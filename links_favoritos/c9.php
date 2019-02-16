@@ -1,7 +1,7 @@
 <?php
 
 require 'classes/autoload.php';
-require '../../classes/vendor/autoload.php';
+require '../classes/vendor/autoload.php';
 
 $param = '';
 if(isset($_GET['parametros'])) {
