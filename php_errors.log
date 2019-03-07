@@ -3199,3 +3199,18 @@ Stack trace:
 #1 /home/ubuntu/workspace/links_favoritos/c9.php(21): izv\mvc\FrontController->doAction()
 #2 {main}
   thrown in /home/ubuntu/workspace/links_favoritos/classes/izv/controller/UserController.php on line 72
+[07-Mar-2019 19:23:20 UTC] PHP Fatal error:  Uncaught Error: Class 'izv\controller\LinksController' not found in /home/ubuntu/workspace/links_favoritos/classes/izv/mvc/FrontController.php:18
+Stack trace:
+#0 /home/ubuntu/workspace/links_favoritos/c9.php(20): izv\mvc\FrontController->__construct('links', 'agregarLink')
+#1 {main}
+  thrown in /home/ubuntu/workspace/links_favoritos/classes/izv/mvc/FrontController.php on line 18
+[07-Mar-2019 19:23:23 UTC] PHP Fatal error:  Uncaught Error: Class 'izv\controller\LinksController' not found in /home/ubuntu/workspace/links_favoritos/classes/izv/mvc/FrontController.php:18
+Stack trace:
+#0 /home/ubuntu/workspace/links_favoritos/c9.php(20): izv\mvc\FrontController->__construct('links', 'agregarLink')
+#1 {main}
+  thrown in /home/ubuntu/workspace/links_favoritos/classes/izv/mvc/FrontController.php on line 18
+[07-Mar-2019 19:23:31 UTC] PHP Fatal error:  Uncaught Error: Class 'izv\controller\LinksController' not found in /home/ubuntu/workspace/links_favoritos/classes/izv/mvc/FrontController.php:18
+Stack trace:
+#0 /home/ubuntu/workspace/links_favoritos/c9.php(20): izv\mvc\FrontController->__construct('links', 'main')
+#1 {main}
+  thrown in /home/ubuntu/workspace/links_favoritos/classes/izv/mvc/FrontController.php on line 18

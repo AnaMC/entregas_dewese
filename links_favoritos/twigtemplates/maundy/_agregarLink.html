@@ -1,0 +1,44 @@
+{% extends '_base.html' %}
+{% block about %}
+<div class="container" style="margin-bottom: 15px;">
+    <div class="row">
+        <form action="index/doEditar" method="post" role="form" class="contactForm">
+         
+          <input type="hidden" value="" name="id"/>
+            <div class="form-group">
+                <input type="text" required class="form-control" name="categoria" id="categoria" value="" placeholder="Agregar categoría"/>
+                <div class="validation"></div>
+            </div>
+          
+           <div class="text-center">
+                <button type="button" id="btn-add-cat" class="contact-submit">Agregar Categoría</button>
+            </div>
+             <br>
+          
+            <input type="hidden" value="" name="id"/>
+            <div class="form-group">
+                <input type="text" required class="form-control" name="href" id="href" value="" placeholder="Link"/>
+                <div class="validation"></div>
+            </div>
+            
+            <input type="hidden" value="" name="id"/>
+            <div class="form-group">
+                <input type="text" required class="form-control" name="comentario" id="comentario" value="" placeholder="Comentarios"/>
+                <div class="validation"></div>
+            </div>
+             
+          <select id="select">
+              
+          </select>
+          
+            <div class="text-center">
+                <button type="button" class="contact-submit">Agregar</button>
+            </div>
+            
+        </form>
+        <div class="text-center">
+            <a href="login/main" class="btn contact-submit" role="button">Volver</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

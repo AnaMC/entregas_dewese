@@ -256,7 +256,7 @@ class Usuario {
      *
      * @return Usuario
      */
-    public function addLink(\Link $link)
+    public function addLink(Link $link)
     {
         $this->links[] = $link;
 
@@ -268,7 +268,7 @@ class Usuario {
      *
      * @param \Link $link
      */
-    public function removeLink(\Link $link)
+    public function removeLink(Link $link)
     {
         $this->links->removeElement($link);
     }
@@ -290,7 +290,7 @@ class Usuario {
      *
      * @return Usuario
      */
-    public function addCategoria(\Categoria $categoria)
+    public function addCategoria(Categoria $categoria)
     {
         $this->categorias[] = $categoria;
 
@@ -302,7 +302,7 @@ class Usuario {
      *
      * @param \Categoria $categoria
      */
-    public function removeCategoria(\Categoria $categoria)
+    public function removeCategoria(Categoria $categoria)
     {
         $this->categorias->removeElement($categoria);
     }

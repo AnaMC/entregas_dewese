@@ -10,12 +10,11 @@ class Router {
         $this->rutas = array(
             'admin' => new Route('AdminModel', 'AdminView' , 'UserController'),
             'index' => new Route('UserModel', 'MaundyView', 'UserController'),
-            'ajax' => new Route('UserModel', 'AjaxView', 'AjaxController'),
             'login' => new Route('LoginModel', 'MaundyView', 'LoginController'),
             'listar' => new Route ('UserModel', 'MaundyView', 'UserController'),
+            //AjaxView no renderiza en pantalla, si no que codifica a json
+            'ajax' => new Route('LinksModel', 'AjaxView', 'AjaxController'),
             'links' => new Route ('LinksModel', 'MaundyView', 'LinksController')
-            //'old'   => new Route('FirstModel', 'FirstView' , 'FirstController'),
-            //'zeta'  => new Route('FirstModel', 'SecondView', 'FirstController')
         );
         $this->ruta = $ruta;
     }

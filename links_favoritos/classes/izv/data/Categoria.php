@@ -82,7 +82,7 @@ class Categoria{
      *
      * @return Categoria
      */
-    public function addLink(\Link $link)
+    public function addLink(Link $link)
     {
         $this->links[] = $link;
 
@@ -94,7 +94,7 @@ class Categoria{
      *
      * @param \Link $link
      */
-    public function removeLink(\Link $link)
+    public function removeLink(Link $link)
     {
         $this->links->removeElement($link);
     }
@@ -116,7 +116,7 @@ class Categoria{
      *
      * @return Categoria
      */
-    public function setUsuario(\Usuario $usuario)
+    public function setUsuario(Usuario $usuario)
     {
         $this->usuario = $usuario;
 

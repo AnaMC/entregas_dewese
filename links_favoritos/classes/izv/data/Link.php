@@ -106,7 +106,7 @@ class Link {
      *
      * @return Link
      */
-    public function setCategoria(\Categoria $categoria)
+    public function setCategoria(Categoria $categoria)
     {
         $this->categoria = $categoria;
 
@@ -130,7 +130,7 @@ class Link {
      *
      * @return Link
      */
-    public function setUsuario(\Usuario $usuario)
+    public function setUsuario(Usuario $usuario)
     {
         $this->usuario = $usuario;
 
