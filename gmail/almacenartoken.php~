@@ -1,0 +1,21 @@
+<?php
+session_start();
+require_once '../links_favoritos/classes/vendor/autoload.php';
+
+$cliente = new Google_Client();
+$cliente->setApplicationName('dewese');
+$cliente->setClientId('1093272371904-3m2qmtqmscg9q6n0cu47vk85qohv457q.apps.googleusercontent.com');
+$cliente->setClientSecret('WFUsJy_8qK0mCN2AmPktheze');
+$cliente->setRedirectUri('https://entregas-dewese-anamc.c9users.io/gmail/almacenartoken.php');
+$cliente->setScopes('https://www.googleapis.com/auth/gmail.compose');
+$cliente->setAccessType('offline');
+
+if (isset($_GET['code'])) {
+    $cliente->authenticate($_GET['code']);
+    $_SESSION['token'] = $cliente->getAccessToken();
+    $archivo = "token.conf";
+    $fh = fopen($archivo, 'w') or die("error");
+    fwrite($fh, json_encode($cliente->getAccessToken()));
+    fclose($fh);
+    header("Location: finalizartoken.php?code=" . $_GET['code']);
+}

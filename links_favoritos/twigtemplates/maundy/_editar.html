@@ -1,0 +1,35 @@
+{% extends '_base.html' %}
+{% block about %}
+<div class="container" style="margin-bottom: 15px;">
+    <div class="row">
+        <form action="index/doEditar" method="post" role="form" class="contactForm">
+            <input type="hidden" value="{{usuario.id}}" name="id"/>
+            <div class="form-group">
+                <input type="email" required class="form-control" name="correo" id="correo" value="{{usuario.correo}}" placeholder="Correo" data-rule="email" data-msg="Por favor, un correo electrónico válido." />
+                <div class="validation"></div>
+            </div>
+            
+            <div class="form-group">
+                <input type="text" required class="form-control" name="alias" id="alias" value="{{usuario.alias}}" placeholder="Alias" data-rule="minlen:4" data-msg="Por favor, al menos 4 caracteres." />
+                <div class="validation"></div>
+            </div>
+            
+            <div class="form-group">
+                <input type="text" required class="form-control" name="nombre" id="nombre" value="{{usuario.nombre}}" placeholder="Nombre" data-rule="minlen:4" data-msg="Por favor, al menos 4 caracteres." />
+                <div class="validation"></div>
+            </div>
+            {% if rol == 1 %}
+            <input type="checkbox" name="rol" id="rol" {{usuario.rol == 1 ? 'checked' : ''}}>
+            <label for="checkbox_id">Dar permisos de administración.</label>
+            {% endif %}
+            <div class="text-center">
+                <button type="submit" class="contact-submit">Editar</button>
+            </div>
+            
+        </form>
+        <div class="text-center">
+            <a href="login/main" class="btn contact-submit" role="button">Volver</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

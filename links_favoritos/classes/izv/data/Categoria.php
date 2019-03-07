@@ -1,10 +1,14 @@
 <?php
+
+namespace izv\data;
 /**
  * @Entity @Table(name="categoria",
  *              uniqueConstraints={@UniqueConstraint(name="catconstr", columns={"idusuario", "categoria"})})
  * id, id_usuario, categoria
  */
 class Categoria{
+    
+    use \izv\common\Common;
     
     /**
      * @Id

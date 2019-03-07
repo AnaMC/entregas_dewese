@@ -59,4 +59,12 @@ trait Common {
         return $this;
     }
 
+    function getUnset(array $datos = []) {
+        $objeto = $this->get();
+        foreach($datos as $dato) {
+            unset($objeto[$dato]);
+        }
+        return $objeto;
+    }
+
 }

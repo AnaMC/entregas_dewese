@@ -20,6 +20,6 @@ class App {
             
             SESSION_NAME = 'MVC_SESSION',
             
-            BASE = 'https://curso1819-izvdamdaw.c9users.io/ejemplos/tercerosejemplos/';
+            BASE = 'https://entregas-dewese-anamc.c9users.io/links_favoritos/';
     
 }

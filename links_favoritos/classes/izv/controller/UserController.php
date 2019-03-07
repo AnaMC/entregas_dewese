@@ -16,6 +16,22 @@ class UserController extends Controller {
         //...
     }
 
+    function main() {
+        //1º control de sesión
+        if($this->getSession()->isLogged()) {
+            $this->getModel()->set('twigFile', '_mainlogged.html');
+            $usuario =$this->getSession()->getLogin()->getUnset(['fechaalta','links', 'categorias']);
+            
+            $this->getModel()->set('user', $usuario);
+            if($this->isAdministrator()) {
+                $this->getModel()->set('administrador', true);
+            }
+        } else {
+            //5º producir resultado
+            $this->getModel()->set('twigFile', '_main.html');
+        }
+    }
+
     private function isAdministrator() {
         return $this->getSession()->isLogged() && $this->getSession()->getLogin()->getCorreo() === 'admin@admin.es';
     }
@@ -28,128 +44,74 @@ class UserController extends Controller {
     5º producir resultado (para la vista)
     */
 
-    function ciudades() {
-        $ordenes = [
-            'id' => 'id',
-            'name' => 'name',
-            'countrycode' => 'countrycode',
-            'district' => 'district',
-            'population' => 'population'
-        ];
-        $this->getModel()->set('twigFile', '_ciudades.html');
-        $pagina = Reader::read('pagina');
-        if($pagina === null || !is_numeric($pagina)) {
-            $pagina = 1;
-        }
-        $orden = Reader::read('orden');
-        if(!isset($ordenes[$orden])) {
-            $orden = 'name';
-        }
-        $filtro = Reader::read('filtro');
-        $r = $this->getModel()->getCiudades($pagina, $orden, $filtro);
-        $this->getModel()->add($r);
+    function agregar(){
+        $this->getModel()->set('twigFile','_agregar.html');
     }
-
-    function dologin() {
-        //1º control de sesión
-        if($this->getSession()->isLogged()) {
-            //5º producir resultado -> redirección
-            header('Location: ' . App::BASE . 'index?op=login&r=session');
-            exit();
+    
+    function doAgregar(){
+        if($this->isAdministrator()){
+            $newUser = Reader::readObject('izv\data\Usuario');
+            // echo $newUser;
+            // // exit();
+            // if(strlen(trim($usuario->getClave())) >= 6 && strlen(trim($usuario->getNombre())) >= 3 && strlen(trim($usuario->getAlias())) >= 3){
+            $newUser->setClave(Util::encriptar($newUser->getClave()));
+            $resultado = $this->getModel()->crearUsuario($newUser);
+            //     if($resultado != 0 && $resultado != -1){
+            //       //Si exito -> email confirmacion
+            //         // $resultado = Mail::sendActivation($newUser);
+            //         header('Location: ' . App::BASE . 'login/mail?result=' . $resultado ? '1' : '0' );
+            //     // }        
+            // }
         }
-
-        //2º lectura de datos
-        $usuario = Reader::readObject('izv\data\Usuario');
-        
-        //4º usar el modelo
-        $r = $this->getModel()->login($usuario);
-
-        if($r !== false) {
-            $this->getSession()->login($r);
-            $r = 1;
-        } else {
-            $r = 0;
+        header('Location: ' . App::BASE . 'login/mail?result=0' );
+    }
+    
+    function editar() {
+        $id_usuario = Reader::read('id');
+        $user = $this->getModel()->getUsuario($id_usuario);
+        $session = $this->getSession()->getLogin();
+        if($user === null || $session->getRol() != 1 && $session->getId() != $id_usuario){
+            header('Location: ' . App::BASE . 'index/main');
+           exit(); 
         }
         
-        //5º producir resultado -> redirección
-        header('Location: ' . App::BASE . 'index?op=login&r=' . $r);
-        exit();
+        $this->getModel()->set('usuario', $user);
+        $this->getModel()->set('rol', $session->getRol());
+        $this->getModel()->set('twigFile','_editar.html');
     }
+    
+    function doEditar() {
 
-    function dologout() {
-        $this->getSession()->logout();
-        header('Location: ' . App::BASE . 'index');
-        exit();
-    }
-
-    function doregister() {
-        //1º control de sesión
-        if($this->getSession()->isLogged()) {
-            //5º producir resultado -> redirección
-            header('Location: ' . App::BASE . 'index?op=register&r=session');
-            exit();
+        if($this->isAdministrator()){
+           $usuario = Reader::readObject('izv\data\Usuario');
+           $rol_usuario = Reader::read('rol');
+           $usuario->setRol($rol_usuario === 'on' ? 1 : 0);
+           $resultado = $this->getModel()->editarUsuario($usuario);
+           header('Location: ' . App::BASE . 'index/listar?result=1');
+           exit();
         }
-
-        //2º lectura de datos
-        $usuario = Reader::readObject('izv\data\Usuario');
-        $clave2 = Reader::read('clave2');
-
-        //3º validación de datos
-        if($usuario->getClave() !== $clave2 ||
-            mb_strlen($usuario->getClave()) < 4) {
-            //5º producir resultado -> redirección
-            header('Location: ' . App::BASE . 'index?op=register&r=password');
-            exit();
+       header('Location: ' . App::BASE . 'index/listar'); 
+    }
+    
+    function doBorrar(){
+        if($this->isAdministrator()){
+            $id = Reader::read('id');
+            $resultado = $this->getModel()->borrarUsuario($id);
+            $r = $resultado->getId() === null ? 1 : 0;
+              header('Location: ' . App::BASE . 'index/listar?result=' . $r);
+              exit();
         }
-        if (!filter_var($usuario->getCorreo(), FILTER_VALIDATE_EMAIL)) {
-            //5º producir resultado -> redirección
-            header('Location: ' . App::BASE . 'index?op=register&r=email');
-            exit();
-        }
-
-        //4º usar el modelo
-        $usuario->setClave(Util::encriptar($usuario->getClave()));
-        $r = $this->getModel()->register($usuario);
-
-        //5º producir resultado -> redirección
-        header('Location: ' . App::BASE . 'index?op=register&r=' . $r);
-        exit();
+       header('Location: ' . App::BASE . 'index/listar'); 
     }
 
-    function login() {
-        //1º control de sesión, si está logueado no se muestra el login
-        if(!$this->getSession()->isLogged()) {
-            //2º lectura de datos    -> no hay
-            //3º validación de datos -> no hay
-            //4º usar el modelo    -> no hace falta
-            //5º producir resultado
-            $this->getModel()->set('twigFile', '_login.html');
-        }
+    function listar(){
+          $pagina = Reader::read('pagina');
+          
+          $resultado = $this->getModel()->getUsuarios($pagina);
+          $this->getModel()->set('usuarios', $resultado);
+          //Le pasamos el usuario a la vista para saber sus datos
+          $this->getModel()->set('user', $this->getSession()->getLogin());
+          $this->getModel()->set('twigFile','_listar.html');
     }
 
-    function main() {
-        //1º control de sesión
-        if($this->getSession()->isLogged()) {
-            $this->getModel()->set('twigFile', '_mainlogged.html');
-            $this->getModel()->set('user', $this->getSession()->getLogin()->getCorreo());
-            if($this->isAdministrator()) {
-                $this->getModel()->set('administrador', true);
-            }
-        } else {
-            //5º producir resultado
-            $this->getModel()->set('twigFile', '_main.html');
-        }
-    }
-
-    function otra() {
-        $this->getModel()->set('twigFile', '_otra.html');
-    }
-
-    function register() {
-        //1º control de sesión, si está logueado no se muestra el registro
-        if(!$this->getSession()->isLogged()) {
-            //5º producir resultado
-            $this->getModel()->set('twigFile', '_register.html');
-        }
-    }
 }

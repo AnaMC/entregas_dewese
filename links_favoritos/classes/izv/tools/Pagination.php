@@ -6,7 +6,7 @@ class Pagination {
 
     private $page, $rpp, $total;
     
-    function __construct($total, $page = 1, $rpp = 10) {
+    function __construct($total, $page = 1, $rpp = 5) {
         $this->total = $total;
         $this->page = $page;
         $this->rpp = $rpp;
@@ -24,6 +24,7 @@ class Pagination {
         return min($this->page() + 1, $this->last());
     }
 
+    // Define el rango para la consulta a la bd (pag. 1 del {0}-10, pag. 2 del {10} - 20....)  
     function offset() {
         return ($this->page() - 1) * $this->rpp;
     }
@@ -69,7 +70,9 @@ class Pagination {
             'primero'   => $this->first(),
             'anterior'  => $this->previous(),
             'siguiente' => $this->next(),
-            'ultimo'    => $this->last()
+            'ultimo'    => $this->last(),
+            'range'     => $this->range(),
+            'actual'    => $this->page()
         );
     }
 }

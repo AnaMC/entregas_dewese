@@ -12,6 +12,7 @@ class Mail {
         $asunto = 'Correo de activación de la App: DWES IZV';
         $jwt = \Firebase\JWT\JWT::encode($usuario->getCorreo(), App::JWT_KEY);
         $enlace = Util::url() . 'doactivar.php?id='. $usuario->getId() .'&code=' . $jwt;
+        // creR FUNCION CON nombre del usuario y enlace para personalizar correo activacion
         $mensaje = "Correo de activación para:  ". $usuario->getNombre();
         $mensaje .= '<br><a href="' . $enlace . '">activar cuenta</a>';
         return self::sendMail($usuario->getCorreo(), $asunto, $mensaje);

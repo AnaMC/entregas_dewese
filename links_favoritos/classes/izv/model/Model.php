@@ -2,19 +2,20 @@
 
 namespace izv\model;
 
-use izv\database\Database;
+use izv\tools\Bootstrap;
+use izv\tools\Util;
 
 class Model {
 
-    private $db;
     private $datosVista = array();
+    // Creamos el manejador de la BD (Doctrine)
+    private $entityManager;
 
     function __construct() {
-        $this->db = new Database();
-    }
-    
-    function __destruct() {
-        $this->db->close();
+        // Hacemos la instancia en el constructor xq todos los modelos van a necesitar el manejador
+        $bootstrap = new Bootstrap();
+        
+        $this->entityManager = $bootstrap->getEntityManager();
     }
     
     function add(array $array) {
@@ -30,12 +31,12 @@ class Model {
         return null;
     }
 
-    function getDatabase() {
-        return $this->db;
-    }
-
     function getViewData() {
         return $this->datosVista;
+    }
+    
+    function getEntityManager(){
+        return $this->entityManager;
     }
 
     function set($name, $value) {

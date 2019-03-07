@@ -2,11 +2,12 @@
 {% block subtitle %}
 <div class="subcription-info text-center">
     <div class="text-center">
-        <a href="index/edituser" class="btn contact-submit" role="button">Editar {{user}}</a>
+        <a href="index/editar?id={{user.id}}" class="btn contact-submit" role="button">Editar {{user.correo}}</a>
         {% if administrador %}
-            <a href="admin/main" target="admin" class="btn contact-submit" role="button">Administrar</a>
+            <a href="index/agregar" target="admin" class="btn contact-submit" role="button">Agregar Usuario</a>
+            <a href="listar/listar" target="admin" class="btn contact-submit" role="button">Ver Usuarios</a>
         {% endif %}
-        <a href="index/dologout" class="btn contact-submit" role="button">Cerrar sesión</a>
+        <a href="login/dologout" class="btn contact-submit" role="button">Cerrar sesión</a>
     </div>
 </div>
 <div id="countdown" data-wow-delay=".3s" data-date="Mar 12, 2019 10:15:00"></div>

@@ -54,29 +54,22 @@ class Reader {
         //return isset($array[$name]) ? $array[$name] : null;
     }
 
-    static function readObject($class, $methodGet = 'get', $methodSet = 'set') {
+    static function readObject($class, $methodGet = 'get', $methodSet = 'set'){
         $object = null;
-        if(class_exists($class)) {
+        if (class_exists($class)){
             $object = new $class();
-            if(method_exists($object, $methodGet)) {
+            if (method_exists($object, $methodGet)){
                 $array = $object->$methodGet();
-                foreach($array as $atributo => $valor) {
-                    $array[$atributo] = self::read($atributo);
-                }
-                if(method_exists($object, $methodSet)) {
-                    $object->$methodSet($array);
+                if (is_array($array)){
+                    foreach($array as $atributo => $valor){
+                        $array[$atributo] = self::read($atributo);
+                    }
+                    if(method_exists($object, $methodSet)){
+                        $object->$methodSet($array);
+                    }
                 }
             }
         }
-        return $object;
-    }
-
-    static function readReadableObject(Readable $object) {
-        $array = $object->readableGet();
-        foreach($array as $atributo => $valor) {
-            $array[$atributo] = self::read($atributo);
-        }
-        $object->readableSet($array);
         return $object;
     }
 

@@ -1,4 +1,6 @@
 <?php
+
+namespace izv\data;
 /**
  * @Entity @Table(name="usuario")
  * 
@@ -43,6 +45,11 @@ class Usuario {
      */
     private $activo = 0;
     
+    /**
+     * @Column(type="boolean", nullable=false, precision=1, options={"default" : 0})
+     */
+    private $rol = 0;
+    
     /** 
      * @OneToMany(targetEntity="Link", mappedBy="usuario") 
      */
@@ -60,6 +67,8 @@ class Usuario {
     {
         $this->links = new \Doctrine\Common\Collections\ArrayCollection();
         $this->categorias = new \Doctrine\Common\Collections\ArrayCollection();
+        //Como no puede ser null y el Datetime no tiene formato autogenerado en mysql creamos una instancia
+        $this->fechaalta = new \DateTime();
     }
 
     /**
@@ -214,6 +223,30 @@ class Usuario {
     public function getActivo()
     {
         return $this->activo;
+    }
+
+    /**
+     * Set rol
+     *
+     * @param boolean $rol
+     *
+     * @return Usuario
+     */
+    public function setRol($rol)
+    {
+        $this->rol = $rol;
+
+        return $this;
+    }
+
+    /**
+     * Get rol
+     *
+     * @return boolean
+     */
+    public function getRol()
+    {
+        return $this->rol;
     }
 
     /**

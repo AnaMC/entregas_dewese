@@ -1,10 +1,14 @@
 <?php
+
+namespace izv\data;
 /**
  * @Entity @Table(name="link",
  *          uniqueConstraints={@UniqueConstraint(name="linkconstr", columns={"idusuario", "idcategoria", "href"})})
  * id, id_cat, id_user, href, comentario
  */
 class Link {
+    
+    use \izv\common\Common;
 
     /**
      * @Id
