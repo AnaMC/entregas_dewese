@@ -31,19 +31,19 @@ class UserModel extends Model {
         return $usuario;
     }
 
-    function login(Usuario $usuario) {
-        $manager = new ManageUsuario($this->getDatabase());
-        return $manager->login($usuario->getCorreo(), $usuario->getClave());
-    }
+    // function login(Usuario $usuario) {
+    //     $manager = new ManageUsuario($this->getDatabase());
+    //     return $manager->login($usuario->getCorreo(), $usuario->getClave());
+    // }
 
-    function register(Usuario $usuario) {
-        $manager = new ManageUsuario($this->getDatabase());
-        $r = $manager->add($usuario);
-        if($r > 0) {
-            $usuario->setId($r);
-        }
-        return $r;
-    }
+    // function register(Usuario $usuario) {
+    //     $manager = new ManageUsuario($this->getDatabase());
+    //     $r = $manager->add($usuario);
+    //     if($r > 0) {
+    //         $usuario->setId($r);
+    //     }
+    //     return $r;
+    // }
     
     function editarUsuario($usuario){
         $usuario_bd = $this->getUsuario($usuario->getId());
@@ -66,15 +66,15 @@ class UserModel extends Model {
     }
     
     //Contar número de usuarios registrados
-     function usuarioCount() {
-            $dql = 'select count(u) from izv\data\Usuario u';
-                //getResults() -> Método de EntityManager();
-            $resultado = $this->getEntityManager()->createQuery($dql)->getResult();
-            echo Util::varDump( $resultado);
-            exit();
-            //RECORRER CON FOREACH Y MOSTRAR PRIMER RESULTADO
-        return $usuarios;
-    }
+    //  function usuarioCount() {
+    //         $dql = 'select count(u) from izv\data\Usuario u';
+    //             //getResults() -> Método de EntityManager();
+    //         $resultado = $this->getEntityManager()->createQuery($dql)->getResult();
+    //         echo Util::varDump( $resultado);
+    //         exit();
+    //         //RECORRER CON FOREACH Y MOSTRAR PRIMER RESULTADO
+    //     return $usuarios;
+    // }
     
     //Paginacion y ordenacion
     function getUsuarios($pagina = 1, $orden = 'nombre', $rrpp = 4) {

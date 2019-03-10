@@ -4581,3 +4581,39 @@ Stack trace:
 #5 /home/ubuntu/workspace/classes/vendor/twig/twig/lib/Twig/Environment.php(289): Twig_Environment->loadTemplate('_listarLink.htm...')
 #6 /home/ubuntu/workspace/links_favoritos/classes/izv/view/MaundyView.php(20): Twig_Environment->render('_listarLink.htm...', Array)
 #7 /home/ubuntu/workspace/ in /home/ubuntu/workspace/links_favoritos/twigtemplates/maundy/_listarLink.html on line 65
+[10-Mar-2019 10:29:04 UTC] PHP Fatal error:  Uncaught Twig_Error_Loader: Unable to find template "_mainlogged.html" (looked into: twigtemplates/admin). in /home/ubuntu/workspace/classes/vendor/twig/twig/lib/Twig/Loader/Filesystem.php:234
+Stack trace:
+#0 /home/ubuntu/workspace/classes/vendor/twig/twig/lib/Twig/Loader/Filesystem.php(143): Twig_Loader_Filesystem->findTemplate('_mainlogged.htm...')
+#1 /home/ubuntu/workspace/classes/vendor/twig/twig/lib/Twig/Environment.php(270): Twig_Loader_Filesystem->getCacheKey('_mainlogged.htm...')
+#2 /home/ubuntu/workspace/classes/vendor/twig/twig/lib/Twig/Environment.php(350): Twig_Environment->getTemplateClass('_mainlogged.htm...')
+#3 /home/ubuntu/workspace/classes/vendor/twig/twig/lib/Twig/Environment.php(289): Twig_Environment->loadTemplate('_mainlogged.htm...')
+#4 /home/ubuntu/workspace/links_favoritos/classes/izv/view/AdminView.php(20): Twig_Environment->render('_mainlogged.htm...', Array)
+#5 /home/ubuntu/workspace/links_favoritos/classes/izv/mvc/FrontController.php(32): izv\view\AdminView->render('')
+#6 /home/ub in /home/ubuntu/workspace/classes/vendor/twig/twig/lib/Twig/Loader/Filesystem.php on line 234
+[10-Mar-2019 10:29:07 UTC] PHP Fatal error:  Uncaught Twig_Error_Loader: Unable to find template "_mainlogged.html" (looked into: twigtemplates/admin). in /home/ubuntu/workspace/classes/vendor/twig/twig/lib/Twig/Loader/Filesystem.php:234
+Stack trace:
+#0 /home/ubuntu/workspace/classes/vendor/twig/twig/lib/Twig/Loader/Filesystem.php(143): Twig_Loader_Filesystem->findTemplate('_mainlogged.htm...')
+#1 /home/ubuntu/workspace/classes/vendor/twig/twig/lib/Twig/Environment.php(270): Twig_Loader_Filesystem->getCacheKey('_mainlogged.htm...')
+#2 /home/ubuntu/workspace/classes/vendor/twig/twig/lib/Twig/Environment.php(350): Twig_Environment->getTemplateClass('_mainlogged.htm...')
+#3 /home/ubuntu/workspace/classes/vendor/twig/twig/lib/Twig/Environment.php(289): Twig_Environment->loadTemplate('_mainlogged.htm...')
+#4 /home/ubuntu/workspace/links_favoritos/classes/izv/view/AdminView.php(20): Twig_Environment->render('_mainlogged.htm...', Array)
+#5 /home/ubuntu/workspace/links_favoritos/classes/izv/mvc/FrontController.php(32): izv\view\AdminView->render('')
+#6 /home/ub in /home/ubuntu/workspace/classes/vendor/twig/twig/lib/Twig/Loader/Filesystem.php on line 234
+[10-Mar-2019 10:29:14 UTC] PHP Fatal error:  Uncaught Twig_Error_Loader: Unable to find template "_mainlogged.html" (looked into: twigtemplates/admin). in /home/ubuntu/workspace/classes/vendor/twig/twig/lib/Twig/Loader/Filesystem.php:234
+Stack trace:
+#0 /home/ubuntu/workspace/classes/vendor/twig/twig/lib/Twig/Loader/Filesystem.php(143): Twig_Loader_Filesystem->findTemplate('_mainlogged.htm...')
+#1 /home/ubuntu/workspace/classes/vendor/twig/twig/lib/Twig/Environment.php(270): Twig_Loader_Filesystem->getCacheKey('_mainlogged.htm...')
+#2 /home/ubuntu/workspace/classes/vendor/twig/twig/lib/Twig/Environment.php(350): Twig_Environment->getTemplateClass('_mainlogged.htm...')
+#3 /home/ubuntu/workspace/classes/vendor/twig/twig/lib/Twig/Environment.php(289): Twig_Environment->loadTemplate('_mainlogged.htm...')
+#4 /home/ubuntu/workspace/links_favoritos/classes/izv/view/AdminView.php(20): Twig_Environment->render('_mainlogged.htm...', Array)
+#5 /home/ubuntu/workspace/links_favoritos/classes/izv/mvc/FrontController.php(32): izv\view\AdminView->render('')
+#6 /home/ub in /home/ubuntu/workspace/classes/vendor/twig/twig/lib/Twig/Loader/Filesystem.php on line 234
+[10-Mar-2019 10:29:24 UTC] PHP Fatal error:  Uncaught Twig_Error_Loader: Unable to find template "_mainlogged.html" (looked into: twigtemplates/admin). in /home/ubuntu/workspace/classes/vendor/twig/twig/lib/Twig/Loader/Filesystem.php:234
+Stack trace:
+#0 /home/ubuntu/workspace/classes/vendor/twig/twig/lib/Twig/Loader/Filesystem.php(143): Twig_Loader_Filesystem->findTemplate('_mainlogged.htm...')
+#1 /home/ubuntu/workspace/classes/vendor/twig/twig/lib/Twig/Environment.php(270): Twig_Loader_Filesystem->getCacheKey('_mainlogged.htm...')
+#2 /home/ubuntu/workspace/classes/vendor/twig/twig/lib/Twig/Environment.php(350): Twig_Environment->getTemplateClass('_mainlogged.htm...')
+#3 /home/ubuntu/workspace/classes/vendor/twig/twig/lib/Twig/Environment.php(289): Twig_Environment->loadTemplate('_mainlogged.htm...')
+#4 /home/ubuntu/workspace/links_favoritos/classes/izv/view/AdminView.php(20): Twig_Environment->render('_mainlogged.htm...', Array)
+#5 /home/ubuntu/workspace/links_favoritos/classes/izv/mvc/FrontController.php(32): izv\view\AdminView->render('')
+#6 /home/ub in /home/ubuntu/workspace/classes/vendor/twig/twig/lib/Twig/Loader/Filesystem.php on line 234

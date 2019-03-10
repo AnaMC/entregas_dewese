@@ -13,12 +13,14 @@ class LinksModel extends Model {
     
     function agregarCategoria($id, $categoria){
         $result = null;
+        //Con try-catch capturamos excepciones de la bd
         try {
             $usuario = $this->getEntityManager()->getReference('izv\data\Usuario', ['id' => $id]);
             $categoria->setUsuario($usuario);
             $this->getEntityManager()->persist($categoria);
             $this->getEntityManager()->flush();  
             return  $categoria;
+            //ver excepciones en documentacion 
         } catch(\Doctrine\DBAL\Exception\UniqueConstraintViolationException $e){
             $result = -1;
         } catch(\Exception $e){
@@ -29,13 +31,13 @@ class LinksModel extends Model {
     
     function getCatUser($id){
         $resultado = $this->getEntityManager()->createQuery('SELECT c FROM izv\data\Categoria c JOIN c.usuario u WHERE u.id = :id')
-                ->setParameter('id', $id)
-                ->getResult();
+                            ->setParameter('id', $id)->getResult();
         
         return $resultado;
     }
     
     function insertarLink($usuario_id, $categoria, $link){
+        //getReference-> cogemos el objeto usuario con el id sin tener que cargar datos que no necesitamos
         $usuario = $this->getEntityManager()->getReference('izv\data\Usuario',  $usuario_id);
         $categoria = $this->getEntityManager()->getReference('izv\data\Categoria', $categoria);
         $link->setUsuario($usuario);
@@ -58,7 +60,7 @@ class LinksModel extends Model {
         $dql = 'SELECT l, c  FROM izv\data\Link l join l.usuario u join l.categoria 
             c WHERE u.id = :id
             ORDER BY ' . $orden . ', c.categoria, l.href, l.comentario, l.id'; 
-        
+                                                            //los id se inyectarán en la consulta
         $query = $this->getEntityManager()->createQuery($dql)->setParameter('id', $id);
      
         $paginator = new Paginator($query);

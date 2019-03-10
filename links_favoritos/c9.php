@@ -3,6 +3,7 @@
 require 'classes/autoload.php';
 require '../classes/vendor/autoload.php';
 
+// Comprobamos s tenemos parámetros (vienen de .htaccess)
 $param = '';
 if(isset($_GET['parametros'])) {
     $param = $_GET['parametros'];

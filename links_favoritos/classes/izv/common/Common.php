@@ -59,10 +59,6 @@ trait Common {
         return $this;
     }
     
-    function getLink($clase, array $data = ['id' => '']) {
-        return $this->gestor->getRepository($clase)->findOneBy($data);
-    }
-    
     function getUnset(array $datos = []) {
         $objeto = $this->get();
         foreach($datos as $dato) {

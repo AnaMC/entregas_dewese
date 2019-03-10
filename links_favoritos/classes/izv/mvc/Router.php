@@ -8,7 +8,6 @@ class Router {
     
     function __construct($ruta) {
         $this->rutas = array(
-            'admin' => new Route('AdminModel', 'AdminView' , 'UserController'),
             'index' => new Route('UserModel', 'MaundyView', 'UserController'),
             'login' => new Route('LoginModel', 'MaundyView', 'LoginController'),
             'listar' => new Route ('UserModel', 'MaundyView', 'UserController'),

@@ -51,17 +51,10 @@ class UserController extends Controller {
     function doAgregar(){
         if($this->isAdministrator()){
             $newUser = Reader::readObject('izv\data\Usuario');
-            // echo $newUser;
-            // // exit();
-            // if(strlen(trim($usuario->getClave())) >= 6 && strlen(trim($usuario->getNombre())) >= 3 && strlen(trim($usuario->getAlias())) >= 3){
+           
             $newUser->setClave(Util::encriptar($newUser->getClave()));
             $resultado = $this->getModel()->crearUsuario($newUser);
-            //     if($resultado != 0 && $resultado != -1){
-            //       //Si exito -> email confirmacion
-            //         // $resultado = Mail::sendActivation($newUser);
-            //         header('Location: ' . App::BASE . 'login/mail?result=' . $resultado ? '1' : '0' );
-            //     // }        
-            // }
+           
         }
         header('Location: ' . App::BASE . 'login/mail?result=0' );
     }
