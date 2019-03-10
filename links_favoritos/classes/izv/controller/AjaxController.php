@@ -37,6 +37,12 @@ class AjaxController extends Controller {
           $this->getModel()->set('nombre',$resultado->getCategoria());
     }
     
+    function borrarlink(){
+        $idlink = Reader::read('id');
+        $result = $this->getModel()->delete($idlink);
+        $this->getModel()->set('result', ($result->getId() === null) ? 1 : 0);
+    }
+    
     function agregarLink(){
         $link = Reader::readObject('izv\data\Link');
         $categoria = Reader::read('categoria');
@@ -50,4 +56,30 @@ class AjaxController extends Controller {
             $this->getModel()->set('result', 0);
         }
     }
+    
+    function mostrarLinks(){
+        
+        $ordenes = [
+                    'l.href' => '',
+                    'c.categoria' => '',
+                    'l.comentario' => ''
+                    ];
+        $pagina = Reader::read('pagina');
+        
+        if($pagina === null || !is_numeric($pagina)){
+            $pagina = 1;
+        }
+        
+        $orden = Reader::read('orden');
+        //Ver si llega el campo
+         if(!isset($ordenes[$orden])){
+            $orden = 'c.categoria';
+        }
+        
+        $links = $this->getModel()->getListaLinks($this->getSession()->getLogin()->getId(), $pagina, $orden);
+        // echo Util::varDump($links);
+        // exit();
+        $this->getModel()->set('links', $links);
+    }
+    
 }

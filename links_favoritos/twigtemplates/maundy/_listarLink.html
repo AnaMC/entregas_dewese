@@ -12,58 +12,57 @@
             </div>
         </form>
     </div>
-    <table class="table">
-        <tr>
-            <th scope="col">
-                <a href="index/listar?orden=nombre">Nombre</a>
-            </th>
-            <th scope="col">
-                <a href="index/listar?orden=alias">Link</a>
-            </th>
-            <th scope="col">
-                <a href="index/listar?orden=correo">Categoria</a>
-            </th>
-            
-             {% if user.correo == 'admin@admin.es' %}
-             
-            <th scope="col">
-                <a>Borrar</a>
-            </th>
-                  {% endif %}
-        </tr>
+    <table class="table" data-orden='c.categoria' data-pagina='1'>
+        <thead>
+            <tr>
+           
+                <th scope="col">
+                    <a href="">Link</a>
+                </th>
+                
+                <th scope="col">
+                    <a href="">Comentario</a>
+                </th>
+                
+                <th scope="col">
+                    <a href="">Categoria</a>
+                </th>
+                
+            </tr>
+        </thead>
         <!-- recogemos el array asociativo de usuarios -->
-        {% for usuario in usuarios.usuarios  %}
-        <tr>
-            <!--<td scope="col">{{usuario.id}}</td>-->
-            <td scope="col">{{usuario.nombre}}</td>
-            <td scope="col">{{usuario.alias}}</td>
-            <td scope="col">{{usuario.correo}}</td>
-            <td scope="col">{{usuario.activo ? '&#10004;' : '&#10008;'}}</td> 
-             <td scope="col">{{usuario.rol ? '&#11088;' : '&#12336;'}}</td>
-            {% if user.correo == 'admin@admin.es' %}
-            <td scope="col"><a href="index/editar?id={{usuario.id}}"> &#9998; </a></td>
-            <td scope="col"><a class="borrar" href="index/doBorrar?id={{usuario.id}}"> &#10060; </a></td>
-            {% endif %}
-        </tr>
-        {% endfor %}
+        <tbody>
+            {% for item in links.link %}
+            <tr>
+                <!--<td scope="col">{{usuario.id}}</td>-->
+                <td scope="col">{{item.link.href}}</td>
+                <td scope="col">{{item.link.comentario}}</td>
+                <td scope="col">{{item.link.categoria}}</td>
+                
+                <!--<td scope="col"><a id="borrar" data-id='{{item.link.id}}' > &#10060; </a></td>-->
+                
+                <td><button id="borrar" data-id='{{item.link.id}}'>Borrar</button></td>
+            </tr>
+            {% endfor %}
+        </tbody>
     </table>
     <div class='row paginacion-centro'>
         <div class='col-md-1'>
-            <a href="index/listarlistar?pagina={{usuarios.paginas.primero}}&orden={{orden}}" class="btn contact-submit" role="button"> << </a>
+            <a href="index/listarlistar?pagina={{usuarios.paginas.primero}}&orden={{orden}}" class="btn contact-submit btn-paginacion" role="button" id="primero" data-pagina = '{{links.paginas.primero}}'> << </a>
         </div>
         <div class='col-md-1'>
-            <a href="index/listar?pagina={{usuarios.paginas.anterior}}&orden={{orden}}" class="btn contact-submit" role="button"> < </a>
+            <a href="index/listar?pagina={{usuarios.paginas.anterior}}&orden={{orden}}" class="btn contact-submit btn-paginacion" id="anterior" role="button" data-pagina = '{{links.paginas.anterior}}'> < </a>
         </div>
-         {% for pagina in usuarios.paginas.range %}
+         {% for pagina in links.paginas.range %}
             <div class='col-md-1'>
-                <a href="index/listar?pagina={{pagina}}&orden={{orden}}" class="btn contact-submit" role="button">{{pagina}}</a>
+                <a href="index/listar?pagina={{pagina}}&orden={{orden}}" class="btn contact-submit btn-paginacion" role="button" data-pagina='{{pagina}}'>{{pagina}}</a>
             </div>
         {% endfor %}
         <div class='col-md-1'>
-            <a href="index/listar?pagina={{usuarios.paginas.siguiente}}&orden={{orden}}" class="btn contact-submit" role="button"> > </a>
+            <a href="index/listar?pagina={{usuarios.paginas.siguiente}}&orden={{orden}}" class="btn contact-submit btn-paginacion" id="siguiente" role="button" data-pagina='{{links.paginas.siguiente}}'> > </a>
         </div>
         <div class='col-md-1'>
-            <a href="index/listar?pagina={{usuarios.paginas.ultimo}}&orden={{orden}}" class="btn contact-submit" role="button"> >> </a>
+            <a href="index/listar?pagina={{usuarios.paginas.ultimo}}&orden={{orden}}" class="btn contact-submit btn-paginacion" id="ultimo" role="button" data-pagina = '{{links.paginas.ultimo}}'> >> </a>
         </div>
     </div>
     <div class='row mi-margen-inferior'>

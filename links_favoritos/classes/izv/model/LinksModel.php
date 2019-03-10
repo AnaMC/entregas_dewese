@@ -4,6 +4,7 @@ namespace izv\model;
 
 use izv\data\Link;
 use izv\data\Categoria;
+use izv\data\Usuario;
 use izv\tools\Util;
 use Doctrine\ORM\Tools\Pagination\Paginator;
 use izv\tools\Pagination;
@@ -51,7 +52,46 @@ class LinksModel extends Model {
         }
         return $result;
     }
-    
+                                                //Limit -> nº de links por pagina
+    function getListaLinks($id, $pagina = 1, $orden = 'c.categoria', $limit = 4 ){
      
-   
+        $dql = 'SELECT l, c  FROM izv\data\Link l join l.usuario u join l.categoria 
+            c WHERE u.id = :id
+            ORDER BY ' . $orden . ', c.categoria, l.href, l.comentario, l.id'; 
+        
+        $query = $this->getEntityManager()->createQuery($dql)->setParameter('id', $id);
+     
+        $paginator = new Paginator($query);
+        $paginator->getQuery()
+            ->setFirstResult($limit * ($pagina - 1))
+            ->setMaxResults($limit);
+        
+        $pagination = new Pagination($paginator->count(), $pagina, $limit);
+        
+        $links = array();
+        $resultado = array();
+     
+        foreach($paginator as $link){
+            $categoria = $link->getCategoria()->getCategoria();
+
+            $links['link'] = $link->getUnset(array('categoria','usuario'));
+            $links['link']['categoria'] = $categoria;
+            $resultado[] = $links;
+            
+        }
+        return ['link' => $resultado, 'paginas' => $pagination->values()];
+     
+    }
+    
+    function delete($id) {
+        $data = ['id' => $id];
+        $item = $this->getEntityManager()->getRepository('\izv\data\Link')->findOneBy($data);
+        $this->getEntityManager()->remove($item);
+        $this->getEntityManager()->flush();
+        return $item;
+    }
+    
+    function getLink($clase, array $data = ['id' => '']) {
+        
+    }
 }
