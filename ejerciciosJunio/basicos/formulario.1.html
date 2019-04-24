@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Formulario de Matriculación</title>
+</head>
+
+<body>
+    <!--Versión 1-->
+    <form action="procesaFormulario1.php" enctype="application/x-www-form-urlencoded" method="post">
+
+        <!--Con require obligamos a que los campos estén "marcados"-->
+        <input required type="text" name="nombre" placeholder="nombre" /><br>
+        <input required type="text" name="apellido" placeholder="apellidos" /><br>
+        <input required type="text" name="dni" placeholder="dni" /><br>
+        <input required type="date" name="fecha" /><br>
+        <textarea name="direccion" placeholder="introduce tu dirección"></textarea><br> sexo:
+        <br>
+        <label for="femenino">femenino</label> <input type="radio" id="femenino" name="sexo" value="femenino" /><br>
+        <label for="masculino">masuclino</label> <input type="radio" id="masculino" name="sexo" value="masculino" /><br>
+
+        <!--Materias-->
+        <!--Debe seleccionarse aslmenos una, aquí n se pueden utilizar los requires, por lo que debemos hacerlo con js-->
+        <!--<label for="dwes">dwes</label> <input type="radio" id="dwes" name="dwes[]" value="dwes" /><br>-->
+        <!--Agregamos [] para poder enviar varios datos con el mismo nombre (aunque distintos valores) en forma de array. -->
+        <!--<label for="dwec">dwec</label> <input type="radio" id="dwec" name="dwec[]" value="dwec" /><br>-->
+
+        <input required type="text" name="asignatura" placeholder="Introduce tu asignatura" /><br>
+        <input type="submit" value="Submit" />
+
+    </form>
+
+    <!--Version 2-->
+
+    <form action="procesaFormulario1.php" enctype="application/x-www-form-urlencoded" method="post">
+
+        <!--Con require obligamos a que los campos estén "marcados"-->
+        <input required type="text" name="nombredepila" placeholder="nombre" /><br>
+        <input required type="text" name="apellidos" placeholder="apellidos" /><br>
+        <input required type="text" name="dni" placeholder="dni" /><br>
+        <input required type="date" name="fechanacimiento" /><br>
+        <textarea name="direccion" placeholder="introduce tu dirección"></textarea><br> sexo:
+        <br>
+        <label for="femenino">femenino</label> <input type="radio" id="femenino" name="sexo" value="femenino" /><br>
+        <label for="masculino">masuclino</label> <input type="radio" id="masculino" name="sexo" value="masculino" /><br>
+
+        <!--Materias-->
+        <!--Debe seleccionarse al menos una, aquí n se pueden utilizar los requires, por lo que debemos hacerlo con js-->
+        <!--<label for="dwes">dwes</label> <input type="radio" id="dwes" name="dwes[]" value="dwes" /><br>-->
+        <!--Agregamos [] para poder enviar varios datos con el mismo nombre (aunque distintos valores) en forma de array. -->
+        <!--<label for="dwec">dwec</label> <input type="radio" id="dwec" name="dwec[]" value="dwec" /><br>-->
+
+        <input required type="text" name="asignatura" placeholder="Introduce tu asignatura" /><br>
+
+        <input type="submit" value="Submit" />
+
+    </form>
+</body>
+
+</html>
