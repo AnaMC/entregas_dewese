@@ -1,0 +1,9 @@
+RewriteEngine On
+RewriteRule ^$ index.php [L]
+RewriteCond %{REQUEST_FILENAME} !-d 
+RewriteCond %{REQUEST_FILENAME} !-f 
+RewriteRule ^(.*)$ c9.php?parametros=$1 [QSA]  
+
+# si me estas pidiendo un directorio
+#  si me estas pidiendo un fichero 
+#  me pidas lo que me pidas si no existe, te mando a c9.php?parametros=$1[QSA] y en c9.php te muestra lo que has solicitado

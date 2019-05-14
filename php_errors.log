@@ -4617,3 +4617,43 @@ Stack trace:
 #4 /home/ubuntu/workspace/links_favoritos/classes/izv/view/AdminView.php(20): Twig_Environment->render('_mainlogged.htm...', Array)
 #5 /home/ubuntu/workspace/links_favoritos/classes/izv/mvc/FrontController.php(32): izv\view\AdminView->render('')
 #6 /home/ub in /home/ubuntu/workspace/classes/vendor/twig/twig/lib/Twig/Loader/Filesystem.php on line 234
+[13-May-2019 17:34:12 UTC] PHP Fatal error:  Uncaught Error: Class 'izv\model\ProductosModel' not found in /home/ubuntu/workspace/Tienda/classes/izv/mvc/FrontController.php:16
+Stack trace:
+#0 /home/ubuntu/workspace/Tienda/c9.php(22): izv\mvc\FrontController->__construct('index.php', '')
+#1 {main}
+  thrown in /home/ubuntu/workspace/Tienda/classes/izv/mvc/FrontController.php on line 16
+[13-May-2019 17:35:38 UTC] PHP Fatal error:  Uncaught Error: Class 'izv\controller\MainController' not found in /home/ubuntu/workspace/Tienda/classes/izv/mvc/FrontController.php:18
+Stack trace:
+#0 /home/ubuntu/workspace/Tienda/c9.php(22): izv\mvc\FrontController->__construct('index.php', '')
+#1 {main}
+  thrown in /home/ubuntu/workspace/Tienda/classes/izv/mvc/FrontController.php on line 18
+[13-May-2019 17:37:13 UTC] PHP Fatal error:  Uncaught Error: Class 'izv\controller\MainController' not found in /home/ubuntu/workspace/Tienda/classes/izv/mvc/FrontController.php:18
+Stack trace:
+#0 /home/ubuntu/workspace/Tienda/c9.php(22): izv\mvc\FrontController->__construct('index.php', '')
+#1 {main}
+  thrown in /home/ubuntu/workspace/Tienda/classes/izv/mvc/FrontController.php on line 18
+[13-May-2019 17:37:14 UTC] PHP Fatal error:  Uncaught Error: Class 'izv\controller\MainController' not found in /home/ubuntu/workspace/Tienda/classes/izv/mvc/FrontController.php:18
+Stack trace:
+#0 /home/ubuntu/workspace/Tienda/c9.php(22): izv\mvc\FrontController->__construct('index.php', '')
+#1 {main}
+  thrown in /home/ubuntu/workspace/Tienda/classes/izv/mvc/FrontController.php on line 18
+[13-May-2019 17:37:15 UTC] PHP Fatal error:  Uncaught Error: Class 'izv\controller\MainController' not found in /home/ubuntu/workspace/Tienda/classes/izv/mvc/FrontController.php:18
+Stack trace:
+#0 /home/ubuntu/workspace/Tienda/c9.php(22): izv\mvc\FrontController->__construct('index.php', '')
+#1 {main}
+  thrown in /home/ubuntu/workspace/Tienda/classes/izv/mvc/FrontController.php on line 18
+[13-May-2019 17:37:15 UTC] PHP Fatal error:  Uncaught Error: Class 'izv\controller\MainController' not found in /home/ubuntu/workspace/Tienda/classes/izv/mvc/FrontController.php:18
+Stack trace:
+#0 /home/ubuntu/workspace/Tienda/c9.php(22): izv\mvc\FrontController->__construct('index.php', '')
+#1 {main}
+  thrown in /home/ubuntu/workspace/Tienda/classes/izv/mvc/FrontController.php on line 18
+[13-May-2019 17:44:29 UTC] PHP Fatal error:  Class 'izv\view\View' not found in /home/ubuntu/workspace/Tienda/classes/izv/view/MainView.php on line 8
+[14-May-2019 07:29:32 UTC] PHP Fatal error:  Uncaught Twig\Error\LoaderError: Unable to find template "_index.twig" (looked into: twigtemplates/admintemplate). in /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Loader/FilesystemLoader.php:250
+Stack trace:
+#0 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Loader/FilesystemLoader.php(150): Twig\Loader\FilesystemLoader->findTemplate('_index.twig')
+#1 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(299): Twig\Loader\FilesystemLoader->getCacheKey('_index.twig')
+#2 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(381): Twig\Environment->getTemplateClass('_index.twig')
+#3 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(359): Twig\Environment->loadTemplate('_index.twig')
+#4 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(318): Twig\Environment->load('_index.twig')
+#5 /home/ubuntu/workspace/Tienda/classes/izv/view/MainView.php(20): Twig\Environment->render('_index.twig', Array)
+#6 /ho in /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Loader/FilesystemLoader.php on line 250
