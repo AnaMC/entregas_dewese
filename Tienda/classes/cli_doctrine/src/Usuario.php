@@ -17,7 +17,7 @@ class Usuario {
   /** @Column(type="string", length=250, unique=false, nullable=false)*/
   private $alias;
   
-  /** @Column(type="string", length=20, unique=false, nullable=false)*/
+  /** @Column(type="string", length=250, unique=false, nullable=false)*/
   private $clave;
   
   /** @Column(type="string", length=250, unique=true, nullable=false) */

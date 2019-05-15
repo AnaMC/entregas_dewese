@@ -3,8 +3,8 @@
 namespace izv\data;
 
 /** @Entity @Table(name="pedido") */
-
 class Pedido {
+  
   /** @Id @Column(type="integer") @GeneratedValue */
   private $id;
  

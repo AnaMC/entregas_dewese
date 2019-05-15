@@ -17,7 +17,7 @@ class Usuario {
       /** @Column(type="string", length=250, unique=false, nullable=false)*/
       private $alias;
       
-      /** @Column(type="string", length=20, unique=false, nullable=false)*/
+      /** @Column(type="string", length=250, unique=false, nullable=false)*/
       private $clave;
       
       /** @Column(type="string", length=250, unique=true, nullable=false) */
@@ -38,10 +38,11 @@ class Usuario {
     /**
      * Constructor
      */
-    public function __construct()
-    {
+    public function __construct(){
         $this->favoritos = new \Doctrine\Common\Collections\ArrayCollection();
         $this->pedidos = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->activo = 0;
+        $this->tipo = 2;
     }
 
     /**

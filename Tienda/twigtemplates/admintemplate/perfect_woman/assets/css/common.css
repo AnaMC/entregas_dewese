@@ -1,0 +1,336 @@
+:root {
+    --color-negro: #000000;
+    --color-blanco: #ffffff;
+    --color-principal: #443785;
+    --color-secundario: #C58D00;
+}
+
+.b1 {
+    border: 3px solid red;
+}
+
+.b2 {
+    border: 3px solid blue;
+}
+
+.b3 {
+    border: 3px solid green;
+}
+
+.b4 {
+    border: 3px solid pink;
+}
+
+.b5 {
+    border: 3px solid grey;
+}
+
+.b6 {
+    border: 3px solid violet;
+}
+
+.b7 {
+    border: 3px solid cyan;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    font-size: 17px;
+}
+
+.img-responsive {
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.menu-principal {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 3em;
+    padding: 20px 0px;
+}
+
+.contenedor-enlaces {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+}
+
+.enlaces {
+    min-width: 130px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0px;
+}
+.enlaces:hover{
+    color: #860000;
+}
+
+/*          FOOTER          */
+
+.cabecera-footer {
+    text-align: center;
+    padding: 35px;
+    font-family: "DINCondensed";
+    letter-spacing: 5px;
+    font-size: 2em;
+}
+
+.hastag-footer {
+    letter-spacing: 5px;
+    font-family: "DINCondensed";
+    font-size: 0.7em;
+    padding-top: 13px;
+}
+
+.instagram-footer {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.insta {
+    /*    border: 1px solid blue;*/
+    flex: 1 0 0;
+}
+
+.insta img {
+    width: 100%;
+    height: auto;
+}
+
+.insta-1 {
+    background-image: url(../img/insta-1.jpg);
+}
+
+.insta-2 {
+    background-image: url(../img/insta-2.jpg);
+}
+
+.insta-3 {
+    background-image: url(../img/insta-3.jpg);
+}
+
+.insta-4 {
+    background-image: url(../img/insta-4.jpg);
+}
+
+.insta-5 {
+    background-image: url(../img/insta-5.jpg);
+}
+
+.insta-6 {
+    background-image: url(../img/insta-6.jpg);
+}
+
+.contenedor-rrss {
+    display: flex;
+    justify-content: center;
+}
+
+.rrss {
+    margin: 45px 10px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.rrss img {
+    width: 34px;
+    height: auto;
+}
+
+.rrss-facebook {
+    background-image: url(../img/facebook.png);
+}
+
+.rrss-instagram {
+    background-image: url(../img/instagram.png);
+}
+
+.rrss-snapchat {
+    background-image: url(../img/snapchat.png);
+}
+
+.rrss-youtube {
+    background-image: url(../img/youtube.png);
+}
+
+.rrss-twitter {
+    background-image: url(../img/twitter.png);
+}
+
+
+.contacto-footer {
+    display: flex;
+}
+
+.col-footer {
+    flex: 1 1 0;
+}
+
+.col-footer p{
+    padding: 2px;
+}
+.col-1-footer {
+    flex: 3 0 0;
+    background-image: url(../img/mapa.jpg);
+    margin: 20px
+}
+
+.col-1-footer img {
+    width: 90%;
+    height: auto;
+}
+
+.col-2-footer {
+    flex: 2 0 0;
+}
+
+.footer-logo {
+    font-size: 2em;
+}
+
+.horario {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.horario-titulo {
+    flex: 1 0 100%;
+}
+
+p a{
+    text-decoration: none;
+    color: black;    
+}
+
+.col-5-footer {
+    background-image: url(../img/sketch-footer.jpg);
+    background-repeat: no-repeat;
+    background-position: bottom;
+}
+
+.suscripcion {
+    color: white;
+    background-color: black;
+    text-align: center;
+    padding: 5px;
+    cursor: pointer;
+}
+
+
+/*          TIPOGRAFIAS         */
+
+.vogue {
+    font-family: "Vogue";
+}
+
+@font-face {
+    font-family: "Vogue";
+    src: url("../tipography/Vogue.ttf");
+}
+
+.libel {
+    font-family: "Libel";
+}
+
+@font-face {
+    font-family: "Libel";
+    src: url("../tipography/Libel-suit.ttf");
+}
+
+.lemon {
+    font-family: "Lemon";
+}
+
+@font-face {
+    font-family: "Lemon";
+    src: url("../tipography/lemon.otf");
+}
+
+
+.geosans {
+    font-family: "Geosans";
+}
+
+@font-face {
+    font-family: "Geosans";
+    src: url("../tipography/GeosansLight.ttf");
+}
+
+.dinCondensed {
+    font-family: "DINCondensed";
+}
+
+@font-face {
+    font-family: "DINCondensed";
+    src: url("../tipography/DINCondensedBold.ttf");
+}
+
+.blackMelody {
+    font-family: "BlackMelody";
+}
+
+@font-face {
+    font-family: "BlackMelody";
+    src: url("../tipography/BlackMelody.otf");
+}
+
+
+
+/*          MEDIA       */
+@media only screen and (max-width:800px){
+    .contacto-footer{
+        flex-wrap: wrap;
+    }
+    .col-footer{
+        flex-basis: 50%;
+        text-align: center;
+    }
+    .col-5-footer,.legal, .horario{
+        display: none;
+    }
+}
+@media only screen and (max-width:900px){
+    .insta:nth-child(6){
+        display: none;
+    }
+}
+@media only screen and (max-width:700px){
+    .insta:nth-child(5){
+        display: none;
+    }
+}
+@media only screen and (max-width:500px){
+    .insta:nth-child(4){
+        display: none;
+    }
+}
+@media only screen and (max-width:300px){
+    .insta:nth-child(3){
+        display: none;
+    }
+}
+@media only screen and (max-width:100px){
+    .insta:nth-child(2){
+        display: none;
+    }
+}

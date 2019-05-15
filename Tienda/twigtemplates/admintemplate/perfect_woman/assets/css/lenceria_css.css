@@ -1,0 +1,343 @@
+.hero {
+    height: 100vh;
+    width: 90vw;
+    margin: 0 auto;
+    background-image: url(../img/hero2.jpg);
+    background-position: center top;
+}
+
+.hero3 {
+    height: 100vh;
+    width: 90vw;
+    margin: 0 auto;
+    background-image: url(../img/hero3.jpg);
+    background-position: center top;
+}
+
+.oculto {
+    visibility: hidden;
+}
+
+#mostrar {
+    visibility: hidden;
+}
+
+.visible {
+    visibility: visible;
+}
+
+
+.box {
+    height: 50px;
+    background-color: #498593;
+}
+
+.izq {
+    flex: 2 0 0;
+}
+
+.box-b1 {
+    flex: 1 0 0;
+    background-color: transparent;
+}
+
+.centro {
+    flex: 4 0 0;
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.centro p {
+    color: white;
+    font-size: 2.2em;
+    letter-spacing: 20px;
+    text-align: center;
+    z-index: 2;
+    text-shadow: 2px 2px black;
+}
+
+.centro p::first-letter {
+    margin-left: 20px;
+}
+
+.sujetadores-titulo {
+    display: flex;
+    justify-content: center;
+    justify-content: space-between;
+    padding-top: 50px;
+    background-color: #cfe6e6;
+}
+
+.box-b2 {
+    flex: 1 0 0;
+    background-color: transparent;
+}
+
+.dcha {
+    flex: 2 0 0;
+    /*   width: 10%; */
+}
+
+.sujetadores-txt {
+    width: 80%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.sujetadores-fotos {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.marco {
+    flex: 1 0 25%;
+}
+
+.marco-item {
+    width: 100%;
+}
+
+.marco-item img {
+    width: 100%;
+    height: auto;
+}
+
+.marco p {
+    text-align: center;
+    padding-top: 18px;
+    padding-bottom: 30px;
+    width: 100%;
+    font-weight: bold;
+    font-family: "Geosans";
+    font-size: 1.1em;
+}
+
+.vermas {
+    width: 80%;
+    text-align: center;
+    margin: 0 auto;
+    cursor: pointer;
+    padding: 40px;
+}
+
+.sujetadores-txt {
+    padding: 40px;
+    font-size: 1.2em;
+}
+
+.sujetadores-01 {
+    background-image: url(../img/suje1.jpg);
+}
+
+.sujetadores-02 {
+    background-image: url(../img/suje2.jpg);
+}
+
+.sujetadores-03 {
+    background-image: url(../img/suje3.jpg);
+}
+
+.sujetadores-04 {
+    background-image: url(../img/suje4.jpg);
+}
+
+.braguitas-titulo {
+    display: flex;
+    justify-content: center;
+    justify-content: space-between;
+    padding-top: 50px;
+    background-color: #dfd7ef;
+}
+
+.box-braguitas {
+    height: 50px;
+    background-color: #4a3571;
+}
+
+.bodies-titulo {
+    display: flex;
+    justify-content: center;
+    justify-content: space-between;
+    padding-top: 50px;
+    background-color: #fae0ec;
+}
+
+.box-bodies {
+    height: 50px;
+    background-color: #c34980;
+}
+
+.pijamas-titulo {
+    display: flex;
+    justify-content: center;
+    justify-content: space-between;
+    padding-top: 50px;
+    background-color: #e3c1ca;
+}
+
+.box-pijamas {
+    height: 50px;
+    background-color: #840024;
+}
+
+.homewear-titulo {
+    display: flex;
+    justify-content: center;
+    justify-content: space-between;
+    padding-top: 50px;
+    background-color: #ffe6c3;
+}
+
+.box-homewear {
+    height: 50px;
+    background-color: #ea961d;
+}
+
+.camisones-titulo {
+    display: flex;
+    justify-content: center;
+    justify-content: space-between;
+    padding-top: 50px;
+    background-color: #ebefd8;
+}
+
+.box-camisones {
+    height: 50px;
+    background-color: #7e9035;
+}
+
+.braguitas-01 {
+    background-image: url(../img/braguita-1.jpg)
+}
+
+.braguitas-02 {
+    background-image: url(../img/braguita-2.jpg)
+}
+
+.braguitas-03 {
+    background-image: url(../img/braguita-3.jpg)
+}
+
+.braguitas-04 {
+    background-image: url(../img/braguita-4.jpg)
+}
+
+.bodies-01 {
+    background-image: url(../img/body-1.jpg)
+}
+
+.bodies-02 {
+    background-image: url(../img/body-2.jpg)
+}
+
+.bodies-03 {
+    background-image: url(../img/body-3.jpg)
+}
+
+.bodies-04 {
+    background-image: url(../img/body-4.jpg)
+}
+
+.cortos-01 {
+    background-image: url(../img/corto1.jpg)
+}
+
+.cortos-02 {
+    background-image: url(../img/corto2.jpg)
+}
+
+.cortos-03 {
+    background-image: url(../img/corto3.jpg)
+}
+
+.cortos-04 {
+    background-image: url(../img/corto4.jpg)
+}
+
+.homewear-01 {
+    background-image: url(../img/home1.jpg)
+}
+
+.homewear-02 {
+    background-image: url(../img/home2.jpg)
+}
+
+.homewear-03 {
+    background-image: url(../img/home3.jpg)
+}
+
+.homewear-04 {
+    background-image: url(../img/home4.jpg)
+}
+
+.camisones-01 {
+    background-image: url(../img/camison1.jpg)
+}
+
+.camisones-02 {
+    background-image: url(../img/camison2.jpg)
+}
+
+.camisones-03 {
+    background-image: url(../img/camison3.jpg)
+}
+
+.camisones-04 {
+    background-image: url(../img/camison4.jpg)
+}
+
+.colaboraciones {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.colaboraciones img {
+    width: 60px;
+    height: auto;
+    padding: 20px 5px;
+}
+
+.colaboracion-txt {
+    letter-spacing: 2px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.franja-colaboracion {
+    background-color: #E2D3D5;
+    height: 86px;
+    width: 100%;
+}
+
+.franja-colaboracion img {
+    margin: 0 auto;
+    display: block;
+}
+
+.blanco {
+    height: 90px;
+}
+
+@media only screen and (max-width:900px) {
+    .marco {
+        flex: 1 0 50%;
+    }
+}
+
+@media only screen and (max-width:500px) {
+    .marco {
+        flex: 1 0 100%;
+    }
+}
+
+
+@media only screen and (max-width:1268px) {
+    .exclusiva {
+        font-size: 1.5em !important;
+    }
+}

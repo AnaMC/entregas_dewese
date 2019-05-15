@@ -29,6 +29,7 @@ class Pedido {
     public function __construct()
     {
         $this->detalles = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->fechaPedido = new \DateTime();
     }
 
     /**
