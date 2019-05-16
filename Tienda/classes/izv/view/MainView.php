@@ -9,7 +9,7 @@ class MainView extends View {
 
     function __construct(Model $model) {
         parent::__construct($model);
-        $this->getModel()->set('twigFolder', 'twigtemplates/admintemplate');
+        $this->getModel()->set('twigFolder', 'twigtemplates/perfect_woman');
         $this->getModel()->set('twigFile', '_index.twig');
     }
 

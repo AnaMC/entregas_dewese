@@ -1,0 +1,96 @@
+{% extends '_base.twig' %}
+{% block index %}
+
+    <!--  About Us  -->
+    <div class="about">
+        <div class="about-info" id="quienes-Somos">
+            <p class="about-logo vogue">PERFECT WOMAN</p>
+            <p class="about-info-txt geosans">
+                Perfect Woman es una marca española de lencería diseñada por y para mujeres que cuenta con distintas líneas de producto, desde ropa interior y ropa para estar en casa a pijamas para la mujer de hoy día. Creamos nuevas ideas cuidadosamente seleccionadas para hacerles la vida más fácil y más feliz, unas veces provocando emociones y otras aportando soluciones, lo que nos ayuda a ofrecer la mejor calidad y confortabilidad de las prendas.
+            </p>
+            <br>
+            <p class=" about-info-txt about-info-txt-frase geosans">Somos especialistas en el universo femenino. </p>
+
+            <div class="about-sketch img-responsive">
+                <img src="{{twigFolder}}/assets/img/sketch-about.jpg" />
+            </div>
+        </div>
+
+        <div class="about-foto img-responsive">
+            <img class="about-foto-dimensionador" src="{{twigFolder}}/assets/img/dimensionador-productos.png" />
+        </div>
+    </div>
+    <!--  Fin About Us  -->
+
+    <!--  Novedades  -->
+    <div class="novedades">
+        <div class="novedades-intro">
+            <p class="novedades-titulo lemon" id="novedades">ÚLTIMAS NOVEDADES</p>
+            <p class="novedades-txt geosans">
+                Descubre todas las sopresas que tenemos preparadas para ti con los productos recién llegados de la nueva coleccion. <br>¡No te dejarán indiferente!
+            </p>
+        </div>
+        <div class="novedades-slider">
+            <div class="novedades-img novedades-img-1 img-responsive">
+                <img src="{{twigFolder}}/assets/img/dimensionador-slider.png" />
+            </div>
+            <div class="novedades-img novedades-img-2 img-responsive">
+                <img src="{{twigFolder}}/assets/img/dimensionador-slider.png" />
+            </div>
+            <div class="novedades-img novedades-img-3 img-responsive">
+                <img src="{{twigFolder}}/assets/img/dimensionador-slider.png" />
+            </div>
+            <div class="novedades-img novedades-img-4 img-responsive">
+                <img src="{{twigFolder}}/assets/img/dimensionador-slider.png" />
+            </div>
+        </div>
+        <div class="novedades-btn">
+            <div id="flecha-Izq" class="img-responsive"></div>
+            <div class="circulo"></div>
+            <div class="circulo"></div>
+            <div class="circulo"></div>
+            <div class="circulo"></div>
+            <div id="flecha-Dch" class="img-responsive">
+                <div class="triangulo"> </div>
+            </div>
+        </div>
+    </div>
+    <!--  Fin Novedades  -->
+
+    <!--    Resumen productos    -->
+
+    <div class="resumen-productos" id="resumen">
+        <a href="lenceria.html#ver-mas-suje" class="container">
+            <img src="{{twigFolder}}/assets/img/resumen-suje.jpg"  class="image">
+            <div class="middle">
+                <div class="text-01 lemon">Sujetadores</div>
+                <div class="text-02 geosans">Uno para cada momento</div>
+                <div class="text geosans">Ver más</div>
+            </div>
+        </a>
+        <a href="lenceria.html#ver-mas-braguitas" class="container">
+            <img src="{{twigFolder}}/assets/img/resumen-braguitas.jpg" class="image">
+            <div class="middle">
+                <div class="text-01 lemon">Braguitas</div>
+                <div class="text-02 geosans">Siéntete especial</div>
+                <div class="text geosans">Ver más</div>
+            </div>
+        </a>
+        <a href="ropa_dormir.html#ver-mas-pijama" class="container">
+            <img src="{{twigFolder}}/assets/img/resumen-pijama.jpg" class="image">
+            <div class="middle">
+                <div class="text-01 lemon">Pijamas</div>
+                <div class="text-02 geosans">Comodidad a la hora de dormir</div>
+                <div class="text geosans">Ver más</div>
+            </div>
+        </a>
+        <a href="ropa_dormir.html#ver-mas-body" class="container">
+            <img src="{{twigFolder}}/assets/img/resumen-body.jpg" class="image">
+            <div class="middle">
+                <div class="text-01 lemon">Bodies</div>
+                <div class="text-02 geosans">¡Elige tu favorito!</div>
+                <div class="text geosans">Ver más</div>
+            </div>
+        </a>
+    </div>
+{% endblock %}

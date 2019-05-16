@@ -39,5 +39,5 @@ class Controller {
     function main() {
         $this->getModel()->set('datos', 'datos que envía el método main');
     }
-
+    
 }

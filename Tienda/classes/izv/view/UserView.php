@@ -1,15 +1,16 @@
 <?php
 
-namespace tienda\view;
+namespace izv\view;
 
-use tienda\model\Model;
-use tienda\tools\Util;
+use izv\model\Model;
+use izv\tools\Util;
 
-class AdminView extends View {
+class UserView extends View {
     
     function __construct(Model $model) {
         parent::__construct($model);
         $this->getModel()->set('twigFolder', 'twigtemplates/admintemplate');
+        // La que se mostrará por defecto
         $this->getModel()->set('twigFile', '_index.twig');
     }
 

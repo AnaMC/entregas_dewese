@@ -9,14 +9,14 @@ class App {
             PASSWORD = 'tienda',
             DATABASE = 'tienda',
             
-            // EMAIL_ALIAS = 'Curso DWES IZV',
-            // EMAIL_APPLICATION_NAME = 'CorreoWeb',
-            // EMAIL_CLIENT_ID = '718777178058-g981n09mmc5tn06fhka6ukbo3uso4tgi.apps.googleusercontent.com',
-            // EMAIL_CLIENT_SECRET = 'w7NwS6ukpKA8glU0JvbrsSVv',
-            // EMAIL_ORIGIN = 'damcurso1819@gmail.com',
-            // EMAIL_TOKEN_FILE = '../gmail/atoken.conf',
+            EMAIL_ALIAS = 'Perfect Woman Lingerie',
+            EMAIL_APPLICATION_NAME = 'CorreoWeb',
+            EMAIL_CLIENT_ID = '1093272371904-3m2qmtqmscg9q6n0cu47vk85qohv457q.apps.googleusercontent.com',
+            EMAIL_CLIENT_SECRET = 'WFUsJy_8qK0mCN2AmPktheze',
+            EMAIL_ORIGIN = 'troglodita91@gmail.com',
+            EMAIL_TOKEN_FILE = '../gmail/atoken.conf',
             
-            // JWT_KEY = 'MVC_DWES_IZV',
+            JWT_KEY = 'TIENDA_IZV',
             
             SESSION_NAME = 'MVC_TIENDA',
             

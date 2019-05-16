@@ -42,7 +42,7 @@
 		<!-- NAVBAR -->
 		<nav class="navbar navbar-default navbar-fixed-top">
 			<div class="brand">
-				<a href="index.twig"><img src="{{twigFolder}}/assets/img/logo.png" alt="Perfect Woman Logo" class="img-responsive logo"></a>
+				<a href="index.twig"><img src="{{twigFolder}}/assets/img/logo.jpg" alt="Perfect Woman Logo" class="img-responsive logo"></a>
 			</div>
 			<div class="container-fluid">
 				<div class="navbar-btn">
@@ -74,7 +74,7 @@
 							<a href="#subPages" data-toggle="collapse" class="collapsed"><img class="mi_icon" src="{{twigFolder}}/assets/img/icons/users.png"><span>Usuarios</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
 							<div id="subPages" class="collapse ">
 								<ul class="nav">
-									<li><a href="admin/adduser" class="">Añadir nuevo usuario</a></li>
+									<li><a href="usuario/registro" class="">Añadir nuevo usuario</a></li>
 									<li><a href="#" class="onClickLista" data-pagina='1' data-lista='usuario'>Listado de usuarios</a></li>
 									<li><a href="#" class="onClickLista" data-pagina='1' data-lista='usuario'>Gestionar usuarios</a></li>
 								</ul>
@@ -115,6 +115,7 @@
 		<!-- END LEFT SIDEBAR -->
 		<!-- MAIN -->
         {% block index %}{% endblock %}
+        {% block adminregister %}{% endblock %}
  		{# Resto de bloques que necesitamos #}
 		<!-- END MAIN -->
 		<div class="clearfix"></div>

@@ -3,14 +3,16 @@
 
 <head>
     <title>Perfect Woman</title>
+    <!--base-->
+	<base href="{{urlbase}}">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Perfect Woman">
     <meta name="viewport" content="width=device-width">
-    <link rel="shortcut icon" href="assets/img/favicon.png">
-    <link rel="stylesheet" href="assets/css/reset.css">
-    <link rel="stylesheet" href="assets/css/common.css">
-    <link rel="stylesheet" href="assets/css/index_css.css">
+    <link rel="shortcut icon" href="{{twigFolder}}/assets/img/favicon.png">
+    <link rel="stylesheet" href="{{twigFolder}}/assets/css/reset.css">
+    <link rel="stylesheet" href="{{twigFolder}}/assets/css/common.css">
+    <link rel="stylesheet" href="{{twigFolder}}/assets/css/index_css.css">
 </head>
 
 <body>
@@ -21,107 +23,23 @@
                 <a href="index.html" class="enlaces enlaces-01">INICIO</a>
                 <a href="lenceria.html" class="enlaces enlaces-02">LENCERIA</a>
                 <a href="ropa_dormir.html" class="enlaces enlaces-03">ROPA DE DORMIR</a>
-                <a href="desfiles.html" class="enlaces enlaces-04">DESFILES</a>
+                <a href="desfiles.twig" class="enlaces enlaces-04">DESFILES</a>
                 <a href="#contacto" class="enlaces enlaces-04">CONTACTO</a>
+                {# ruta (router) / accion (controller)#}
+                <a href="usuario/registro" class="enlaces enlaces-04">REGISTRO</a>
+                <a href="tienda/login" class="enlaces enlaces-04">LOGIN</a>
             </nav>
         </div>
     </header>
 
     <div class="hero img-responsive"></div>
-
-    <!--  About Us  -->
-    <div class="about">
-        <div class="about-info" id="quienes-Somos">
-            <p class="about-logo vogue">PERFECT WOMAN</p>
-            <p class="about-info-txt geosans">
-                Perfect Woman es una marca española de lencería diseñada por y para mujeres que cuenta con distintas líneas de producto, desde ropa interior y ropa para estar en casa a pijamas para la mujer de hoy día. Creamos nuevas ideas cuidadosamente seleccionadas para hacerles la vida más fácil y más feliz, unas veces provocando emociones y otras aportando soluciones, lo que nos ayuda a ofrecer la mejor calidad y confortabilidad de las prendas.
-            </p>
-            <br>
-            <p class=" about-info-txt about-info-txt-frase geosans">Somos especialistas en el universo femenino. </p>
-
-            <div class="about-sketch img-responsive">
-                <img src="assets/img/sketch-about.jpg" />
-            </div>
-        </div>
-
-        <div class="about-foto img-responsive">
-            <img class="about-foto-dimensionador" src="assets/img/dimensionador-productos.png" />
-        </div>
-    </div>
-    <!--  Fin About Us  -->
-
-    <!--  Novedades  -->
-    <div class="novedades">
-        <div class="novedades-intro">
-            <p class="novedades-titulo lemon" id="novedades">ÚLTIMAS NOVEDADES</p>
-            <p class="novedades-txt geosans">
-                Descubre todas las sopresas que tenemos preparadas para ti con los productos recién llegados de la nueva coleccion. <br>¡No te dejarán indiferente!
-            </p>
-        </div>
-        <div class="novedades-slider">
-            <div class="novedades-img novedades-img-1 img-responsive">
-                <img src="assets/img/dimensionador-slider.png" />
-            </div>
-            <div class="novedades-img novedades-img-2 img-responsive">
-                <img src="assets/img/dimensionador-slider.png" />
-            </div>
-            <div class="novedades-img novedades-img-3 img-responsive">
-                <img src="assets/img/dimensionador-slider.png" />
-            </div>
-            <div class="novedades-img novedades-img-4 img-responsive">
-                <img src="assets/img/dimensionador-slider.png" />
-            </div>
-        </div>
-        <div class="novedades-btn">
-            <div id="flecha-Izq" class="img-responsive"></div>
-            <div class="circulo"></div>
-            <div class="circulo"></div>
-            <div class="circulo"></div>
-            <div class="circulo"></div>
-            <div id="flecha-Dch" class="img-responsive">
-                <div class="triangulo"> </div>
-            </div>
-        </div>
-    </div>
-    <!--  Fin Novedades  -->
-
-    <!--    Resumen productos    -->
-
-    <div class="resumen-productos" id="resumen">
-        <a href="lenceria.html#ver-mas-suje" class="container">
-            <img src="assets/img/resumen-suje.jpg"  class="image">
-            <div class="middle">
-                <div class="text-01 lemon">Sujetadores</div>
-                <div class="text-02 geosans">Uno para cada momento</div>
-                <div class="text geosans">Ver más</div>
-            </div>
-        </a>
-        <a href="lenceria.html#ver-mas-braguitas" class="container">
-            <img src="assets/img/resumen-braguitas.jpg" class="image">
-            <div class="middle">
-                <div class="text-01 lemon">Braguitas</div>
-                <div class="text-02 geosans">Siéntete especial</div>
-                <div class="text geosans">Ver más</div>
-            </div>
-        </a>
-        <a href="ropa_dormir.html#ver-mas-pijama" class="container">
-            <img src="assets/img/resumen-pijama.jpg" class="image">
-            <div class="middle">
-                <div class="text-01 lemon">Pijamas</div>
-                <div class="text-02 geosans">Comodidad a la hora de dormir</div>
-                <div class="text geosans">Ver más</div>
-            </div>
-        </a>
-        <a href="ropa_dormir.html#ver-mas-body" class="container">
-            <img src="assets/img/resumen-body.jpg" class="image">
-            <div class="middle">
-                <div class="text-01 lemon">Bodies</div>
-                <div class="text-02 geosans">¡Elige tu favorito!</div>
-                <div class="text geosans">Ver más</div>
-            </div>
-        </a>
-    </div>
-
+    
+ 	{# Resto de bloques que necesitamos #}
+    {% block index %}{% endblock %}
+    {% block desfiles %}{% endblock %}
+    {% block lenceria %}{% endblock %}
+    {% block ropa_dormir %}{% endblock %}
+ 		
     <footer>
         <div class="cabecera-footer" id="insta">
             <p class="titulo-footer"> COMPARTE TU ESTILO</p>
@@ -130,36 +48,36 @@
 
         <div class="instagram-footer">
             <div class="insta insta-1 img-responsive">
-                <img src="assets/img/dimensionador.png" />
+                <img src="{{twigFolder}}/assets/img/dimensionador.png" />
             </div>
             <div class="insta insta-2 img-responsive ">
-                <img src="assets/img/dimensionador.png" /></div>
-            <div class="insta insta-3 img-responsive ">
-                <img src="assets/img/dimensionador.png" /></div>
+                <img src="{{twigFolder}}/assets/img/dimensionador.png" /></div>
+            <div class="insta insta-3 im/g-responsive ">
+                <img src="{{twigFolder}}/assets/img/dimensionador.png" /></div>
             <div class="insta insta-4 img-responsive ">
-                <img src="assets/img/dimensionador.png" /></div>
+                <img src="{{twigFolder}}/assets/img/dimensionador.png" /></div>
             <div class="insta insta-5 img-responsive ">
-                <img src="assets/img/dimensionador.png" /></div>
-            <div class="insta insta-6 img-responsive ">
-                <img src="assets/img/dimensionador.png" /></div>
+                <img src="{{twigFolder}}/assets/img/dimensionador.png" /></div>
+            <div class="insta insta-6 im/g-responsive ">
+                <img src="{{twigFolder}}/assets/img/dimensionador.png" /></div>
         </div>
 
         <div class="rrss-footer">
             <div class="contenedor-rrss ">
                 <div class="rrss rrss-facebook img-responsive ">
-                    <img src="assets/img/dimensionador.png" />
+                    <img src="{{twigFolder}}/assets/img/dimensionador.png" />
                 </div>
                 <div class="rrss rrss-instagram img-responsive ">
-                    <img src="assets/img/dimensionador.png" />
+                    <img src="{{twigFolder}}/assets/img/dimensionador.png" />
                 </div>
                 <div class="rrss rrss-snapchat img-responsive ">
-                    <img src="assets/img/dimensionador.png" />
+                    <img src="{{twigFolder}}/assets/img/dimensionador.png" />
                 </div>
                 <div class="rrss rrss-youtube img-responsive ">
-                    <img src="assets/img/dimensionador.png" />
+                    <img src="{{twigFolder}}/assets/img/dimensionador.png" />
                 </div>
                 <div class="rrss rrss-twitter img-responsive ">
-                    <img src="assets/img/dimensionador.png" />
+                    <img src="{{twigFolder}}/assets/img/dimensionador.png" />
                 </div>
             </div>
         </div>

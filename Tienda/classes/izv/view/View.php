@@ -11,8 +11,8 @@ class View {
 
     function __construct(Model $model) {
         $this->model = $model;
-        $this->getModel()->set('twigFolder', 'twigtemplates/admintemplate');
-        $this->getModel()->set('twigFile', '_index.twig');
+        // $this->getModel()->set('twigFolder', 'twigtemplates/perfect_woman');
+        // $this->getModel()->set('twigFile', '_index.twig');
     }
     
     function getModel() {

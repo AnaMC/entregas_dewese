@@ -4657,3 +4657,209 @@ Stack trace:
 #4 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(318): Twig\Environment->load('_index.twig')
 #5 /home/ubuntu/workspace/Tienda/classes/izv/view/MainView.php(20): Twig\Environment->render('_index.twig', Array)
 #6 /ho in /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Loader/FilesystemLoader.php on line 250
+[15-May-2019 11:41:50 UTC] PHP Fatal error:  Uncaught Twig\Error\LoaderError: The "twigtemplates/perfect_woman" directory does not exist ("/home/ubuntu/workspace/Tienda/twigtemplates/perfect_woman"). in /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Loader/FilesystemLoader.php:106
+Stack trace:
+#0 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Loader/FilesystemLoader.php(87): Twig\Loader\FilesystemLoader->addPath('twigtemplates/p...', '__main__')
+#1 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Loader/FilesystemLoader.php(45): Twig\Loader\FilesystemLoader->setPaths(Array)
+#2 /home/ubuntu/workspace/Tienda/classes/izv/view/MainView.php(18): Twig\Loader\FilesystemLoader->__construct('twigtemplates/p...')
+#3 /home/ubuntu/workspace/Tienda/classes/izv/mvc/FrontController.php(32): izv\view\MainView->render('')
+#4 /home/ubuntu/workspace/Tienda/c9.php(25): izv\mvc\FrontController->render()
+#5 {main}
+  thrown in /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Loader/FilesystemLoader.php on line 106
+[15-May-2019 11:50:58 UTC] PHP Fatal error:  Uncaught Twig\Error\LoaderError: Unable to find template "_index.twig" (looked into: twigtemplates/perfect_woman). in /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Loader/FilesystemLoader.php:250
+Stack trace:
+#0 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Loader/FilesystemLoader.php(150): Twig\Loader\FilesystemLoader->findTemplate('_index.twig')
+#1 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(299): Twig\Loader\FilesystemLoader->getCacheKey('_index.twig')
+#2 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(381): Twig\Environment->getTemplateClass('_index.twig')
+#3 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(359): Twig\Environment->loadTemplate('_index.twig')
+#4 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(318): Twig\Environment->load('_index.twig')
+#5 /home/ubuntu/workspace/Tienda/classes/izv/view/MainView.php(20): Twig\Environment->render('_index.twig', Array)
+#6 /ho in /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Loader/FilesystemLoader.php on line 250
+[15-May-2019 16:59:51 UTC] PHP Fatal error:  Uncaught Twig\Error\LoaderError: The "perfect_woman" directory does not exist ("/home/ubuntu/workspace/Tienda/perfect_woman"). in /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Loader/FilesystemLoader.php:106
+Stack trace:
+#0 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Loader/FilesystemLoader.php(87): Twig\Loader\FilesystemLoader->addPath('perfect_woman', '__main__')
+#1 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Loader/FilesystemLoader.php(45): Twig\Loader\FilesystemLoader->setPaths(Array)
+#2 /home/ubuntu/workspace/Tienda/classes/izv/view/MainView.php(18): Twig\Loader\FilesystemLoader->__construct('perfect_woman')
+#3 /home/ubuntu/workspace/Tienda/classes/izv/mvc/FrontController.php(32): izv\view\MainView->render('registo')
+#4 /home/ubuntu/workspace/Tienda/c9.php(25): izv\mvc\FrontController->render()
+#5 {main}
+  thrown in /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Loader/FilesystemLoader.php on line 106
+[15-May-2019 17:07:24 UTC] PHP Fatal error:  Uncaught Twig\Error\LoaderError: Unable to find template "admintemplate/_register.twig" (looked into: twigtemplates/perfect_woman). in /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Loader/FilesystemLoader.php:250
+Stack trace:
+#0 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Loader/FilesystemLoader.php(150): Twig\Loader\FilesystemLoader->findTemplate('admintemplate/_...')
+#1 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(299): Twig\Loader\FilesystemLoader->getCacheKey('admintemplate/_...')
+#2 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(381): Twig\Environment->getTemplateClass('admintemplate/_...')
+#3 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(359): Twig\Environment->loadTemplate('admintemplate/_...')
+#4 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(318): Twig\Environment->load('admintemplate/_...')
+#5 /home/ubuntu/workspace/Tienda/classes/izv/view/MainView.php(20): T in /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Loader/FilesystemLoader.php on line 250
+[15-May-2019 17:07:57 UTC] PHP Fatal error:  Uncaught Twig\Error\LoaderError: Looks like you try to load a template outside configured directories (../admintemplate/_register.twig). in /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Loader/FilesystemLoader.php:291
+Stack trace:
+#0 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Loader/FilesystemLoader.php(209): Twig\Loader\FilesystemLoader->validateName('../admintemplat...')
+#1 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Loader/FilesystemLoader.php(150): Twig\Loader\FilesystemLoader->findTemplate('../admintemplat...')
+#2 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(299): Twig\Loader\FilesystemLoader->getCacheKey('../admintemplat...')
+#3 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(381): Twig\Environment->getTemplateClass('../admintemplat...')
+#4 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(359): Twig\Environment->loadTemplate('../admintemplat...')
+#5 /home/ubuntu/workspace/Tienda in /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Loader/FilesystemLoader.php on line 291
+[15-May-2019 17:08:10 UTC] PHP Fatal error:  Uncaught Twig\Error\LoaderError: Unable to find template "./admintemplate/_register.twig" (looked into: twigtemplates/perfect_woman). in /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Loader/FilesystemLoader.php:250
+Stack trace:
+#0 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Loader/FilesystemLoader.php(150): Twig\Loader\FilesystemLoader->findTemplate('./admintemplate...')
+#1 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(299): Twig\Loader\FilesystemLoader->getCacheKey('./admintemplate...')
+#2 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(381): Twig\Environment->getTemplateClass('./admintemplate...')
+#3 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(359): Twig\Environment->loadTemplate('./admintemplate...')
+#4 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(318): Twig\Environment->load('./admintemplate...')
+#5 /home/ubuntu/workspace/Tienda/classes/izv/view/MainView.php(20): in /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Loader/FilesystemLoader.php on line 250
+[15-May-2019 17:11:42 UTC] PHP Fatal error:  Uncaught Twig\Error\LoaderError: Unable to find template "_register.twig" (looked into: twigtemplates/perfect_woman). in /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Loader/FilesystemLoader.php:250
+Stack trace:
+#0 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Loader/FilesystemLoader.php(150): Twig\Loader\FilesystemLoader->findTemplate('_register.twig')
+#1 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(299): Twig\Loader\FilesystemLoader->getCacheKey('_register.twig')
+#2 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(381): Twig\Environment->getTemplateClass('_register.twig')
+#3 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(359): Twig\Environment->loadTemplate('_register.twig')
+#4 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(318): Twig\Environment->load('_register.twig')
+#5 /home/ubuntu/workspace/Tienda/classes/izv/view/MainView.php(20): Twig\Environment->render('_register in /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Loader/FilesystemLoader.php on line 250
+[15-May-2019 17:11:52 UTC] PHP Fatal error:  Uncaught Twig\Error\LoaderError: Unable to find template "admintemplate/_register.twig" (looked into: twigtemplates/perfect_woman). in /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Loader/FilesystemLoader.php:250
+Stack trace:
+#0 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Loader/FilesystemLoader.php(150): Twig\Loader\FilesystemLoader->findTemplate('admintemplate/_...')
+#1 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(299): Twig\Loader\FilesystemLoader->getCacheKey('admintemplate/_...')
+#2 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(381): Twig\Environment->getTemplateClass('admintemplate/_...')
+#3 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(359): Twig\Environment->loadTemplate('admintemplate/_...')
+#4 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(318): Twig\Environment->load('admintemplate/_...')
+#5 /home/ubuntu/workspace/Tienda/classes/izv/view/MainView.php(20): T in /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Loader/FilesystemLoader.php on line 250
+[15-May-2019 17:12:00 UTC] PHP Fatal error:  Uncaught Twig\Error\LoaderError: Unable to find template "admintemplate/_register.twig" (looked into: twigtemplates/perfect_woman). in /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Loader/FilesystemLoader.php:250
+Stack trace:
+#0 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Loader/FilesystemLoader.php(150): Twig\Loader\FilesystemLoader->findTemplate('admintemplate/_...')
+#1 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(299): Twig\Loader\FilesystemLoader->getCacheKey('admintemplate/_...')
+#2 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(381): Twig\Environment->getTemplateClass('admintemplate/_...')
+#3 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(359): Twig\Environment->loadTemplate('admintemplate/_...')
+#4 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(318): Twig\Environment->load('admintemplate/_...')
+#5 /home/ubuntu/workspace/Tienda/classes/izv/view/MainView.php(20): T in /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Loader/FilesystemLoader.php on line 250
+[15-May-2019 17:13:28 UTC] PHP Fatal error:  Uncaught Twig\Error\LoaderError: Unable to find template "admintemplate/_register.twig" (looked into: twigtemplates/perfect_woman). in /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Loader/FilesystemLoader.php:250
+Stack trace:
+#0 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Loader/FilesystemLoader.php(150): Twig\Loader\FilesystemLoader->findTemplate('admintemplate/_...')
+#1 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(299): Twig\Loader\FilesystemLoader->getCacheKey('admintemplate/_...')
+#2 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(381): Twig\Environment->getTemplateClass('admintemplate/_...')
+#3 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(359): Twig\Environment->loadTemplate('admintemplate/_...')
+#4 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(318): Twig\Environment->load('admintemplate/_...')
+#5 /home/ubuntu/workspace/Tienda/classes/izv/view/MainView.php(20): T in /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Loader/FilesystemLoader.php on line 250
+[15-May-2019 17:15:04 UTC] PHP Fatal error:  Uncaught Twig\Error\LoaderError: Unable to find template "admintemplate/_register.twig" (looked into: twigtemplates/perfect_woman). in /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Loader/FilesystemLoader.php:250
+Stack trace:
+#0 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Loader/FilesystemLoader.php(150): Twig\Loader\FilesystemLoader->findTemplate('admintemplate/_...')
+#1 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(299): Twig\Loader\FilesystemLoader->getCacheKey('admintemplate/_...')
+#2 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(381): Twig\Environment->getTemplateClass('admintemplate/_...')
+#3 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(359): Twig\Environment->loadTemplate('admintemplate/_...')
+#4 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(318): Twig\Environment->load('admintemplate/_...')
+#5 /home/ubuntu/workspace/Tienda/classes/izv/view/MainView.php(20): T in /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Loader/FilesystemLoader.php on line 250
+[15-May-2019 17:17:22 UTC] PHP Fatal error:  Uncaught Twig\Error\LoaderError: Unable to find template "admintemplate/_register.twig" (looked into: twigtemplates/perfect_woman). in /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Loader/FilesystemLoader.php:250
+Stack trace:
+#0 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Loader/FilesystemLoader.php(150): Twig\Loader\FilesystemLoader->findTemplate('admintemplate/_...')
+#1 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(299): Twig\Loader\FilesystemLoader->getCacheKey('admintemplate/_...')
+#2 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(381): Twig\Environment->getTemplateClass('admintemplate/_...')
+#3 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(359): Twig\Environment->loadTemplate('admintemplate/_...')
+#4 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(318): Twig\Environment->load('admintemplate/_...')
+#5 /home/ubuntu/workspace/Tienda/classes/izv/view/MainView.php(20): T in /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Loader/FilesystemLoader.php on line 250
+[15-May-2019 17:19:25 UTC] PHP Fatal error:  Uncaught Twig\Error\LoaderError: Unable to find template "admintemplate/_register.twig" (looked into: twigtemplates/perfect_woman). in /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Loader/FilesystemLoader.php:250
+Stack trace:
+#0 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Loader/FilesystemLoader.php(150): Twig\Loader\FilesystemLoader->findTemplate('admintemplate/_...')
+#1 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(299): Twig\Loader\FilesystemLoader->getCacheKey('admintemplate/_...')
+#2 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(381): Twig\Environment->getTemplateClass('admintemplate/_...')
+#3 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(359): Twig\Environment->loadTemplate('admintemplate/_...')
+#4 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(318): Twig\Environment->load('admintemplate/_...')
+#5 /home/ubuntu/workspace/Tienda/classes/izv/view/MainView.php(20): T in /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Loader/FilesystemLoader.php on line 250
+[15-May-2019 17:19:32 UTC] PHP Fatal error:  Uncaught Twig\Error\LoaderError: Unable to find template "admintemplate/_register.twig" (looked into: twigtemplates/perfect_woman). in /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Loader/FilesystemLoader.php:250
+Stack trace:
+#0 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Loader/FilesystemLoader.php(150): Twig\Loader\FilesystemLoader->findTemplate('admintemplate/_...')
+#1 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(299): Twig\Loader\FilesystemLoader->getCacheKey('admintemplate/_...')
+#2 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(381): Twig\Environment->getTemplateClass('admintemplate/_...')
+#3 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(359): Twig\Environment->loadTemplate('admintemplate/_...')
+#4 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(318): Twig\Environment->load('admintemplate/_...')
+#5 /home/ubuntu/workspace/Tienda/classes/izv/view/MainView.php(20): T in /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Loader/FilesystemLoader.php on line 250
+[15-May-2019 17:22:48 UTC] PHP Fatal error:  Uncaught Twig\Error\LoaderError: Unable to find template "admintemplate/_register.twig" (looked into: twigtemplates/perfect_woman). in /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Loader/FilesystemLoader.php:250
+Stack trace:
+#0 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Loader/FilesystemLoader.php(150): Twig\Loader\FilesystemLoader->findTemplate('admintemplate/_...')
+#1 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(299): Twig\Loader\FilesystemLoader->getCacheKey('admintemplate/_...')
+#2 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(381): Twig\Environment->getTemplateClass('admintemplate/_...')
+#3 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(359): Twig\Environment->loadTemplate('admintemplate/_...')
+#4 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(318): Twig\Environment->load('admintemplate/_...')
+#5 /home/ubuntu/workspace/Tienda/classes/izv/view/MainView.php(20): T in /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Loader/FilesystemLoader.php on line 250
+[15-May-2019 17:23:12 UTC] PHP Fatal error:  Uncaught Twig\Error\LoaderError: Unable to find template "admintemplate/_register.twig" (looked into: twigtemplates/perfect_woman). in /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Loader/FilesystemLoader.php:250
+Stack trace:
+#0 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Loader/FilesystemLoader.php(150): Twig\Loader\FilesystemLoader->findTemplate('admintemplate/_...')
+#1 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(299): Twig\Loader\FilesystemLoader->getCacheKey('admintemplate/_...')
+#2 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(381): Twig\Environment->getTemplateClass('admintemplate/_...')
+#3 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(359): Twig\Environment->loadTemplate('admintemplate/_...')
+#4 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(318): Twig\Environment->load('admintemplate/_...')
+#5 /home/ubuntu/workspace/Tienda/classes/izv/view/MainView.php(20): T in /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Loader/FilesystemLoader.php on line 250
+[15-May-2019 17:23:29 UTC] PHP Fatal error:  Class 'tienda\view\View' not found in /home/ubuntu/workspace/Tienda/classes/izv/view/AdminView.php on line 8
+[15-May-2019 17:26:02 UTC] PHP Fatal error:  Uncaught Twig\Error\LoaderError: Unable to find template "admintemplate/_register.twig" (looked into: twigtemplates/admintemplate). in /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Loader/FilesystemLoader.php:250
+Stack trace:
+#0 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Loader/FilesystemLoader.php(150): Twig\Loader\FilesystemLoader->findTemplate('admintemplate/_...')
+#1 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(299): Twig\Loader\FilesystemLoader->getCacheKey('admintemplate/_...')
+#2 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(381): Twig\Environment->getTemplateClass('admintemplate/_...')
+#3 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(359): Twig\Environment->loadTemplate('admintemplate/_...')
+#4 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(318): Twig\Environment->load('admintemplate/_...')
+#5 /home/ubuntu/workspace/Tienda/classes/izv/view/AdminView.php(21):  in /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Loader/FilesystemLoader.php on line 250
+[15-May-2019 18:05:31 UTC] PHP Fatal error:  Uncaught Twig\Error\LoaderError: Unable to find template "_register.twig" (looked into: twigtemplates/perfect_woman). in /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Loader/FilesystemLoader.php:250
+Stack trace:
+#0 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Loader/FilesystemLoader.php(150): Twig\Loader\FilesystemLoader->findTemplate('_register.twig')
+#1 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(299): Twig\Loader\FilesystemLoader->getCacheKey('_register.twig')
+#2 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(381): Twig\Environment->getTemplateClass('_register.twig')
+#3 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(359): Twig\Environment->loadTemplate('_register.twig')
+#4 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(318): Twig\Environment->load('_register.twig')
+#5 /home/ubuntu/workspace/Tienda/classes/izv/view/AdminView.php(21): Twig\Environment->render('_registe in /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Loader/FilesystemLoader.php on line 250
+[15-May-2019 18:07:00 UTC] PHP Fatal error:  Uncaught Error: Class 'izv\view\AdminView' not found in /home/ubuntu/workspace/Tienda/classes/izv/mvc/FrontController.php:20
+Stack trace:
+#0 /home/ubuntu/workspace/Tienda/c9.php(22): izv\mvc\FrontController->__construct('admintemplate', 'registro')
+#1 {main}
+  thrown in /home/ubuntu/workspace/Tienda/classes/izv/mvc/FrontController.php on line 20
+[15-May-2019 18:07:17 UTC] PHP Fatal error:  Uncaught Error: Class 'izv\view\UserView' not found in /home/ubuntu/workspace/Tienda/classes/izv/mvc/FrontController.php:20
+Stack trace:
+#0 /home/ubuntu/workspace/Tienda/c9.php(22): izv\mvc\FrontController->__construct('admintemplate', 'registro')
+#1 {main}
+  thrown in /home/ubuntu/workspace/Tienda/classes/izv/mvc/FrontController.php on line 20
+[15-May-2019 18:26:20 UTC] PHP Fatal error:  Uncaught Twig\Error\LoaderError: Unable to find template "_register.twig" (looked into: twigtemplates/perfect_woman). in /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Loader/FilesystemLoader.php:250
+Stack trace:
+#0 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Loader/FilesystemLoader.php(150): Twig\Loader\FilesystemLoader->findTemplate('_register.twig')
+#1 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(299): Twig\Loader\FilesystemLoader->getCacheKey('_register.twig')
+#2 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(381): Twig\Environment->getTemplateClass('_register.twig')
+#3 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(359): Twig\Environment->loadTemplate('_register.twig')
+#4 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(318): Twig\Environment->load('_register.twig')
+#5 /home/ubuntu/workspace/Tienda/classes/izv/view/MainView.php(20): Twig\Environment->render('_register in /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Loader/FilesystemLoader.php on line 250
+[15-May-2019 18:27:50 UTC] PHP Fatal error:  Uncaught Twig\Error\LoaderError: Unable to find template "_register.twig" (looked into: twigtemplates/perfect_woman). in /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Loader/FilesystemLoader.php:250
+Stack trace:
+#0 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Loader/FilesystemLoader.php(150): Twig\Loader\FilesystemLoader->findTemplate('_register.twig')
+#1 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(299): Twig\Loader\FilesystemLoader->getCacheKey('_register.twig')
+#2 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(381): Twig\Environment->getTemplateClass('_register.twig')
+#3 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(359): Twig\Environment->loadTemplate('_register.twig')
+#4 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(318): Twig\Environment->load('_register.twig')
+#5 /home/ubuntu/workspace/Tienda/classes/izv/view/MainView.php(20): Twig\Environment->render('_register in /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Loader/FilesystemLoader.php on line 250
+[15-May-2019 18:27:58 UTC] PHP Fatal error:  Uncaught Twig\Error\LoaderError: Unable to find template "_register.twig" (looked into: twigtemplates/perfect_woman). in /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Loader/FilesystemLoader.php:250
+Stack trace:
+#0 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Loader/FilesystemLoader.php(150): Twig\Loader\FilesystemLoader->findTemplate('_register.twig')
+#1 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(299): Twig\Loader\FilesystemLoader->getCacheKey('_register.twig')
+#2 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(381): Twig\Environment->getTemplateClass('_register.twig')
+#3 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(359): Twig\Environment->loadTemplate('_register.twig')
+#4 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(318): Twig\Environment->load('_register.twig')
+#5 /home/ubuntu/workspace/Tienda/classes/izv/view/MainView.php(20): Twig\Environment->render('_register in /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Loader/FilesystemLoader.php on line 250
+[15-May-2019 18:30:11 UTC] PHP Fatal error:  Uncaught Twig\Error\LoaderError: Unable to find template "_register.twig" (looked into: twigtemplates/perfect_woman). in /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Loader/FilesystemLoader.php:250
+Stack trace:
+#0 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Loader/FilesystemLoader.php(150): Twig\Loader\FilesystemLoader->findTemplate('_register.twig')
+#1 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(299): Twig\Loader\FilesystemLoader->getCacheKey('_register.twig')
+#2 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(381): Twig\Environment->getTemplateClass('_register.twig')
+#3 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(359): Twig\Environment->loadTemplate('_register.twig')
+#4 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(318): Twig\Environment->load('_register.twig')
+#5 /home/ubuntu/workspace/Tienda/classes/izv/view/MainView.php(20): Twig\Environment->render('_register in /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Loader/FilesystemLoader.php on line 250
+[15-May-2019 18:33:28 UTC] PHP Fatal error:  Uncaught Twig\Error\LoaderError: Unable to find template "_register.twig" (looked into: twigtemplates/perfect_woman). in /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Loader/FilesystemLoader.php:250
+Stack trace:
+#0 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Loader/FilesystemLoader.php(150): Twig\Loader\FilesystemLoader->findTemplate('_register.twig')
+#1 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(299): Twig\Loader\FilesystemLoader->getCacheKey('_register.twig')
+#2 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(381): Twig\Environment->getTemplateClass('_register.twig')
+#3 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(359): Twig\Environment->loadTemplate('_register.twig')
+#4 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(318): Twig\Environment->load('_register.twig')
+#5 /home/ubuntu/workspace/Tienda/classes/izv/view/MainView.php(20): Twig\Environment->render('_register in /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Loader/FilesystemLoader.php on line 250
+[15-May-2019 18:40:39 UTC] PHP Fatal error:  Uncaught Twig\Error\LoaderError: Unable to find template "_register.twig" (looked into: twigtemplates/perfect_woman). in /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Loader/FilesystemLoader.php:250
+Stack trace:
+#0 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Loader/FilesystemLoader.php(150): Twig\Loader\FilesystemLoader->findTemplate('_register.twig')
+#1 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(299): Twig\Loader\FilesystemLoader->getCacheKey('_register.twig')
+#2 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(381): Twig\Environment->getTemplateClass('_register.twig')
+#3 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(359): Twig\Environment->loadTemplate('_register.twig')
+#4 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(318): Twig\Environment->load('_register.twig')
+#5 /home/ubuntu/workspace/Tienda/classes/izv/view/MainView.php(20): Twig\Environment->render('_register in /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Loader/FilesystemLoader.php on line 250
