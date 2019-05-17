@@ -18,8 +18,7 @@ class MainController extends Controller {
         $this->getModel()->set('titulo', 'Main Controller');
     }
     
-    function registro(){
-        $this->getModel()->set('twigFile', '_register.twig');
-        
-    }
+    // function registro(){
+    //     $this->getModel()->set('twigFile', '_register.twig');
+    // }
 }

@@ -10,7 +10,7 @@ class Router {
         $this->rutas = array(
             //RUTAS
             'index'     => new Route('Model', 'MainView' , 'MainController'),
-            'usuario'  => new Route('Model', 'UserView', 'UserController'),
+            'usuario'  => new Route('UserModel', 'UserView', 'UserController'),
         );
         $this->ruta = $ruta;
     }

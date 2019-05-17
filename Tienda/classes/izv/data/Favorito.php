@@ -5,6 +5,9 @@ namespace izv\data;
 /** @Entity @Table(name="favorito") */
 
 class Favorito {
+        
+   use \izv\common\Common;
+    
    /** @Id @Column(type="integer") @GeneratedValue */
    private $id;
    
