@@ -4910,3 +4910,16 @@ Stack trace:
 #2 /home/ubuntu/workspace/Tienda/c9.php(24): izv\mvc\FrontController->doAction()
 #3 {main}
   thrown in /home/ubuntu/workspace/Tienda/classes/izv/tools/Mail.php on line 13
+[18-May-2019 17:07:12 UTC] PHP Warning:  file_get_contents(../gmail/atoken.conf): failed to open stream: No such file or directory in /home/ubuntu/workspace/Tienda/classes/izv/tools/Mail.php on line 27
+[18-May-2019 17:07:12 UTC] PHP Fatal error:  Uncaught InvalidArgumentException: invalid json token in /home/ubuntu/workspace/Tienda/classes/vendor/google/apiclient/src/Google/Client.php:430
+Stack trace:
+#0 /home/ubuntu/workspace/Tienda/classes/izv/tools/Mail.php(27): Google_Client->setAccessToken(false)
+#1 /home/ubuntu/workspace/Tienda/classes/izv/tools/Mail.php(18): izv\tools\Mail::sendMail('a@a.es', 'Correo de activ...', 'Correo de activ...')
+#2 /home/ubuntu/workspace/Tienda/classes/izv/controller/UserController.php(47): izv\tools\Mail::sendActivation(Object(izv\data\Usuario))
+#3 /home/ubuntu/workspace/Tienda/classes/izv/mvc/FrontController.php(28): izv\controller\UserController->doRegistro()
+#4 /home/ubuntu/workspace/Tienda/c9.php(24): izv\mvc\FrontController->doAction()
+#5 {main}
+  thrown in /home/ubuntu/workspace/Tienda/classes/vendor/google/apiclient/src/Google/Client.php on line 430
+[18-May-2019 17:08:08 UTC] PHP Notice:  Undefined variable: resultado in /home/ubuntu/workspace/Tienda/classes/izv/controller/UserController.php on line 52
+[18-May-2019 17:30:35 UTC] PHP Notice:  Undefined variable: resultado in /home/ubuntu/workspace/Tienda/classes/izv/controller/UserController.php on line 52
+[18-May-2019 17:32:17 UTC] PHP Notice:  Undefined variable: resultado in /home/ubuntu/workspace/Tienda/classes/izv/controller/UserController.php on line 52

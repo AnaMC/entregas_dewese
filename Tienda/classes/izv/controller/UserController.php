@@ -21,7 +21,11 @@ class UserController extends Controller {
         $this->getModel()->set('titulo', 'User Controller');
     }
     
-     function registro(){
+    private function isAdministrator() {
+        return $this->getSession()->isLogged() && $this->getSession()->getLogin()->geTipo() === 1;
+    }
+    
+    function registro(){
         
         $resultado = Reader::read('resultado');
         
