@@ -4923,3 +4923,134 @@ Stack trace:
 [18-May-2019 17:08:08 UTC] PHP Notice:  Undefined variable: resultado in /home/ubuntu/workspace/Tienda/classes/izv/controller/UserController.php on line 52
 [18-May-2019 17:30:35 UTC] PHP Notice:  Undefined variable: resultado in /home/ubuntu/workspace/Tienda/classes/izv/controller/UserController.php on line 52
 [18-May-2019 17:32:17 UTC] PHP Notice:  Undefined variable: resultado in /home/ubuntu/workspace/Tienda/classes/izv/controller/UserController.php on line 52
+[20-May-2019 10:12:54 UTC] PHP Notice:  Undefined variable: resultado in /home/ubuntu/workspace/Tienda/classes/izv/controller/UserController.php on line 55
+[20-May-2019 10:13:48 UTC] PHP Warning:  file_get_contents(../gmail/atoken.conf): failed to open stream: No such file or directory in /home/ubuntu/workspace/Tienda/classes/izv/tools/Mail.php on line 27
+[20-May-2019 10:13:48 UTC] PHP Fatal error:  Uncaught InvalidArgumentException: invalid json token in /home/ubuntu/workspace/Tienda/classes/vendor/google/apiclient/src/Google/Client.php:430
+Stack trace:
+#0 /home/ubuntu/workspace/Tienda/classes/izv/tools/Mail.php(27): Google_Client->setAccessToken(false)
+#1 /home/ubuntu/workspace/Tienda/classes/izv/tools/Mail.php(18): izv\tools\Mail::sendMail('pepegoteraeston...', 'Correo de activ...', 'Correo de activ...')
+#2 /home/ubuntu/workspace/Tienda/classes/izv/controller/UserController.php(50): izv\tools\Mail::sendActivation(Object(izv\data\Usuario))
+#3 /home/ubuntu/workspace/Tienda/classes/izv/mvc/FrontController.php(28): izv\controller\UserController->doRegistro()
+#4 /home/ubuntu/workspace/Tienda/c9.php(24): izv\mvc\FrontController->doAction()
+#5 {main}
+  thrown in /home/ubuntu/workspace/Tienda/classes/vendor/google/apiclient/src/Google/Client.php on line 430
+[20-May-2019 10:48:21 UTC] PHP Notice:  Undefined variable: resultado in /home/ubuntu/workspace/Tienda/classes/izv/controller/UserController.php on line 55
+[20-May-2019 10:49:23 UTC] PHP Warning:  file_get_contents(../gmail/atoken.conf): failed to open stream: No such file or directory in /home/ubuntu/workspace/Tienda/classes/izv/tools/Mail.php on line 27
+[20-May-2019 10:49:23 UTC] PHP Fatal error:  Uncaught InvalidArgumentException: invalid json token in /home/ubuntu/workspace/Tienda/classes/vendor/google/apiclient/src/Google/Client.php:430
+Stack trace:
+#0 /home/ubuntu/workspace/Tienda/classes/izv/tools/Mail.php(27): Google_Client->setAccessToken(false)
+#1 /home/ubuntu/workspace/Tienda/classes/izv/tools/Mail.php(18): izv\tools\Mail::sendMail('martincabrerizo...', 'Correo de activ...', 'Correo de activ...')
+#2 /home/ubuntu/workspace/Tienda/classes/izv/controller/UserController.php(50): izv\tools\Mail::sendActivation(Object(izv\data\Usuario))
+#3 /home/ubuntu/workspace/Tienda/classes/izv/mvc/FrontController.php(28): izv\controller\UserController->doRegistro()
+#4 /home/ubuntu/workspace/Tienda/c9.php(24): izv\mvc\FrontController->doAction()
+#5 {main}
+  thrown in /home/ubuntu/workspace/Tienda/classes/vendor/google/apiclient/src/Google/Client.php on line 430
+[20-May-2019 10:51:04 UTC] PHP Notice:  Undefined variable: resultado in /home/ubuntu/workspace/Tienda/classes/izv/controller/UserController.php on line 55
+[20-May-2019 10:52:37 UTC] PHP Notice:  Undefined variable: resultado in /home/ubuntu/workspace/Tienda/classes/izv/controller/UserController.php on line 55
+[20-May-2019 10:53:53 UTC] PHP Warning:  file_get_contents(../gmail/atoken.conf): failed to open stream: No such file or directory in /home/ubuntu/workspace/Tienda/classes/izv/tools/Mail.php on line 27
+[20-May-2019 10:53:53 UTC] PHP Fatal error:  Uncaught InvalidArgumentException: invalid json token in /home/ubuntu/workspace/Tienda/classes/vendor/google/apiclient/src/Google/Client.php:430
+Stack trace:
+#0 /home/ubuntu/workspace/Tienda/classes/izv/tools/Mail.php(27): Google_Client->setAccessToken(false)
+#1 /home/ubuntu/workspace/Tienda/classes/izv/tools/Mail.php(18): izv\tools\Mail::sendMail('martincabrerizo...', 'Correo de activ...', 'Correo de activ...')
+#2 /home/ubuntu/workspace/Tienda/classes/izv/controller/UserController.php(50): izv\tools\Mail::sendActivation(Object(izv\data\Usuario))
+#3 /home/ubuntu/workspace/Tienda/classes/izv/mvc/FrontController.php(28): izv\controller\UserController->doRegistro()
+#4 /home/ubuntu/workspace/Tienda/c9.php(24): izv\mvc\FrontController->doAction()
+#5 {main}
+  thrown in /home/ubuntu/workspace/Tienda/classes/vendor/google/apiclient/src/Google/Client.php on line 430
+[20-May-2019 11:08:00 UTC] PHP Notice:  Undefined variable: resultado in /home/ubuntu/workspace/Tienda/classes/izv/controller/UserController.php on line 55
+[21-May-2019 18:59:34 UTC] PHP Fatal error:  Uncaught Twig\Error\LoaderError: Unable to find template "admintemplates/_login.twig" (looked into: twigtemplates/admintemplate). in /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Loader/FilesystemLoader.php:250
+Stack trace:
+#0 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Loader/FilesystemLoader.php(150): Twig\Loader\FilesystemLoader->findTemplate('admintemplates/...')
+#1 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(299): Twig\Loader\FilesystemLoader->getCacheKey('admintemplates/...')
+#2 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(381): Twig\Environment->getTemplateClass('admintemplates/...')
+#3 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(359): Twig\Environment->loadTemplate('admintemplates/...')
+#4 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(318): Twig\Environment->load('admintemplates/...')
+#5 /home/ubuntu/workspace/Tienda/classes/izv/view/UserView.php(21): Twi in /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Loader/FilesystemLoader.php on line 250
+[22-May-2019 11:37:44 UTC] PHP Notice:  Undefined variable: resultado in /home/ubuntu/workspace/Tienda/classes/izv/controller/UserController.php on line 55
+[22-May-2019 11:40:17 UTC] PHP Fatal error:  Uncaught Twig\Error\SyntaxError: Unexpected token "end of template" of value "" ("end of statement block" expected). in /home/ubuntu/workspace/Tienda/twigtemplates/admintemplate/_base-sign.twig:48
+Stack trace:
+#0 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/TokenParser/BlockTokenParser.php(58): Twig\TokenStream->expect(3)
+#1 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Parser.php(185): Twig\TokenParser\BlockTokenParser->parse(NULL)
+#2 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Parser.php(98): Twig\Parser->subparse(NULL, false)
+#3 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(563): Twig\Parser->parse(Object(Twig\TokenStream))
+#4 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(595): Twig\Environment->parse(Object(Twig\TokenStream))
+#5 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(408): Twig\Environment->compileSource(Object(Twig\Source))
+#6 /home/ubuntu/workspace/Tienda/classes/vendor in /home/ubuntu/workspace/Tienda/twigtemplates/admintemplate/_base-sign.twig on line 48
+[22-May-2019 11:41:23 UTC] PHP Fatal error:  Uncaught Twig\Error\SyntaxError: Unexpected token "end of template" of value "" ("end of statement block" expected). in /home/ubuntu/workspace/Tienda/twigtemplates/admintemplate/_base-sign.twig:48
+Stack trace:
+#0 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/TokenParser/BlockTokenParser.php(58): Twig\TokenStream->expect(3)
+#1 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Parser.php(185): Twig\TokenParser\BlockTokenParser->parse(NULL)
+#2 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Parser.php(98): Twig\Parser->subparse(NULL, false)
+#3 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(563): Twig\Parser->parse(Object(Twig\TokenStream))
+#4 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(595): Twig\Environment->parse(Object(Twig\TokenStream))
+#5 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(408): Twig\Environment->compileSource(Object(Twig\Source))
+#6 /home/ubuntu/workspace/Tienda/classes/vendor in /home/ubuntu/workspace/Tienda/twigtemplates/admintemplate/_base-sign.twig on line 48
+[22-May-2019 11:41:44 UTC] PHP Fatal error:  Uncaught Twig\Error\SyntaxError: Unexpected token "end of template" of value "" ("end of statement block" expected). in /home/ubuntu/workspace/Tienda/twigtemplates/admintemplate/_base-sign.twig:48
+Stack trace:
+#0 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/TokenParser/BlockTokenParser.php(58): Twig\TokenStream->expect(3)
+#1 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Parser.php(185): Twig\TokenParser\BlockTokenParser->parse(NULL)
+#2 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Parser.php(98): Twig\Parser->subparse(NULL, false)
+#3 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(563): Twig\Parser->parse(Object(Twig\TokenStream))
+#4 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(595): Twig\Environment->parse(Object(Twig\TokenStream))
+#5 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(408): Twig\Environment->compileSource(Object(Twig\Source))
+#6 /home/ubuntu/workspace/Tienda/classes/vendor in /home/ubuntu/workspace/Tienda/twigtemplates/admintemplate/_base-sign.twig on line 48
+[22-May-2019 11:42:17 UTC] PHP Fatal error:  Uncaught Twig\Error\SyntaxError: Unexpected token "end of template" of value "" ("end of statement block" expected). in /home/ubuntu/workspace/Tienda/twigtemplates/admintemplate/_base-sign.twig:48
+Stack trace:
+#0 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/TokenParser/BlockTokenParser.php(58): Twig\TokenStream->expect(3)
+#1 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Parser.php(185): Twig\TokenParser\BlockTokenParser->parse(NULL)
+#2 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Parser.php(98): Twig\Parser->subparse(NULL, false)
+#3 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(563): Twig\Parser->parse(Object(Twig\TokenStream))
+#4 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(595): Twig\Environment->parse(Object(Twig\TokenStream))
+#5 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(408): Twig\Environment->compileSource(Object(Twig\Source))
+#6 /home/ubuntu/workspace/Tienda/classes/vendor in /home/ubuntu/workspace/Tienda/twigtemplates/admintemplate/_base-sign.twig on line 48
+[22-May-2019 11:42:21 UTC] PHP Fatal error:  Uncaught Twig\Error\SyntaxError: Unexpected token "end of template" of value "" ("end of statement block" expected). in /home/ubuntu/workspace/Tienda/twigtemplates/admintemplate/_base-sign.twig:48
+Stack trace:
+#0 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/TokenParser/BlockTokenParser.php(58): Twig\TokenStream->expect(3)
+#1 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Parser.php(185): Twig\TokenParser\BlockTokenParser->parse(NULL)
+#2 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Parser.php(98): Twig\Parser->subparse(NULL, false)
+#3 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(563): Twig\Parser->parse(Object(Twig\TokenStream))
+#4 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(595): Twig\Environment->parse(Object(Twig\TokenStream))
+#5 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(408): Twig\Environment->compileSource(Object(Twig\Source))
+#6 /home/ubuntu/workspace/Tienda/classes/vendor in /home/ubuntu/workspace/Tienda/twigtemplates/admintemplate/_base-sign.twig on line 48
+[22-May-2019 11:42:53 UTC] PHP Fatal error:  Uncaught Twig\Error\SyntaxError: Unexpected token "end of template" of value "" ("end of statement block" expected). in /home/ubuntu/workspace/Tienda/twigtemplates/admintemplate/_base-sign.twig:48
+Stack trace:
+#0 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/TokenParser/BlockTokenParser.php(58): Twig\TokenStream->expect(3)
+#1 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Parser.php(185): Twig\TokenParser\BlockTokenParser->parse(NULL)
+#2 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Parser.php(98): Twig\Parser->subparse(NULL, false)
+#3 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(563): Twig\Parser->parse(Object(Twig\TokenStream))
+#4 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(595): Twig\Environment->parse(Object(Twig\TokenStream))
+#5 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(408): Twig\Environment->compileSource(Object(Twig\Source))
+#6 /home/ubuntu/workspace/Tienda/classes/vendor in /home/ubuntu/workspace/Tienda/twigtemplates/admintemplate/_base-sign.twig on line 48
+[22-May-2019 11:43:14 UTC] PHP Fatal error:  Uncaught Twig\Error\SyntaxError: Unexpected token "end of template" of value "" ("end of statement block" expected). in /home/ubuntu/workspace/Tienda/twigtemplates/admintemplate/_base-sign.twig:48
+Stack trace:
+#0 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/TokenParser/BlockTokenParser.php(58): Twig\TokenStream->expect(3)
+#1 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Parser.php(185): Twig\TokenParser\BlockTokenParser->parse(NULL)
+#2 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Parser.php(98): Twig\Parser->subparse(NULL, false)
+#3 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(563): Twig\Parser->parse(Object(Twig\TokenStream))
+#4 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(595): Twig\Environment->parse(Object(Twig\TokenStream))
+#5 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(408): Twig\Environment->compileSource(Object(Twig\Source))
+#6 /home/ubuntu/workspace/Tienda/classes/vendor in /home/ubuntu/workspace/Tienda/twigtemplates/admintemplate/_base-sign.twig on line 48
+[22-May-2019 11:45:39 UTC] PHP Fatal error:  Uncaught Twig\Error\SyntaxError: Unexpected token "end of template" of value "" ("end of statement block" expected). in /home/ubuntu/workspace/Tienda/twigtemplates/admintemplate/_base-sign.twig:48
+Stack trace:
+#0 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/TokenParser/BlockTokenParser.php(58): Twig\TokenStream->expect(3)
+#1 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Parser.php(185): Twig\TokenParser\BlockTokenParser->parse(NULL)
+#2 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Parser.php(98): Twig\Parser->subparse(NULL, false)
+#3 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(563): Twig\Parser->parse(Object(Twig\TokenStream))
+#4 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(595): Twig\Environment->parse(Object(Twig\TokenStream))
+#5 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(408): Twig\Environment->compileSource(Object(Twig\Source))
+#6 /home/ubuntu/workspace/Tienda/classes/vendor in /home/ubuntu/workspace/Tienda/twigtemplates/admintemplate/_base-sign.twig on line 48
+[22-May-2019 11:45:43 UTC] PHP Fatal error:  Uncaught Twig\Error\SyntaxError: Unexpected token "end of template" of value "" ("end of statement block" expected). in /home/ubuntu/workspace/Tienda/twigtemplates/admintemplate/_base-sign.twig:48
+Stack trace:
+#0 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/TokenParser/BlockTokenParser.php(58): Twig\TokenStream->expect(3)
+#1 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Parser.php(185): Twig\TokenParser\BlockTokenParser->parse(NULL)
+#2 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Parser.php(98): Twig\Parser->subparse(NULL, false)
+#3 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(563): Twig\Parser->parse(Object(Twig\TokenStream))
+#4 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(595): Twig\Environment->parse(Object(Twig\TokenStream))
+#5 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(408): Twig\Environment->compileSource(Object(Twig\Source))
+#6 /home/ubuntu/workspace/Tienda/classes/vendor in /home/ubuntu/workspace/Tienda/twigtemplates/admintemplate/_base-sign.twig on line 48
+[22-May-2019 11:46:33 UTC] PHP Notice:  Undefined variable: resultado in /home/ubuntu/workspace/Tienda/classes/izv/controller/UserController.php on line 55
+[22-May-2019 11:49:03 UTC] PHP Notice:  Undefined variable: resultado in /home/ubuntu/workspace/Tienda/classes/izv/controller/UserController.php on line 55
+[22-May-2019 14:58:26 UTC] PHP Notice:  Undefined variable: resultado in /home/ubuntu/workspace/Tienda/classes/izv/controller/UserController.php on line 55
+[22-May-2019 15:00:26 UTC] PHP Notice:  Undefined variable: resultado in /home/ubuntu/workspace/Tienda/classes/izv/controller/UserController.php on line 55
+[22-May-2019 15:11:39 UTC] PHP Notice:  Undefined variable: resultado in /home/ubuntu/workspace/Tienda/classes/izv/controller/UserController.php on line 55
+[22-May-2019 15:12:13 UTC] PHP Notice:  Undefined variable: resultado in /home/ubuntu/workspace/Tienda/classes/izv/controller/UserController.php on line 55

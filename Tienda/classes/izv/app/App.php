@@ -14,7 +14,7 @@ class App {
             EMAIL_CLIENT_ID = '1093272371904-3m2qmtqmscg9q6n0cu47vk85qohv457q.apps.googleusercontent.com',
             EMAIL_CLIENT_SECRET = 'WFUsJy_8qK0mCN2AmPktheze',
             EMAIL_ORIGIN = 'troglodita91@gmail.com',
-            EMAIL_TOKEN_FILE = '../gmail/atoken.conf',
+            EMAIL_TOKEN_FILE = '../token.conf',
             
             JWT_KEY = 'TIENDA_IZV',
             

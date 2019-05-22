@@ -11,10 +11,12 @@ class Mail {
     static function sendActivation(Usuario $usuario) {
         $asunto = 'Correo de activación para su nueva cuenta en Perfect Woman';
         $jwt = \Firebase\JWT\JWT::encode($usuario->getCorreo(), App::JWT_KEY);
-        $enlace = Util::url() . 'doactivar.php?id='. $usuario->getId() .'&code=' . $jwt;
+        $enlace = App::BASE.'usuario/doActivar?id='.$usuario->getId();
         // Crear funcion con nombre del usuario y enlace para personalizar correo activacion
         $mensaje = "Correo de activación para el usuario:  ". $usuario->getNombre();
         $mensaje .= '<br><a href="' . $enlace . '">activar cuenta</a>';
+        file_put_contents('activacion.txt', $asunto . ' ' . $mensaje, FILE_APPEND | LOCK_EX);
+        file_put_contents('activacion.txt', "\n", FILE_APPEND | LOCK_EX);
         return self::sendMail($usuario->getCorreo(), $asunto, $mensaje);
     }
     
@@ -52,4 +54,5 @@ class Mail {
         }
         return $result;
     }
+    
 }
