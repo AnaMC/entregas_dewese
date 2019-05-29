@@ -24,5 +24,10 @@ class UserModel extends Model {
         return $result;
     }
     
+    function getUsuario($id){
+        $usuario = $this->getEntityManager()->getRepository('\izv\data\Usuario')->findOneBy(['id' => $id]);
+        return $usuario;
+    }
+    
    
 }

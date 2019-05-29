@@ -55,7 +55,7 @@ class UserController extends Controller {
        header('Location: ' . App::BASE . 'usuario/registro?resultado=' . $resultado );
     }
     
-      function doActivar(){
+    function doActivar(){
         $id = Reader::read('id');
         $c ='izv\data\Usuario';
         $usuario = $this->getModel()->getEntityManager()->getRepository($c)->findOneBy([
@@ -66,35 +66,53 @@ class UserController extends Controller {
             header('Location: ' . App::BASE . 'usuario/login');
     }
     
-    
+    //Plantilla que va a mostrar
     function login() {
         $this->getModel()->set('twigFile', '_login.twig');
     }
     
-  function doLogin(){
-        // Recogemos los datos que nos han llegado del usuario
-        // Comprobamos datos bd
-        // Comprobacion Contraseña
-        // Hacemos el logueo
-        $correoUsuario = Reader::read('correo');
-        $claveUusario = Reader::read('clave');
-        //Guardamos la ruta de la clase para poder utilizarla en el getRepository
-        $c='izv\data\Usuario';
-        
-        $usuario = $this->getModel()->getEntityManager()->getRepository($c)->findOneBy([
-                'correo' => $correoUsuario
-            ]);
+    function doLogin(){
+            // Recogemos los datos que nos han llegado del usuario
+            // Comprobamos datos bd
+            // Comprobacion Contraseña
+            // Hacemos el logueo
+            $correoUsuario = Reader::read('correo');
+            $claveUusario = Reader::read('clave');
             
-        if (!empty($usuario)) {
-            $resultado = Util::verificarClave($claveUusario, $usuario->getClave()); 
-            $activo = $usuario -> getActivo();
-            if($resultado && $activo ===1){
-               $this->getSession()->login($usuario);
-               header('Location: usuario/registro?op=login&res=1');
-               exit();
-            } 
-        }
-        header('Location: login/main?op=login&res=0');
+            //Guardamos la ruta de la clase para poder utilizarla en el getRepository
+            $c='izv\data\Usuario';
+            
+            $usuario = $this->getModel()->getEntityManager()->getRepository($c)->findOneBy([
+                    'correo' => $correoUsuario
+                ]);
+            $nombre = $usuario->getNombre(); 
+            
+            if (!empty($usuario)) {
+                $resultado = Util::verificarClave($claveUusario, $usuario->getClave()); 
+                $activo = $usuario -> getActivo();
+                if($resultado && $activo ===1){
+                   $this->getSession()->login($usuario);
+                   header('Location: logged?op=login&res=1');
+                   exit();
+                } 
+            }
+            header('Location: login/registro?op=login&res=0');
+    }
+    
+     // Una vez logeados...
+    function logged(){
+        $id=$this->getSession()->getLogin()->getId();
+       
+        $usuario=$this->getModel()->getUsuario($id);
+        // ↓ Para "pasar" la informacion a la plantilla 
+        $this->getModel()->set('info', $usuario);
+        $this->getModel()->set('twigFile', '_tablas.twig');
+    }
+    
+    function doLogout(){
+       $this->getSession()->logout();
+        header('Location: login');
+        exit();
     }
     
     

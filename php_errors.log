@@ -5054,3 +5054,70 @@ Stack trace:
 [22-May-2019 15:00:26 UTC] PHP Notice:  Undefined variable: resultado in /home/ubuntu/workspace/Tienda/classes/izv/controller/UserController.php on line 55
 [22-May-2019 15:11:39 UTC] PHP Notice:  Undefined variable: resultado in /home/ubuntu/workspace/Tienda/classes/izv/controller/UserController.php on line 55
 [22-May-2019 15:12:13 UTC] PHP Notice:  Undefined variable: resultado in /home/ubuntu/workspace/Tienda/classes/izv/controller/UserController.php on line 55
+[22-May-2019 16:29:37 UTC] PHP Fatal error:  Uncaught Twig\Error\SyntaxError: Unknown "nombre" tag. in /home/ubuntu/workspace/Tienda/twigtemplates/admintemplate/_base.twig:57
+Stack trace:
+#0 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Parser.php(98): Twig\Parser->subparse(NULL, false)
+#1 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(563): Twig\Parser->parse(Object(Twig\TokenStream))
+#2 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(595): Twig\Environment->parse(Object(Twig\TokenStream))
+#3 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(408): Twig\Environment->compileSource(Object(Twig\Source))
+#4 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(381): Twig\Environment->loadClass('__TwigTemplate_...', '_base.twig', NULL)
+#5 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Template.php(327): Twig\Environment->loadTemplate('_base.twig', NULL)
+#6 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(418) in /home/ubuntu/workspace/Tienda/twigtemplates/admintemplate/_base.twig on line 57
+[22-May-2019 17:44:48 UTC] PHP Parse error:  syntax error, unexpected 'Location' (T_STRING), expecting ',' or ')' in /home/ubuntu/workspace/Tienda/classes/izv/controller/UserController.php on line 99
+[29-May-2019 11:31:28 UTC] PHP Fatal error:  Uncaught Twig\Error\SyntaxError: Unexpected token "name" of value "info" ("end of print statement" expected). in /home/ubuntu/workspace/Tienda/twigtemplates/admintemplate/_base.twig:55
+Stack trace:
+#0 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Parser.php(143): Twig\TokenStream->expect(4)
+#1 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Parser.php(98): Twig\Parser->subparse(NULL, false)
+#2 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(563): Twig\Parser->parse(Object(Twig\TokenStream))
+#3 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(595): Twig\Environment->parse(Object(Twig\TokenStream))
+#4 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(408): Twig\Environment->compileSource(Object(Twig\Source))
+#5 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(381): Twig\Environment->loadClass('__TwigTemplate_...', '_base.twig', NULL)
+#6 /home/ubuntu/workspace/Tienda/classes/vendor/twig in /home/ubuntu/workspace/Tienda/twigtemplates/admintemplate/_base.twig on line 55
+[29-May-2019 11:35:27 UTC] PHP Fatal error:  Uncaught Twig\Error\LoaderError: Unable to find template "_index.twig" (looked into: twigtemplates/admintemplate). in /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Loader/FilesystemLoader.php:250
+Stack trace:
+#0 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Loader/FilesystemLoader.php(150): Twig\Loader\FilesystemLoader->findTemplate('_index.twig')
+#1 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(299): Twig\Loader\FilesystemLoader->getCacheKey('_index.twig')
+#2 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(381): Twig\Environment->getTemplateClass('_index.twig')
+#3 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(359): Twig\Environment->loadTemplate('_index.twig')
+#4 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(318): Twig\Environment->load('_index.twig')
+#5 /home/ubuntu/workspace/Tienda/classes/izv/view/UserView.php(21): Twig\Environment->render('_index.twig', Array)
+#6 /ho in /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Loader/FilesystemLoader.php on line 250
+[29-May-2019 11:36:08 UTC] PHP Fatal error:  Uncaught Twig\Error\LoaderError: Unable to find template "_index.twig" (looked into: twigtemplates/admintemplate). in /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Loader/FilesystemLoader.php:250
+Stack trace:
+#0 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Loader/FilesystemLoader.php(150): Twig\Loader\FilesystemLoader->findTemplate('_index.twig')
+#1 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(299): Twig\Loader\FilesystemLoader->getCacheKey('_index.twig')
+#2 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(381): Twig\Environment->getTemplateClass('_index.twig')
+#3 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(359): Twig\Environment->loadTemplate('_index.twig')
+#4 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(318): Twig\Environment->load('_index.twig')
+#5 /home/ubuntu/workspace/Tienda/classes/izv/view/UserView.php(21): Twig\Environment->render('_index.twig', Array)
+#6 /ho in /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Loader/FilesystemLoader.php on line 250
+[29-May-2019 11:36:29 UTC] PHP Fatal error:  Uncaught Twig\Error\LoaderError: Unable to find template "_index.twig" (looked into: twigtemplates/admintemplate). in /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Loader/FilesystemLoader.php:250
+Stack trace:
+#0 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Loader/FilesystemLoader.php(150): Twig\Loader\FilesystemLoader->findTemplate('_index.twig')
+#1 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(299): Twig\Loader\FilesystemLoader->getCacheKey('_index.twig')
+#2 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(381): Twig\Environment->getTemplateClass('_index.twig')
+#3 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(359): Twig\Environment->loadTemplate('_index.twig')
+#4 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(318): Twig\Environment->load('_index.twig')
+#5 /home/ubuntu/workspace/Tienda/classes/izv/view/UserView.php(21): Twig\Environment->render('_index.twig', Array)
+#6 /ho in /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Loader/FilesystemLoader.php on line 250
+[29-May-2019 11:37:09 UTC] PHP Fatal error:  Uncaught Twig\Error\LoaderError: Unable to find template "_index.twig" (looked into: twigtemplates/admintemplate). in /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Loader/FilesystemLoader.php:250
+Stack trace:
+#0 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Loader/FilesystemLoader.php(150): Twig\Loader\FilesystemLoader->findTemplate('_index.twig')
+#1 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(299): Twig\Loader\FilesystemLoader->getCacheKey('_index.twig')
+#2 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(381): Twig\Environment->getTemplateClass('_index.twig')
+#3 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(359): Twig\Environment->loadTemplate('_index.twig')
+#4 /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Environment.php(318): Twig\Environment->load('_index.twig')
+#5 /home/ubuntu/workspace/Tienda/classes/izv/view/UserView.php(21): Twig\Environment->render('_index.twig', Array)
+#6 /ho in /home/ubuntu/workspace/Tienda/classes/vendor/twig/twig/src/Loader/FilesystemLoader.php on line 250
+[29-May-2019 11:42:09 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method izv\model\UserModel::getUsuario() in /home/ubuntu/workspace/Tienda/classes/izv/controller/UserController.php:106
+Stack trace:
+#0 /home/ubuntu/workspace/Tienda/classes/izv/mvc/FrontController.php(28): izv\controller\UserController->logged()
+#1 /home/ubuntu/workspace/Tienda/c9.php(24): izv\mvc\FrontController->doAction()
+#2 {main}
+  thrown in /home/ubuntu/workspace/Tienda/classes/izv/controller/UserController.php on line 106
+[29-May-2019 11:44:16 UTC] PHP Fatal error:  Uncaught Doctrine\Common\Persistence\Mapping\MappingException: Class '\izv\data\Cliente' does not exist in /home/ubuntu/workspace/Tienda/classes/vendor/doctrine/common/lib/Doctrine/Common/Persistence/Mapping/MappingException.php:96
+Stack trace:
+#0 /home/ubuntu/workspace/Tienda/classes/vendor/doctrine/common/lib/Doctrine/Common/Persistence/Mapping/RuntimeReflectionService.php(41): Doctrine\Common\Persistence\Mapping\MappingException::nonExistingClass('\\izv\\data\\Clien...')
+#1 /home/ubuntu/workspace/Tienda/classes/vendor/doctrine/common/lib/Doctrine/Common/Persistence/Mapping/AbstractClassMetadataFactory.php(281): Doctrine\Common\Persistence\Mapping\RuntimeReflectionService->getParentClasses('\\izv\\data\\Clien...')
+#2 /home/ubuntu/workspace/Tienda/classes/vendor/doctrine/common/lib/Doctrine/Common/Persistence/Mapping/AbstractClassMetadataFactory.php(311): Doctrine\Common\Persistence\Mapping\AbstractClassMetadataFactory->getParentClasses('\\izv\\data\\Clien...')
+#3 /home/ubuntu/workspace/Tienda/classes/vendor in /home/ubuntu/workspace/Tienda/classes/vendor/doctrine/common/lib/Doctrine/Common/Persistence/Mapping/MappingException.php on line 96
