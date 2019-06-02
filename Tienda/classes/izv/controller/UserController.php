@@ -22,7 +22,7 @@ class UserController extends Controller {
         $this->getModel()->set('titulo', 'User Controller');
     }
     
-    private function isAdministrator() {
+    private function isAdmin() {
         return $this->getSession()->isLogged() && $this->getSession()->getLogin()->getTipo() === 1;
     }
     
@@ -92,28 +92,43 @@ class UserController extends Controller {
                 $activo = $usuario -> getActivo();
                 if($resultado && $activo ===1){
                    $this->getSession()->login($usuario);
-                   header('Location: logged?op=login&res=1');
+                   header('Location: listar?op=login&res=1');
                    exit();
                 } 
             }
             header('Location: login/registro?op=login&res=0');
     }
     
-     // Una vez logeados...
-    function logged(){
-        $id=$this->getSession()->getLogin()->getId();
-       
-        $usuario=$this->getModel()->getUsuario($id);
-        // ↓ Para "pasar" la informacion a la plantilla 
-        $this->getModel()->set('info', $usuario);
-        $this->getModel()->set('twigFile', '_tablas.twig');
-    }
-    
     function doLogout(){
-       $this->getSession()->logout();
+      $this->getSession()->logout();
         header('Location: login');
         exit();
     }
+   
+    // function logged(){
+    //     //  $pagina = Reader::read('pagina');
+          
+    //       $resultado = $this->getModel()->getUsuarios();
+    //       $this->getModel()->set('info', $resultado);
+    //     //   //Le pasamos el usuario a la vista para saber sus datos
+    //     //   $this->getModel()->set('user', $this->getSession()->getLogin());
+    //       $this->getModel()->set('twigFile','_tablas.twig');
+    // }
+    function logged(){
+        $id = $this->getSession()->getLogin()->getId();
+        $resultado = $this->getModel()->getUsuario($id);
+        $this->getModel()->set('info', $resultado);
+        $this->getModel()->set('twigFile','_tablas.twig');
+    }
     
+    function listar(){
+        $resultado = $this->getModel()->getUsuarios();
+        // var_dump($resultado);
+        // exit();
+        $this->getModel()->set('info', $resultado);
+        $this->getModel()->set('admin', $this->isAdmin());
+        $this->getModel()->set('twigFile','_tablas.twig');
+        
+    }
     
 }

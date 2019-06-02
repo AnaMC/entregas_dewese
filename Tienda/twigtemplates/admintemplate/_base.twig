@@ -52,9 +52,9 @@
 					<ul class="nav navbar-nav navbar-right">
 						
 						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown"><span>{{ "Hola ! "}}</span><img src="{{twigFolder}}/assets/img/user.png" class="img-circle" alt="Avatar"> <span>{{user.nombre}}</span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown"><span>{{info.nombre }}</span> <i class="icon-submenu lnr lnr-chevron-down"></i><img src="{{twigFolder}}/assets/img/user.png" class="img-circle" alt="Avatar"> </a>
 							<ul class="dropdown-menu">
-								<li><a href="#"><i class="lnr lnr-user"></i> <span> {{info.nombre}}</span></a></li>
+								{#<li><a href="#"><i class="lnr lnr-user"></i> <span> {{info.nombre}}</span></a></li>#}
 								<li><a href="main"><i class="fas fa-home"></i> <span>Volver a tienda</span></a></li>
 								<li><a href="usuario/doLogout"><i class="lnr lnr-exit"></i> <span>Logout</span></a></li>
 							</ul>
@@ -70,16 +70,29 @@
 				<nav>
 					<ul class="nav">
 						<li><a href="index.twig" class="active"><i class="lnr lnr-home"></i> <span>Inicio</span></a></li>
+						{% if admin %}
 						<li>
 							<a href="#subPages" data-toggle="collapse" class="collapsed"><img class="mi_icon" src="{{twigFolder}}/assets/img/icons/users.png"><span>Usuarios</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
 							<div id="subPages" class="collapse ">
 								<ul class="nav">
+									<li><a href="usuario/registro" class="">Mis datos</a></li>
 									<li><a href="usuario/registro" class="">Añadir nuevo usuario</a></li>
-									<li><a href="#" class="onClickLista" data-pagina='1' data-lista='usuario'>Listado de usuarios</a></li>
-									<li><a href="#" class="onClickLista" data-pagina='1' data-lista='usuario'>Gestionar usuarios</a></li>
+									<li><a href="usuario/listar" class="onClickLista" data-pagina='1' data-lista='usuario'>Listado de usuarios</a></li>
 								</ul>
 							</div>
 						</li>
+						
+						{% else %}
+							<li>
+								<a href="#subPages" data-toggle="collapse" class="collapsed"><img class="mi_icon" src="{{twigFolder}}/assets/img/icons/users.png"><span>Mi Cuenta</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
+								<div id="subPages" class="collapse ">
+										<ul class="nav">
+											<li><a href="usuario/registro" class="">Informacion de cuenta</a></li>
+										</ul>
+								</div>
+							</li>
+						{% endif %}
+						
 						<li>
 							<a href="#subPages2" data-toggle="collapse" class="collapsed"><img class="mi_icon" src="{{twigFolder}}/assets/img/icons/bra.svg"><span>Productos</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
 							<div id="subPages2" class="collapse ">
