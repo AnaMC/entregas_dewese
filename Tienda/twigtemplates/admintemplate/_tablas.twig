@@ -12,7 +12,7 @@
 								<h3 class="panel-title">Gestión de usuario {{admin ? 'administrador' : 'usuario normal'}}</h3>
 								<div class="right">
 									<button type="button" class="btn-toggle-collapse"><i class="lnr lnr-chevron-up"></i></button>
-									<button type="button" class="btn-remove"><i class="lnr lnr-cross"></i></button>
+									{#<button type="button" class="btn-remove"><i class="lnr lnr-cross"></i></button>#}
 								</div>
 							</div>
 							<div class="panel-body no-padding">
@@ -24,30 +24,43 @@
 										<th>Alias</th>
 										<th>Correo</th>
 										<th>Activo</th>
-										<th>Tipo</th>
-										<th>Editar</th>
+										{% if admin %}
+											<th>Tipo</th>
+										{% endif %}
+											<th>Editar</th>
 										{% if admin %}
 											<th>Borrar</th>
 										{% endif %}
 									</tr>
 								</thead>
-									<tbody>
-										{% if admin %}
-											{% for usuario in info  %}
-												<tr>
-													<td>{{usuario.nombre}}</td>
-													<td>{{usuario.apellidos}}</td>
-													<td>{{usuario.alias}}</td>
-													<td>{{usuario.correo}}</td>
-													<td><span class="label label-success">{{usuario.activo ? '&#10004;' : '&#10008;'}}</span></td>
-													{#<td><span class="label label-success">{{info.tipo ? '&#11088;' : '&#12336;'}}</span></td>#}
-													<td><span class="label ">{{usuario.tipo ? '&#11088;' : '&#12336;'}}</span></td>
-													<td scope="col"><a href="index/editar?id={{usuario.id}}"> &#9998; </a></td>
-													<td scope="col"><a class="borrar" href="index/doBorrar?id={{usuario.id}}"> &#10060; </a></td>
-											 	{% endfor %}
-										 	</tr>
-										{% endif %}
-									</tbody>
+								<tbody>
+									{% if admin %}
+										{% for usuario in info  %}
+											<tr>
+												<td>{{usuario.nombre}}</td>
+												<td>{{usuario.apellidos}}</td>
+												<td>{{usuario.alias}}</td>
+												<td>{{usuario.correo}}</td>
+												<td><span class="label label-success">{{usuario.activo ? '&#10004;' : '&#10008;'}}</span></td>
+												{#<td><span class="label label-success">{{info.tipo ? '&#11088;' : '&#12336;'}}</span></td>#}
+												<td><span class="label ">{{usuario.tipo ? '&#11088;' : '&#12336;'}}</span></td>
+												<input type="hidden" class="form-control" name='id' id="id-edit"  value="{{info.id}}"   >
+												<td scope="col"><a href="usuario/editar"> &#9998; </a></td>
+												<td scope="col"><a class="borrar" href="usuario/doBorrar"> &#10060; </a></td>
+											</tr>
+										{% endfor %}
+									{% else %} 
+								 		<tr>
+											<td>{{info.nombre}}</td>
+											<td>{{info.apellidos}}</td>
+											<td>{{info.alias}}</td>
+											<td>{{info.correo}}</td>
+											<input type="hidden" class="form-control" name='id' id="id-edit"  value="{{info.id}}"   >
+											<td><span class="label label-success">{{info.activo ? '&#10004;' : '&#10008;'}}</span></td>
+											<td scope="col"><a href="usuario/editar"> &#9998; </a></td>
+									 	</tr>
+									{% endif %}
+								</tbody>
 								</table>
 							</div>
 							<div class="panel-footer">

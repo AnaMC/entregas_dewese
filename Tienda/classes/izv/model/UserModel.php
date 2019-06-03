@@ -40,83 +40,30 @@ class UserModel extends Model {
         foreach($result as $usuario) {
             $usuarios[] = $usuario->getUnset(array('favoritos', 'pedidos'));
         }
-       
         return $usuarios;
         //  varDump($usuarios);
         // exit();
     } 
     
+    function borrarUsuario($id){
+        $usuario_bd = $this->getUsuario($id);
+        $this->getEntityManager()->remove($usuario_bd);
+        $this->getEntityManager()->flush();
+        return $usuario_bd; 
+    }
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    // function getUsuarios(){
-    //     // $usuarios = $this->getEntityManager()->getRepository('\izv\data\Usuario')->findAll();
-    //     // echo Util::varDump($usuarios);
-    //     // return $usuarios;
-    //      $dql = 'select usu from izv\data\Usuario usu order by usu.';
-    //      $query = $this->getEntityManager()->createQuery($dql);
-    //      $usuarios = array();
-    //      foreach($query as $usuario) {
-    //         // Recogemos cada usuario
-    //         // getUnset -> nos quitamos los campos que no nos interesen del objeto, nos quitamos de problemas de relaciones
-    //         $usuarios[] = $usuario->getUnset(array('favoritos'));
-    //     }
-    //     echo Util::varDump($query);
-    //     exit();
-    //     return  ['usuarios' => $usuarios];
-    // }
-    
-        //  Paginacion y ordenacion
-    // function getUsuarios($pagina = 1, $orden = 'nombre', $rrpp = 4) {
-    //     if($pagina == null || !is_numeric($pagina)){
-    //         $pagina = 1;
-    //     }
+    function editar($usuario){
+        $id = $usuario->getId();
+        $usuario_bd = $this->getUsuario($id);
         
-    //     $dql = 'select usu from izv\data\Usuario usu order by usu.'. $orden .', usu.alias';
-    //     $query = $this->getEntityManager()->createQuery($dql);
+        $usuario_bd->setNombre($usuario->getNombre());
+        $usuario_bd->setApellidos($usuario->getApellidos());
+        $usuario_bd->setAlias($usuario->getAlias());
+        $usuario_bd->setCorreo($usuario->getCorreo());
         
-    //     $paginator = new Paginator($query);
-    //     $paginator->getQuery()
-    //         ->setFirstResult($rrpp * ($pagina - 1))
-    //         ->setMaxResults($rrpp);
-    //     // return $paginator;
-    //     $pagination = new Pagination($paginator->count(), $pagina, $rrpp);
-    //     $usuarios = array();
-    //     foreach($paginator as $usuario) {
-    //         // Recogemos cada usuario
-    //         // getUnset -> nos quitamos los campos que no nos interesen del objeto, nos quitamos de problemas de relaciones
-    //         // $usuarios[] = $usuario->getUnset(array('favorito','pedido'));
-    //         $usuarios[] = $usuario;
-    //     }
-    //     // echo Util::varDump($usuarios);
-    //     // exit();
-    //     return ['usuarios' => $usuarios, 'paginas' => $pagination->values()];
-    // }
-   
+        $this->getEntityManager()->persist($usuario_bd);
+        $this->getEntityManager()->flush();
+        return $usuario;
+    }
+    
 }

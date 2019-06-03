@@ -71,38 +71,37 @@
 					<ul class="nav">
 						<li><a href="index.twig" class="active"><i class="lnr lnr-home"></i> <span>Inicio</span></a></li>
 						{% if admin %}
-						<li>
-							<a href="#subPages" data-toggle="collapse" class="collapsed"><img class="mi_icon" src="{{twigFolder}}/assets/img/icons/users.png"><span>Usuarios</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
-							<div id="subPages" class="collapse ">
-								<ul class="nav">
-									<li><a href="usuario/registro" class="">Mis datos</a></li>
-									<li><a href="usuario/registro" class="">Añadir nuevo usuario</a></li>
-									<li><a href="usuario/listar" class="onClickLista" data-pagina='1' data-lista='usuario'>Listado de usuarios</a></li>
-								</ul>
-							</div>
-						</li>
-						
+							<li>
+								<a href="#subPages" data-toggle="collapse" class="collapsed"><img class="mi_icon" src="{{twigFolder}}/assets/img/icons/users.png"><span>Usuarios</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
+								<div id="subPages" class="collapse ">
+									<ul class="nav">
+										{#<li><a href="usuario/logged" class="">Mis datos</a></li>#}
+										<li><a href="usuario/registro" class="">Añadir nuevo usuario</a></li>
+										<li><a href="usuario/listar" class="" >Listado de usuarios</a></li>
+									</ul>
+								</div>
+							</li>
 						{% else %}
 							<li>
 								<a href="#subPages" data-toggle="collapse" class="collapsed"><img class="mi_icon" src="{{twigFolder}}/assets/img/icons/users.png"><span>Mi Cuenta</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
 								<div id="subPages" class="collapse ">
 										<ul class="nav">
-											<li><a href="usuario/registro" class="">Informacion de cuenta</a></li>
+											<li><a href="usuario/logged" class="">Informacion de cuenta</a></li>
 										</ul>
 								</div>
 							</li>
 						{% endif %}
-						
-						<li>
-							<a href="#subPages2" data-toggle="collapse" class="collapsed"><img class="mi_icon" src="{{twigFolder}}/assets/img/icons/bra.svg"><span>Productos</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
-							<div id="subPages2" class="collapse ">
-								<ul class="nav">
-									<li><a href="admin/addX" class="">Añadir nuevo producto</a></li>
-									<li><a href="#" class="onClickListaX" data-pagina='1' data-lista='X'>Listado de productos</a></li>
-								</ul>
-							</div>
-						</li>
-						
+						{% if admin %}
+							<li>
+								<a href="#subPages2" data-toggle="collapse" class="collapsed"><img class="mi_icon" src="{{twigFolder}}/assets/img/icons/bra.svg"><span>Productos</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
+								<div id="subPages2" class="collapse ">
+									<ul class="nav">
+										<li><a href="articulo/registroArticulo" class="">Añadir nuevo producto</a></li>
+										<li><a href="#" class="onClickListaX" data-pagina='1' data-lista='X'>Listado de productos</a></li>
+									</ul>
+								</div>
+							</li>
+						{% endif %}
 						<li>
 							<a href="#subPages5" data-toggle="collapse" class="collapsed"><img class="mi_icon" src="{{twigFolder}}/assets/img/icons/heart.svg"><span>Favoritos</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
 							<div id="subPages5" class="collapse ">
@@ -130,6 +129,8 @@
         {% block index %}{% endblock %}
         {% block tablas %}{% endblock %}
         {% block register %}{% endblock %}
+        {% block articuloRegister %}{% endblock %}
+        {% block edit %}{% endblock %}
         {#{% block login %}{% endblock %}#}
  		{# Resto de bloques que necesitamos #}
 		<!-- END MAIN -->

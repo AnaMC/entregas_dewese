@@ -1,0 +1,121 @@
+{% extends '_base.twig' %}
+{% block edit %}
+		{#{% if edit %}#}
+			{#<input type='hidden' id='editar-update' data-editype="usuario">#}
+			{#<input type="hidden" class="form-control" id="id"  value="{{user.id}}"   >#}
+		{#{% endif %}#}
+		<!-- MAIN -->
+		<div class="main">
+			<!-- MAIN CONTENT -->
+			<div class="main-content">
+				<div class="container-fluid">
+					<div class='row' id='form-container' data-class='usuario'>
+						{# Feedback #}
+						{% if respuesta %}
+							<div class='respuesta' data-resultado={{resultado}}>guay</div>
+						{% endif %}	
+					
+						<div class='col-md-6'>
+							<div class="panel todo-list">
+								<div class="panel-heading">
+									<h3 class="panel-title">Edición de los datos personales de {{info.nombre}}</h3>
+									<div class="right">
+										<button type="button" class="btn-toggle-collapse"><i class="lnr lnr-chevron-up"></i></button>
+										{#<button type="button" class="btn-remove"><i class="lnr lnr-cross"></i></button>#}
+									</div>
+								</div>
+								<div class='panel-body'>
+									<form class="form-auth-small text-left" action="usuario/doEditar">
+										<input type="text" placeholder="{{info.id}}" value="{{info.id}}" name="id"/>
+										{#<input type="hidden" class="form-control" placeholder="{{info.id}}" name='id' id="id-edit"  value="{{info.id}}" >#}
+									    <div class="form-group">
+											<label for="signup-nombre" class="control-label title">Nombre</label>
+											<input type="text" class="form-control" id="signup-nombre" placeholder="{{info.nombre}}" name='nombre' >
+										</div>
+										<div class="form-group">
+											<label for="signup-apellidos" class="control-label title">Apellidos</label>
+											<input type="text" class="form-control" id="signup-apellidos" placeholder="{{info.apellidos}}" name='apellidos'>
+										</div>
+										<div class="form-group">
+											<label for="signup-alias" class="control-label title">Alias</label>
+											<input type="text" class="form-control" id="signup-alias" ajax-callBack placeholder="{{info.alias}}" name='alias'>
+										</div>
+										<div class="form-group">
+											<label for="signup-direccion" class="control-label title">Direccion</label>
+											<input type="text" class="form-control" id="signup-direccion" placeholder="{{info.direccion}}" name='direccion'>
+										</div>
+										<div class="form-group">
+											<label for="signup-email" class="control-label title">Email</label>
+											<input type="email" class="form-control" id="signup-email" ajax-callBack placeholder="{{info.correo}}" name='correo'>
+										</div>
+										
+											{#<div class="form-group">#}
+											{#		<label for="signup-password" class="control-label title">Contraseña</label>#}
+											{#		<div class='password-container'>#}
+											{#			<a href='#'><i class="far fa-eye"></i></a>#}
+											{#			<input type="password" class="form-control" id="signup-password" placeholder="Contraseña" name='clave'>#}
+											{#		</div>#}
+											{#	</div>#}
+										<br>
+										<input type="submit" class="btn btn-primary submit" value="Enviar"></input>
+										<br>
+									</form>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class='row'>
+								<div class='col-md-12'>
+									<!-- TODO LIST -->
+									<div class="panel">
+										<div class="panel-heading">
+											<h3 class="panel-title">Gestión de Cuenta</h3>
+											<div class="right">
+												<button type="button" class="btn-toggle-collapse"><i class="lnr lnr-chevron-up"></i></button>
+												{#<button type="button" class="btn-remove"><i class="lnr lnr-cross"></i></button>#}
+											</div>
+										</div>
+										<div class="panel-body">
+											<ul class="list-unstyled todo-list">
+												<li>
+													<label class="control-inline fancy-checkbox">
+														<input type="checkbox" id="activo" name='activo' {{user.activo == true ? 'checked' : '' }}><span></span>
+														
+													</label>
+													<p>
+														<span class="title">Activar Cuenta</span>
+														<span class="short-description">Marque esta opción para activar la cuenta de este usuario.</span>
+														{#<span class="date">Oct 9, 2016</span>#}
+													</p>
+													<div class="controls">
+														<a href="#"><i class="icon-software icon-software-pencil"></i></a> <a href="#"><i class="icon-arrows icon-arrows-circle-remove"></i></a>
+													</div>
+												</li>
+												<li>
+													<label class="control-inline fancy-checkbox">
+														<input type="checkbox" id="rol" name='rol' {{info.tipo == true ? 'checked' : '' }}><span></span>
+													</label>
+													<p>
+														<span class="title">Privilegios de Administrador</span>
+														<span class="short-description">Marque esta opción para otorgar privilegios de administrador a este usuario</span>
+														<span class="date">Con estos privilegios podrá realizar operaciones de insercción de datos y borrado.</span>
+													</p>
+													<div class="controls">
+														<a href="#"><i class="icon-software icon-software-pencil"></i></a> <a href="#"><i class="icon-arrows icon-arrows-circle-remove"></i></a>
+													</div>
+												</li>
+											</ul>
+										</div>
+									</div>
+									<!-- END TODO LIST -->
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- END MAIN CONTENT -->
+		</div>
+		<!-- END MAIN -->
+	
+{% endblock %}

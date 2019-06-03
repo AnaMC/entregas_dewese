@@ -11,6 +11,7 @@ class Router {
             //RUTAS
             'index'     => new Route('Model', 'MainView' , 'MainController'),
             'usuario'  => new Route('UserModel', 'UserView', 'UserController'),
+            'articulo'  => new Route('ArticuloModel', 'UserView', 'ArticuloController'),
         );
         $this->ruta = $ruta;
     }

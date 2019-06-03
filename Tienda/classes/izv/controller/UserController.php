@@ -14,8 +14,8 @@ class UserController extends Controller {
 
     function __construct(Model $model) {
         parent::__construct($model);
+        $this->getModel()->set('admin', $this->isAdmin());
         $this->getModel()->set('titulo', 'User Controller');
-        $this->getModel()->set('twigFile', '_base.twig');
     }
     
     function main() {
@@ -90,10 +90,16 @@ class UserController extends Controller {
             if (!empty($usuario)) {
                 $resultado = Util::verificarClave($claveUusario, $usuario->getClave()); 
                 $activo = $usuario -> getActivo();
+                $admin = $this->isAdmin();
                 if($resultado && $activo ===1){
                    $this->getSession()->login($usuario);
-                   header('Location: listar?op=login&res=1');
+                   if($admin){
+                        header('Location: listar?op=login&res=1');
                    exit();
+                   }else{
+                        header('Location: logged?op=login&res=1');
+                   exit();
+                   }
                 } 
             }
             header('Location: login/registro?op=login&res=0');
@@ -105,15 +111,6 @@ class UserController extends Controller {
         exit();
     }
    
-    // function logged(){
-    //     //  $pagina = Reader::read('pagina');
-          
-    //       $resultado = $this->getModel()->getUsuarios();
-    //       $this->getModel()->set('info', $resultado);
-    //     //   //Le pasamos el usuario a la vista para saber sus datos
-    //     //   $this->getModel()->set('user', $this->getSession()->getLogin());
-    //       $this->getModel()->set('twigFile','_tablas.twig');
-    // }
     function logged(){
         $id = $this->getSession()->getLogin()->getId();
         $resultado = $this->getModel()->getUsuario($id);
@@ -128,7 +125,43 @@ class UserController extends Controller {
         $this->getModel()->set('info', $resultado);
         $this->getModel()->set('admin', $this->isAdmin());
         $this->getModel()->set('twigFile','_tablas.twig');
+
+    } 
+    
+    function doBorrar(){
+        $admin = $this->isAdmin();
+       if($admin){
+                $id = Reader::read('id');
+                $resultado = $this->getModel()->borrarUsuario($id);
+                $r = $resultado->getId() === null ? 1 : 0;
+                  header('Location: ' . App::BASE . 'index/listar?result=' . $r);
+                  exit();
+            }
+           header('Location: ' . App::BASE . 'index/listar'); 
+        }
         
+    function editar(){
+        $id = Reader::read('id');
+        $resultado = $this->getModel()->getUsuario($id);
+        if($resultado != null){
+                                    //Clave , valor [para feedback]
+            $this->getModel()->set('info', $resultado);
+        }
+        
+        $this->getModel()->set('twigFile', '_edit.twig');
+        
+    }
+    
+    function doEditar(){
+        $id = Reader::read('id');
+        var_dump($id);
+        exit();
+        $usuario =  $this->getModel()->getUsuario($id);
+        
+        $resultado = $this->getModel()->editar($usuario);
+        $r = $resultado->getId() === null ? 1 : 0;
+        header('Location: ' . App::BASE . 'usuario/editar?result=' . $r);
+        exit();
     }
     
 }
