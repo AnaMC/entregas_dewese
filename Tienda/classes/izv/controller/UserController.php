@@ -43,6 +43,8 @@ class UserController extends Controller {
        if(strlen(trim($usuario->getClave())) >= 6 && strlen(trim($usuario->getNombre())) >= 3 && strlen(trim($usuario->getAlias())) >= 3){
           //Antes de hacer flush encriptamos la clave
            $usuario->setClave(Util::encriptar($usuario->getClave()));
+        //   echo Util::varDump ($usuario);
+        //   exit();
            $resultado = $this->getModel()->registroUsuario($usuario);
 
            if($resultado != 0 && $resultado != -1){
@@ -120,8 +122,7 @@ class UserController extends Controller {
     
     function listar(){
         $resultado = $this->getModel()->getUsuarios();
-        // var_dump($resultado);
-        // exit();
+      
         $this->getModel()->set('info', $resultado);
         $this->getModel()->set('admin', $this->isAdmin());
         $this->getModel()->set('twigFile','_tablas.twig');
@@ -130,14 +131,18 @@ class UserController extends Controller {
     
     function doBorrar(){
         $admin = $this->isAdmin();
-       if($admin){
-                $id = Reader::read('id');
-                $resultado = $this->getModel()->borrarUsuario($id);
-                $r = $resultado->getId() === null ? 1 : 0;
-                  header('Location: ' . App::BASE . 'index/listar?result=' . $r);
-                  exit();
-            }
-           header('Location: ' . App::BASE . 'index/listar'); 
+        if($admin){
+            $id = Reader::read('id');
+            // var_dump($id);
+            // exit();
+            $resultado = $this->getModel()->borrarUsuario($id);
+            $r = $resultado->getId() === null ? 1 : 0;
+            // header('Location: ' . App::BASE . 'index/listar?result=' . $r);
+            header('Location: listar?op=borrado&result='. $r);
+            exit();
+        }
+        //   header('Location: ' . App::BASE . 'index/listar'); 
+           header('Location: listar?op=borrado&result=1');
         }
         
     function editar(){
@@ -153,15 +158,23 @@ class UserController extends Controller {
     }
     
     function doEditar(){
-        $id = Reader::read('id');
-        var_dump($id);
-        exit();
-        $usuario =  $this->getModel()->getUsuario($id);
-        
-        $resultado = $this->getModel()->editar($usuario);
-        $r = $resultado->getId() === null ? 1 : 0;
-        header('Location: ' . App::BASE . 'usuario/editar?result=' . $r);
+        $usuario = Reader::readObject('izv\data\Usuario');
+        // var_dump($id);
+        // exit();
+        $resultado = $this->getModel()->editar($usuario);  // $r = $resultado->getId() === null ? 1 : 0;
+        $admin = $this->isAdmin();
+        if($admin){
+            header('Location: listar?op=login&res=' . $r);
+            exit();
+        }else{
+            header('Location: logged?op=login&res=' . $r);
+            exit();
+        }
         exit();
     }
+    
+    
+    
+    
     
 }

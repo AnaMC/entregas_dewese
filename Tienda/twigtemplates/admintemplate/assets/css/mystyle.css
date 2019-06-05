@@ -410,3 +410,8 @@ td {
 .tamano-login{
     height: 500px;
 }
+
+.transparente{
+    border: 0px !important; 
+    background-color: transparent !important;
+}

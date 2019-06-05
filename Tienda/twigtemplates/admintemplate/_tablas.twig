@@ -44,9 +44,21 @@
 												<td><span class="label label-success">{{usuario.activo ? '&#10004;' : '&#10008;'}}</span></td>
 												{#<td><span class="label label-success">{{info.tipo ? '&#11088;' : '&#12336;'}}</span></td>#}
 												<td><span class="label ">{{usuario.tipo ? '&#11088;' : '&#12336;'}}</span></td>
-												<input type="hidden" class="form-control" name='id' id="id-edit"  value="{{info.id}}"   >
-												<td scope="col"><a href="usuario/editar"> &#9998; </a></td>
-												<td scope="col"><a class="borrar" href="usuario/doBorrar"> &#10060; </a></td>
+												<form method="POST" action="usuario/editar" >
+	                                                <td>
+													<input type="hidden" class="form-control" name='id' id="id-edit"  value="{{usuario.id}}"   >
+												    <button type="submit" class="editar transparente"> &#9998;</button>
+												   </td>
+	                                             </form>
+												{#<td scope="col"><a href="usuario/editar"> &#9998; </a></td>#}
+												{#<td scope="col"><a class="borrar" href="usuario/doBorrar"> &#10060; </a></td>#}
+												{#<td scope="col"><a class="borrar" href="index/doBorrar?id={{usuario.id}}"> &#10060; </a></td>#}
+												<form method="POST" action="usuario/doBorrar" >
+	                                                <td>
+		                                                <input type="hidden" class="form-control" name="id" id="id-edit"  value="{{usuario.id}}" >
+		                                                 <button type="submit" class="borrar transparente"> &#10060;</button>
+	                                                 </td>
+	                                             </form>
 											</tr>
 										{% endfor %}
 									{% else %} 
