@@ -415,3 +415,14 @@ td {
     border: 0px !important; 
     background-color: transparent !important;
 }
+
+.col-paginacion{
+    margin: 0 20px !important;
+}
+
+.panel-footer-ana{
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}

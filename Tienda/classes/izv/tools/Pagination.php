@@ -17,7 +17,7 @@ class Pagination {
     }
     
     function last() {
-        return ceil($this->total / $this->rpp);
+          return ceil($this->total / $this->rpp());
     }
     
     function next() {
@@ -26,7 +26,7 @@ class Pagination {
 
     // Define el rango para la consulta a la bd (pag. 1 del {0}-10, pag. 2 del {10} - 20....)  
     function offset() {
-        return ($this->page() - 1) * $this->rpp;
+         return ($this->page() - 1) * $this->rpp();
     }
 
     function page() {
@@ -62,7 +62,7 @@ class Pagination {
     }
 
     function rpp() {
-        return $this->rpp;
+        return abs($this->rpp);
     }
     
     function values() {

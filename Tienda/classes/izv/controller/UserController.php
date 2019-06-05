@@ -173,8 +173,18 @@ class UserController extends Controller {
         exit();
     }
     
+    // Paginacion
     
-    
-    
+     function paginacion() {
+        $pagina = Reader::read('pagina');
+        
+        if($pagina === null || !is_numeric($pagina)) {
+            $pagina = 1;
+        }
+        
+        $resultado = $this->getModel()->getUsuariosPaginados($pagina);
+        $this->getModel()->add($resultado);
+        $this->getModel()->set('twigFile', '_tablas.twig');
+    }
     
 }

@@ -39,6 +39,10 @@ class Model {
         return $this->entityManager;
     }
 
+    function getManager() {
+            return $this->gestor;
+    }
+
     function set($name, $value) {
         $this->datosVista[$name] = $value;
         return $this;

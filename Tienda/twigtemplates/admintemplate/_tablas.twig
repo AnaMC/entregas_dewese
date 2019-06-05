@@ -5,7 +5,7 @@
 			<div class="main-content">
 				<div class="container-fluid">
 					<!-- OVERVIEW -->
-					<div class="panel panel-headline">
+					<div class="panel0 panel-headline">
 						<!-- RECENT PURCHASES -->
 						<div class="panel">
 							<div class="panel-heading">
@@ -75,10 +75,25 @@
 								</tbody>
 								</table>
 							</div>
-							<div class="panel-footer">
-								<div class="row">
-									<div class="col-md-6 text-right"><a href="#" class="btn btn-primary">View All Purchases</a></div>
-								</div>
+							{# PAGINACIÓN #}
+							<div class="panel-footer-ana">
+								<div class='row paginacion-centro'>
+							        <div class='col-md-1 col-paginacion'>
+							            <a href="usuario/listar?pagina={{usuarios.paginas.primero}}" class="btn btn-primary" role="button"> &#10094;&#10094; </a>
+							        </div>
+							        <div class='col-md-1 col-paginacion'>
+							            <a href="usuario/listar?pagina={{usuarios.paginas.anterior}}" class="btn btn-primary" role="button"> &#10094; </a>
+							        </div>
+							        <div class='col-md-1 col-paginacion'>
+							            <a href="usuario/listar?pagina={{usuarios.paginas.siguiente}}" class="btn btn-primary" role="button"> &#10095; </a>
+							        </div>
+							        <div class='col-md-1 col-paginacion'>
+							            <a href="usuario/listar?pagina={{usuarios.paginas.ultimo}}" class="btn btn-primary " role="button"> &#10095;&#10095; </a>
+							        </div>
+							    </div>
+								{#<div class="row">#}
+								{#	<div class="col-md-6 text-right"><a href="#" class="btn btn-primary">View All Purchases</a></div>#}
+								{#</div>#}
 							</div>
 						</div>
 					</div>
