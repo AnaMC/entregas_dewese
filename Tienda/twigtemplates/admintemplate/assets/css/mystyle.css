@@ -426,3 +426,13 @@ td {
     justify-content: center;
     margin-bottom: 40px;
 }
+
+div #respuesta{
+    background-color: #00aaff !important;
+    width: 300px !important;
+    text-align: center !important;
+    color: white !important;
+    text-transform: uppercase !important;
+    padding: 20px 0px !important;
+    margin: 0 auto !important;
+}

@@ -1,5 +1,5 @@
 {% extends '_base-sign.twig' %}
-{% block register %}
+{% block new_register %}
 		{% if edit %}
 			<input type='hidden' id='editar-update' data-editype="usuario">
 			<input type="hidden" class="form-control" id="id"  value="{{user.id}}"   >
@@ -12,7 +12,7 @@
 					<div class='row' id='form-container' data-class='usuario'>
 						{# Feedback #}
 						{% if respuesta %}
-							<div class='respuesta' data-resultado={{resultado}}>guay</div>
+							<div class='respuesta' id="respuesta" data-resultado={{resultado}}>Realizado con éxito</div>
 						{% endif %}	
 					
 						<div class='col-md-6'>
