@@ -96,7 +96,7 @@ class UserController extends Controller {
                 if($resultado && $activo ===1){
                    $this->getSession()->login($usuario);
                    if($admin){
-                        header('Location: listar?op=login&res=1');
+                        header('Location: paginacion?op=login&res=1');
                    exit();
                    }else{
                         header('Location: logged?op=login&res=1');
@@ -143,7 +143,7 @@ class UserController extends Controller {
         }
         //   header('Location: ' . App::BASE . 'index/listar'); 
            header('Location: listar?op=borrado&result=1');
-        }
+    }
         
     function editar(){
         $id = Reader::read('id');
@@ -183,7 +183,10 @@ class UserController extends Controller {
         }
         
         $resultado = $this->getModel()->getUsuariosPaginados($pagina);
+        // echo Util::varDump($resultado);
+        // exit();
         $this->getModel()->add($resultado);
+        $this->getModel()->set('admin', $this->isAdmin());
         $this->getModel()->set('twigFile', '_tablas.twig');
     }
     

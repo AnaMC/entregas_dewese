@@ -66,12 +66,10 @@ class UserModel extends Model {
         return $usuario;
     }
     
-    //pag Doctrine
-    
-    function getUsuariosPaginados($pagina = 1, $rpp = 3) {
-        // $gestor = $this->getEntityManager();
-        $gestor = $this->getManager();
-        $dql = 'select usu from izv\data\Usuario usu';
+    function getUsuariosPaginados($pagina = 1, $rpp = 4) {
+        $gestor = $this->getEntityManager();
+        // $gestor = $this->getManager();
+        $dql = 'select usu from izv\data\Usuario usu order by usu.nombre';
         $query = $gestor->createQuery($dql);
         $paginator = new Paginator($query); 
         $total = $paginator->count();
@@ -79,7 +77,7 @@ class UserModel extends Model {
         $paginator->getQuery()
             ->setFirstResult($pagination->offset())
             ->setMaxResults($pagination->rpp());
-        return array('usuarios' => $paginator, 'paginas' => $pagination->values());
+        return array('info' => $paginator, 'paginas' => $pagination->values());
        
     }
     
