@@ -22,10 +22,6 @@ class UserController extends Controller {
         $this->getModel()->set('titulo', 'User Controller');
     }
     
-    private function isAdmin() {
-        return $this->getSession()->isLogged() && $this->getSession()->getLogin()->getTipo() === 1;
-    }
-    
     function registro(){
         
         $resultado = Reader::read('resultado');

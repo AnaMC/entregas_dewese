@@ -98,7 +98,8 @@
 								<div id="subPages2" class="collapse ">
 									<ul class="nav">
 										<li><a href="articulo/registroArticulo" class="">Añadir nuevo producto</a></li>
-										<li><a href="#" class="onClickListaX" data-pagina='1' data-lista='X'>Listado de productos</a></li>
+										<li><a href="articulo/paginacionArticulos" class="">Listado de Productos</a></li>
+										{#<li><a href="articulo/getArticulosPaginados" class="" data-pagina='1' data-lista='X'>Listado de productos</a></li>#}
 									</ul>
 								</div>
 							</li>
@@ -129,9 +130,11 @@
 		<!-- MAIN -->
         {% block index %}{% endblock %}
         {% block tablas %}{% endblock %}
+        {% block tablasProduct %}{% endblock %}
         {% block register %}{% endblock %}
         {% block articuloRegister %}{% endblock %}
         {% block edit %}{% endblock %}
+        {% block articuloEdit %}{% endblock %}
         {#{% block login %}{% endblock %}#}
  		{# Resto de bloques que necesitamos #}
 		<!-- END MAIN -->

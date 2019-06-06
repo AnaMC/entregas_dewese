@@ -25,4 +25,47 @@ class ArticuloModel extends Model {
         return $result;
     }
     
+    function getArticulosPaginados($pagina = 1, $rpp = 3) {
+        $gestor = $this->getEntityManager();
+        // $gestor = $this->getManager();
+        $dql = 'select art from izv\data\Articulo art order by art.nombre';
+        $query = $gestor->createQuery($dql);
+        $paginator = new Paginator($query); 
+        $total = $paginator->count();
+        $pagination = new Pagination($total, $pagina, $rpp); 
+        $paginator->getQuery()
+            ->setFirstResult($pagination->offset())
+            ->setMaxResults($pagination->rpp());
+        return array('info' => $paginator, 'paginas' => $pagination->values());
+    }
+    
+    function getArticulo($id){
+        $articulo = $this->getEntityManager()->getRepository('\izv\data\Articulo')->findOneBy(['id' => $id]);
+        return $articulo;
+    }   
+    
+     function borrarArticulo($id){
+        $articulo_bd = $this->getArticulo($id);
+        $this->getEntityManager()->remove($articulo_bd);
+        $this->getEntityManager()->flush();
+        // return $articulo_bd; 
+    }
+    
+    function editar($articulo){
+        $id = $articulo->getId();
+        $articulo_bd = $this->getArticulo($id);
+        
+         $articulo_bd->setNombre($articulo->getNombre());
+         $articulo_bd->setPrecio($articulo->getPrecio());
+         $articulo_bd->setCantidad($articulo->getCantidad());
+         $articulo_bd->setTallaDesde($articulo->getTallaDesde());
+         $articulo_bd->setTallaHasta($articulo->getTallaHasta());
+         $articulo_bd->setDescripcion($articulo->getDescripcion());
+         $articulo_bd->setTipo($articulo->getTipo());
+        
+        $this->getEntityManager()->persist( $articulo_bd);
+        $this->getEntityManager()->flush();
+        return $articulo;
+    }
+    
 }

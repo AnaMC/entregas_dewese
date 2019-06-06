@@ -41,4 +41,8 @@ class Controller {
         $this->getModel()->set('datos', 'datos que envía el método main');
     }
     
+    function isAdmin() {
+        return $this->getSession()->isLogged() && $this->getSession()->getLogin()->getTipo() === 1;
+    }
+    
 }
