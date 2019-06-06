@@ -78,7 +78,6 @@ class UserModel extends Model {
             ->setFirstResult($pagination->offset())
             ->setMaxResults($pagination->rpp());
         return array('info' => $paginator, 'paginas' => $pagination->values());
-       
     }
     
 }

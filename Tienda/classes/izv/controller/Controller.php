@@ -24,6 +24,7 @@ class Controller {
         $this->model = $model;
         $this->sesion = new Session(App::SESSION_NAME);
         $this->getModel()->set('urlbase', App::BASE);
+        $this->getModel()->set('user_logged', $this->getSession()->getLogin());
     }
     
     function getModel() {

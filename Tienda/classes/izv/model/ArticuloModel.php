@@ -16,9 +16,7 @@ class ArticuloModel extends Model {
         $result = 1;
         try {
             $this->getEntityManager()->persist($articulo);
-            
             $this->getEntityManager()->flush();
-            // return $articulo;    
         } catch(\Doctrine\DBAL\Exception\UniqueConstraintViolationException $e){
             $result = -1;
         } catch(\Exception $e){

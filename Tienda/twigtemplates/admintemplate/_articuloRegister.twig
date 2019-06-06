@@ -2,7 +2,7 @@
 {% block articuloRegister %}
 		{% if edit %}
 			<input type='hidden' id='editar-update' data-editype="usuario">
-			{#<input type="hidden" class="form-control" id="id"  value="{{articulo.id}}"   >#}
+			<input type="hidden" class="form-control" id="id"  value="{{articulo.id}}"   >
 		{% endif %}
 		<!-- MAIN -->
 		<div class="main">
@@ -54,11 +54,6 @@
 											<label for="subidaArt-tipo" class="control-label title">Tipo</label>
 											<textarea class="form-control" id="subidaArt-tipo" ajax-callBack placeholder="Tipo" name='tipo'></textarea>
 										</div>
-										<div class="form-group">
-											<label for="subidaArt-detalles" class="control-label title">Detalles</label>
-											<textarea class="form-control" id="subidaArt-destalles" ajax-callBack placeholder="Detalles" name='detalles'></textarea>
-										</div>
-										
 											
 										<br>
 										<input type="submit" class="btn btn-primary submit" value="Agregar"></input>
