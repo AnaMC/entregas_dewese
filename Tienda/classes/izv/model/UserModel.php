@@ -80,4 +80,6 @@ class UserModel extends Model {
         return array('info' => $paginator, 'paginas' => $pagination->values());
     }
     
+    
+    
 }

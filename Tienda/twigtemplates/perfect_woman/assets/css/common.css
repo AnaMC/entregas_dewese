@@ -81,7 +81,8 @@ nav a {
     align-items: center;
     padding: 20px 0px;
 }
-.enlaces:hover{
+
+.enlaces:hover {
     color: #860000;
 }
 
@@ -186,9 +187,10 @@ nav a {
     flex: 1 1 0;
 }
 
-.col-footer p{
+.col-footer p {
     padding: 2px;
 }
+
 .col-1-footer {
     flex: 3 0 0;
     background-image: url(../img/mapa.jpg);
@@ -217,9 +219,9 @@ nav a {
     flex: 1 0 100%;
 }
 
-p a{
+p a {
     text-decoration: none;
-    color: black;    
+    color: black;
 }
 
 .col-5-footer {
@@ -234,6 +236,10 @@ p a{
     text-align: center;
     padding: 5px;
     cursor: pointer;
+}
+
+.btn-compra {
+    padding: 0 !important;
 }
 
 
@@ -297,40 +303,48 @@ p a{
 
 
 /*          MEDIA       */
-@media only screen and (max-width:800px){
-    .contacto-footer{
+
+@media only screen and (max-width:800px) {
+    .contacto-footer {
         flex-wrap: wrap;
     }
-    .col-footer{
+    .col-footer {
         flex-basis: 50%;
         text-align: center;
     }
-    .col-5-footer,.legal, .horario{
+    .col-5-footer,
+    .legal,
+    .horario {
         display: none;
     }
 }
-@media only screen and (max-width:900px){
-    .insta:nth-child(6){
+
+@media only screen and (max-width:900px) {
+    .insta:nth-child(6) {
         display: none;
     }
 }
-@media only screen and (max-width:700px){
-    .insta:nth-child(5){
+
+@media only screen and (max-width:700px) {
+    .insta:nth-child(5) {
         display: none;
     }
 }
-@media only screen and (max-width:500px){
-    .insta:nth-child(4){
+
+@media only screen and (max-width:500px) {
+    .insta:nth-child(4) {
         display: none;
     }
 }
-@media only screen and (max-width:300px){
-    .insta:nth-child(3){
+
+@media only screen and (max-width:300px) {
+    .insta:nth-child(3) {
         display: none;
     }
 }
-@media only screen and (max-width:100px){
-    .insta:nth-child(2){
+
+@media only screen and (max-width:100px) {
+    .insta:nth-child(2) {
         display: none;
     }
 }

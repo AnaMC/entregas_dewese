@@ -18,7 +18,16 @@ class MainController extends Controller {
         $this->getModel()->set('titulo', 'Main Controller');
     }
     
-    // function registro(){
-    //     $this->getModel()->set('twigFile', '_register.twig');
-    // }
+    function lenceria(){
+      $this->getModel()->set('twigFile', '/_lenceria.twig');  
+    } 
+    function desfiles(){
+        $this->getModel()->set('twigFile', '/_desfiles.twig');
+    } 
+    function dormir(){
+        $this->getModel()->set('twigFile', '/_ropa_dormir.twig');
+    }
+    function productos(){
+        $this->getModel()->set('twigFile', '/_productos.twig');
+    }
 }

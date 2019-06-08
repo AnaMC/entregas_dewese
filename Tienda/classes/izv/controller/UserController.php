@@ -91,13 +91,13 @@ class UserController extends Controller {
                 $admin = $this->isAdmin();
                 if($resultado && $activo ===1){
                    $this->getSession()->login($usuario);
-                   if($admin){
+                  if($admin){
                         header('Location: paginacion?op=login&res=1');
-                   exit();
-                   }else{
-                        header('Location: logged?op=login&res=1');
-                   exit();
-                   }
+                  exit();
+                  }else{
+                        header('Location: paginacion?op=login&res=1');
+                  exit();
+                  }
                 } 
             }
             header('Location: login/registro?op=login&res=0');
@@ -134,11 +134,11 @@ class UserController extends Controller {
             $resultado = $this->getModel()->borrarUsuario($id);
             $r = $resultado->getId() === null ? 1 : 0;
             // header('Location: ' . App::BASE . 'index/listar?result=' . $r);
-            header('Location: listar?op=borrado&result='. $r);
+            header('Location: paginacion?op=borrado&result='. $r);
             exit();
         }
         //   header('Location: ' . App::BASE . 'index/listar'); 
-           header('Location: listar?op=borrado&result=1');
+           header('Location: paginacion?op=borrado&result=1');
     }
         
     function editar(){

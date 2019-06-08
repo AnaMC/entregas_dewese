@@ -43,7 +43,11 @@
 	                <a href="#contacto" class="enlaces enlaces-04">CONTACTO</a>
 	                {# ruta (router) / accion (controller)#}
 	                {#<a href="usuario/registro" class="enlaces enlaces-04">REGISTRO</a>#}
-	                <a href="usuario/login" class="enlaces enlaces-04">INICIAR SESIÓN / REGISTRO</a>
+	                {% if user_logged %}
+	                	 <a href="usuario/paginacion" class="enlaces enlaces-04">MI CUENTA</a>
+	                {% else %}	 
+	                	<a href="usuario/login" class="enlaces enlaces-04">INICIAR SESIÓN / REGISTRO</a>
+	                {% endif %}
 	                {#<a href="login.twig" class="enlaces enlaces-04">REGISTRO/INICIO DE SESIÓN</a>#}
 	            </nav>
 	        </div>

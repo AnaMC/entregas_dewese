@@ -13,6 +13,9 @@
     <link rel="stylesheet" href="{{twigFolder}}/assets/css/reset.css">
     <link rel="stylesheet" href="{{twigFolder}}/assets/css/common.css">
     <link rel="stylesheet" href="{{twigFolder}}/assets/css/index_css.css">
+    <link rel="stylesheet" href="{{twigFolder}}/assets/css/desfiles_css.css">
+    <link rel="stylesheet" href="{{twigFolder}}/assets/css/lenceria_css.css">
+    <link rel="stylesheet" href="{{twigFolder}}/assets/css/index_css.css">
 </head>
 
 <body>
@@ -21,23 +24,27 @@
             <p class="logo vogue"> PERFECT WOMAN </p>
             <nav class="contenedor-enlaces libel">
                 <a href="{{twigFolder}}/index.twig" class="enlaces enlaces-01">INICIO</a>
-                <a href="{{twigFolder}}/lenceria.twig" class="enlaces enlaces-02">LENCERIA</a>
-                <a href="{{twigFolder}}/ropa_dormir.twig" class="enlaces enlaces-03">ROPA DE DORMIR</a>
-                <a href="{{twigFolder}}/desfiles.twig" class="enlaces enlaces-04">DESFILES</a>
+                {#<a href="index/productos" class="enlaces enlaces-01">Productos</a>#}
+                <a href="index/lenceria" class="enlaces enlaces-02">LENCERIA</a>
+                <a href="index/dormir" class="enlaces enlaces-03">ROPA DE DORMIR</a>
+                <a href="index/desfiles" class="enlaces enlaces-04">DESFILES</a>
                 <a href="#contacto" class="enlaces enlaces-04">CONTACTO</a>
                 {# ruta (router) / accion (controller)#}
                 {#<a href="usuario/registro" class="enlaces enlaces-04">REGISTRO</a>#}
                 {# Si logueado -> mi cuenta, no logueado-> iniciar Sesión #}
-                <a href="usuario/login" class="enlaces enlaces-04">INICIAR SESIÓN / REGISTRO</a>
+                {% if user_logged %}
+	                <a href="usuario/paginacion" class="enlaces enlaces-04">MI CUENTA</a>
+	            {% else %}	 
+	                <a href="usuario/login" class="enlaces enlaces-04">INICIAR SESIÓN / REGISTRO</a>
+	            {% endif %}
                 {#<a href="login.twig" class="enlaces enlaces-04">REGISTRO/INICIO DE SESIÓN</a>#}
             </nav>
         </div>
     </header>
 
-    <div class="hero img-responsive"></div>
-    
  	{# Resto de bloques que necesitamos #}
     {% block index %}{% endblock %}
+    {% block productos %}{% endblock %}
     {% block desfiles %}{% endblock %}
     {% block lenceria %}{% endblock %}
     {% block ropa_dormir %}{% endblock %}
