@@ -26,30 +26,30 @@
 									</div>
 								</div>
 								<div class='panel-body'>
-									<form class="form-auth-small text-left" action="usuario/doRegistro">
+									<form class="form-auth-small text-left" action="usuario/doRegistro" id="formulario">
 										{#<input type="hidden" class="form-control" name='id' id="id-edit"  value="{{user.id}}"   >#}
 									    <div class="form-group">
 											<label for="signup-nombre" class="control-label title">Nombre</label>
-											<input type="text" class="form-control" id="signup-nombre" placeholder="Introduzca su nombre" name='nombre' >
+											<input type="text" class="form-control" id="signup-nombre" placeholder="Introduzca su nombre" name='nombre' data-minimolength="3" data-maximolength="20"required>
 										</div>
 										<div class="form-group">
 											<label for="signup-apellidos" class="control-label title">Apellidos</label>
-											<input type="text" class="form-control" id="signup-apellidos" placeholder="Introduzca sus apellidos" name='apellidos'>
+											<input type="text" class="form-control" id="signup-apellidos" placeholder="Introduzca sus apellidos" name='apellidos' data-minimolength="3" data-maximolength="25" required>
 										</div>
 										<div class="form-group">
 											<label for="signup-alias" class="control-label title">Alias</label>
-											<input type="text" class="form-control" id="signup-alias" ajax-callBack placeholder="Introduzca su alias" name='alias'>
+											<input type="text" class="form-control" id="signup-alias" ajax-callBack placeholder="Introduzca su alias" name='alias' data-minimolength="3" data-maximolength="10" required>
 										</div>
 										<div class="form-group">
 											<label for="signup-email" class="control-label title">Email</label>
-											<input type="email" class="form-control" id="signup-email" ajax-callBack placeholder="Email" name='correo'>
+											<input type="email" class="form-control" id="signup-email" ajax-callBack placeholder="Email" name='correo' required>
 										</div>
 										
 											<div class="form-group">
 													<label for="signup-password" class="control-label title">Contraseña</label>
 													<div class='password-container'>
 														<a href='#'><i class="far fa-eye"></i></a>
-														<input type="password" class="form-control" id="signup-password" placeholder="Contraseña" name='clave'>
+														<input type="password" class="form-control" id="signup-password" placeholder="Contraseña" name='clave' require>
 													</div>
 												</div>
 										<br>

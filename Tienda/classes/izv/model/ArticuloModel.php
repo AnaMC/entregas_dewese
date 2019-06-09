@@ -28,7 +28,7 @@ class ArticuloModel extends Model {
         return $result;
     }
     
-    function getArticulosPaginados($pagina = 1, $rpp = 3) {
+    function getArticulosPaginados($pagina = 1, $rpp = 8) {
         $gestor = $this->getEntityManager();
         // $gestor = $this->getManager();
         $dql = 'select art from izv\data\Articulo art order by art.nombre';
