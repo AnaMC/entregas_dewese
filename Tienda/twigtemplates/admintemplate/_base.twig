@@ -118,7 +118,10 @@
 							<a href="#subPages3" data-toggle="collapse" class="collapsed"><img class="mi_icon" src="{{twigFolder}}/assets/img/icons/shopping-bag.svg"> <span>Compras</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
 							<div id="subPages3" class="collapse ">
 								<ul class="nav">
-									<li><a href="#" class="onClickListaX" data-pagina='1' data-lista='info-complementaria'>Informacion de compra</a></li>
+									{% if admin %}
+										<li><a href="compra/paginacionPedidosUsuarios" class="" data-pagina='1' data-lista='info-complementaria'>Pedidos recibidos</a></li>
+									{% endif %}
+									<li><a href="compra/paginacionPedidos" class="" data-pagina='1' data-lista='info-complementaria'>Mi lista de pedidos</a></li>
 								</ul>
 							</div>
 						</li>
@@ -136,6 +139,7 @@
         {% block edit %}{% endblock %}
         {% block articuloEdit %}{% endblock %}
         {% block tablasPedidos %}{% endblock %}
+        {% block tablasPedidosUsuarios %}{% endblock %}
         {#{% block login %}{% endblock %}#}
  		{# Resto de bloques que necesitamos #}
 		<!-- END MAIN -->

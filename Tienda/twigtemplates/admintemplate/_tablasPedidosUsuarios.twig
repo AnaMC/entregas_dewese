@@ -1,0 +1,87 @@
+{% extends '_base.twig' %}
+{% block tablasPedidosUsuarios %}
+		<div class="main">
+			<!-- MAIN CONTENT -->
+			<div class="main-content">
+				<div class="container-fluid">
+					<!-- OVERVIEW -->
+					<div class="panel0 panel-headline">
+						<!-- RECENT PURCHASES -->
+						<div class="panel">
+							<div class="panel-heading">
+								<h1 class="panel-title">Pedidos recibidos de tus clientes</h1>
+								<div class="right">
+									<button type="button" class="btn-toggle-collapse"><i class="lnr lnr-chevron-up"></i></button>
+								</div>
+							</div>
+							<div class="panel-body no-padding">
+								<table class="table table-striped">
+								<thead>
+									<tr>
+										<th>Identificador</th>
+										<th>Fecha de pedido</th>
+										<th>Forma de pago</th>
+										<th>Detalles</th>
+										<th>Editar</th>
+										<th>Borrar</th>
+									</tr>
+								</thead>
+								<tbody>
+									{#<span>HOLAAAAAA {{paginas.total}}</span>#}
+									{% if admin and paginas.total > 0%}
+										{% for pedido in pedidos  %}
+											<tr>
+												<td>{{pedido.id}}</td>
+												<td>{{pedido.fechaPedido|date("d/m/Y")}}</td>
+												<td>{{pedido.formaPago}}</td>
+												<form method="POST" action="articulo/verDetalles" >
+	                                            	<td>
+														<input type="hidden" class="form-control" name='id' id="id-edit"  value="{{pedido.id}}"   >
+												    	<button type="submit" class="editar transparente"> ver más</button>
+												    	<i href="articulo/editarArticulo?{{pedido.id}}" class="borrar transparente"></button>
+												   </td>
+	                                            </form>
+												<form method="POST" action="articulo/editarArticulo" >
+	                                            	<td>
+														<input type="hidden" class="form-control" name='id' id="id-edit"  value="{{pedido.id}}"   >
+												    	<button type="submit" class="editar transparente"> &#9998;</button>
+												    	<i href="articulo/editarArticulo?{{pedido.id}}" class="borrar transparente"></button>
+												   </td>
+	                                            </form>
+												<form method="POST" action="articulo/doBorrarArticulo" >
+	                                                <td>
+		                                                <input type="hidden" class="form-control" name="id" id="id-edit"  value="{{articulo.id}}" >
+		                                                <button type="submit" class="borrar transparente"> &#10060;</button>
+	                                                 </td>
+	                                             </form>
+											</tr>
+										{% endfor %}
+									{% endif %}
+								</tbody>
+								</table>
+							</div>
+							{# PAGINACIÓN #}
+							<div class="panel-footer-ana">
+								<div class='row paginacion-centro'>
+							        <div class='col-md-1 col-paginacion'>
+							            <a href="compra/paginacionPedidosUsuarios?pagina={{paginas.primero}}" class="btn btn-primary" role="button"> &#10094;&#10094; </a>
+							        </div>
+							        <div class='col-md-1 col-paginacion'>
+							            <a href="compra/paginacionPedidosUsuarios?pagina={{paginas.anterior}}" class="btn btn-primary" role="button"> &#10094; </a>
+							        </div>
+							        <div class='col-md-1 col-paginacion'>
+							            <a href="compra/paginacionPedidosUsuarios?pagina={{paginas.siguiente}}" class="btn btn-primary" role="button"> &#10095; </a>
+							        </div>
+							        <div class='col-md-1 col-paginacion'>
+							            <a href="compra/paginacionPedidosUsuarios?pagina={{paginas.ultimo}}" class="btn btn-primary " role="button"> &#10095;&#10095; </a>
+							        </div>
+							    </div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- END MAIN CONTENT -->
+		</div>
+		<!-- END MAIN -->
+{% endblock %}

@@ -29,13 +29,27 @@ class CompraController extends Controller {
         if($pagina === null || !is_numeric($pagina)) {
             $pagina = 1;
         }
-        
-        $resultado = $this->getModel()->getPedidosPaginados($pagina);
+        $id = $this->getSession()->getLogin()->getId();
+        $resultado = $this->getModel()->getPedidosPaginados($pagina, $id);
         // echo Util::varDump($resultado);
         // exit();
         $this->getModel()->add($resultado);
         $this->getModel()->set('admin', $this->isAdmin());
         $this->getModel()->set('twigFile', '_tablasPedidos.twig');
+    }
+    
+     function paginacionPedidosUsuarios() {
+        $pagina = Reader::read('pagina');
+        
+        if($pagina === null || !is_numeric($pagina)) {
+            $pagina = 1;
+        }
+        $resultado = $this->getModel()->getPedidosPaginadosUsuarios($pagina);
+        // echo Util::varDump($resultado);
+        // exit();
+        $this->getModel()->add($resultado);
+        $this->getModel()->set('admin', $this->isAdmin());
+        $this->getModel()->set('twigFile', '_tablasPedidosUsuarios.twig');
     }
  
     function doBorrarPedido(){
@@ -51,5 +65,22 @@ class CompraController extends Controller {
         }
            header('Location: paginacionPedidos?op=borrado&result=1');
     } 
+    
+      function paginacionArticulos() {
+        $pagina = Reader::read('pagina');
+        
+        if($pagina === null || !is_numeric($pagina)) {
+            $pagina = 1;
+        }
+        
+        $resultado = $this->getModel()->getArticulosPaginados($pagina);
+        // echo Util::varDump($resultado);
+        // exit();
+        $this->getModel()->add($resultado);
+        $this->getModel()->set('admin', $this->isAdmin());
+        $this->getModel()->set('twigFile', '/_lenceria.twig');
+    }
+    
+    
 
 }
