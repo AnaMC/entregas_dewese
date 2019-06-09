@@ -88,8 +88,8 @@
 
 .sujetadores-fotos {
     display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+    /*justify-content: space-around;*/
+    /*flex-wrap: wrap;*/
 }
 
 .marco {
@@ -129,19 +129,19 @@
 }
 
 .sujetadores-01 {
-    background-image: url(../img/suje1.jpg);
+    /*background-image: url(../img/suje1.jpg);*/
 }
 
 .sujetadores-02 {
-    background-image: url(../img/suje2.jpg);
+    /*background-image: url(../img/suje2.jpg);*/
 }
 
 .sujetadores-03 {
-    background-image: url(../img/suje3.jpg);
+    /*background-image: url(../img/suje3.jpg);*/
 }
 
 .sujetadores-04 {
-    background-image: url(../img/suje4.jpg);
+    /*background-image: url(../img/suje4.jpg);*/
 }
 
 .braguitas-titulo {
@@ -321,6 +321,20 @@
 
 .blanco {
     height: 90px;
+}
+
+.row {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+}
+
+.row span {
+    margin: 32px 8px;
+}
+
+.row span a {
+    text-decoration: none;
 }
 
 @media only screen and (max-width:900px) {

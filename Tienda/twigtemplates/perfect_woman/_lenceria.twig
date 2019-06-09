@@ -19,42 +19,30 @@
         <p class="sujetadores-txt geosans
         ">Descubre la nueva colección de sujetadotes de Perfect Woman, serán tu aliado perfecto para todo tipo de prendas, ya que proporcionan una forma natural y una sujeción perfecta. </p>
 
-        <div class="sujetadores-fotos ">
-            {#{% for articulo in info  %}#}
-                <form action="compra/comprar">
-                <input type="hidden" class="form-control" name='id' id="id-edit"  value="{{pedido.id}}">
-                <div class="marco">
-                    <div class=" marco-item sujetadores-01 img-responsive">
-                         <a><img src="{{twigFolder}}/assets/img/dimensionador-productos.png" /></a>
+        <div class="sujetadores-fotos " id="#sujetadores">
+            
+            {% for articulo in info  %}
+                <form action="lenceria/doComprar">
+                    <input type="hidden" class="form-control" name='id' id="id-edit"  value="{{articulo.id}}">
+                    <div class="marco">
+                        <div class=" marco-item sujetadores-01 img-responsive" style="background-image:url({{twigFolder}}/assets/img/suje_{{articulo.id}}.jpg)">
+                             <a><img src="{{twigFolder}}/assets/img/dimensionador-productos.png" /></a>
+                        </div>
+                        <p class="pie-foto">{{articulo.nombre}}</p>
+                        {#<p class="btn-compra"><a href="ruta/accion">Comprar</a></p>#}
+                        <input class="btn-compra" type="submit" value="Comprar"></input>
                     </div>
-                    <p class="pie-foto">Sujetador push up de encaje y tul <br> {{articulo.nombre}}</p>
-                    {#<p class="btn-compra"><a href="ruta/accion">Comprar</a></p>#}
-                    <input class="btn-compra" type="submit" value="Comprar"></input>
-                </div>
                 </form>
-            {#{% endfor %}#}
-            {#<div class="marco">#}
-            {#    <div class=" marco-item sujetadores-02 img-responsive ">#}
-            {#        <img src="{{twigFolder}}/assets/img/dimensionador-productos.png" />#}
-            {#    </div>#}
-            {#    <p>Sujetador push up</p>#}
-            {#</div>#}
-
-            {#<div class="marco">#}
-            {#    <div class=" marco-item sujetadores-03 img-responsive ">#}
-            {#        <img src="{{twigFolder}}/assets/img/dimensionador-productos.png" />#}
-            {#    </div>#}
-            {#    <p>Sujetador triangular de encaje</p>#}
-            {#</div>#}
-
-            {#<div class="marco">#}
-            {#    <div class=" marco-item sujetadores-04 img-responsive ">#}
-            {#        <img src="{{twigFolder}}/assets/img/dimensionador-productos.png" />#}
-            {#    </div>#}
-            {#    <p>Sujetador clásico</p>#}
-            {#</div>#}
+            {% endfor %}
+    	
         </div>
-        <p id="ver-mas-suje" class="vermas geosans">VER MÁS</p>
+        {#<p id="ver-mas-suje" class="vermas geosans">VER MÁS</p>#}
+        <div class="row">
+            <span> <a href="lenceria/main?pagina={{paginas.primero}}" >&#10094;&#10094; </a></span>
+            <span> <a href="lenceria/main?pagina={{paginas.anterior}}" >&#10094; </a></span>
+            <span> <a href="lenceria/main?pagina={{paginas.siguiente}}"> &#10095;</a></span>
+            <span> <a href="lenceria/main?pagina={{paginas.ultimo}}">&#10095;&#10095;</a></span>    
+        </div>
     </div>
     <!--  Fin Sujetadores  -->
 
@@ -123,7 +111,7 @@
 
         <p class="sujetadores-txt geosans">Los bodies son la tendencia que no puede faltar en tu armario, para estar en casa o para salir a la calle con unos vaqueros son perfectos como fondo de armario. <br> ¡Nunca sabes cuándo pueden salvarte un look! Elige tu favorito.</p>
 
-        <div class="sujetadores-fotos ">
+        <div class="sujetadores-fotos">
 
             <div class="marco">
                 <div class="marco-item bodies-01 img-responsive ">

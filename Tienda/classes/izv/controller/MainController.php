@@ -17,17 +17,17 @@ class MainController extends Controller {
     function main() {
         $this->getModel()->set('titulo', 'Main Controller');
     }
-    
-    function lenceria(){
-      $this->getModel()->set('twigFile', '/_lenceria.twig');  
-    } 
+   
     function desfiles(){
         $this->getModel()->set('twigFile', '/_desfiles.twig');
     } 
+    
     function dormir(){
         $this->getModel()->set('twigFile', '/_ropa_dormir.twig');
     }
+    
     function productos(){
         $this->getModel()->set('twigFile', '/_productos.twig');
     }
+    
 }

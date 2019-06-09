@@ -78,7 +78,7 @@ class CompraController extends Controller {
         // exit();
         $this->getModel()->add($resultado);
         $this->getModel()->set('admin', $this->isAdmin());
-        $this->getModel()->set('twigFile', '/_lenceria.twig');
+        $this->getModel()->set('twigFile', '../perfect_woman/_lencemplateria.twig');
     }
     
     

@@ -27,8 +27,7 @@
 									</tr>
 								</thead>
 								<tbody>
-									{#<span>HOLAAAAAA {{paginas.total}}</span>#}
-									{% if admin and paginas.total > 0%}
+									{% if paginas.total > 0%}
 										{% for pedido in pedidos  %}
 											<tr>
 												<td>{{pedido.id}}</td>

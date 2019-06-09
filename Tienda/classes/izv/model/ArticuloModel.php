@@ -4,6 +4,9 @@ namespace izv\model;
 
 use izv\data\Articulo;
 use izv\tools\Util;
+use izv\data\Pedido;
+use izv\data\Detalle;
+use izv\data\Usuario;
 use Doctrine\ORM\Tools\Pagination\Paginator;
 use izv\tools\Pagination;
 
@@ -66,6 +69,45 @@ class ArticuloModel extends Model {
         $this->getEntityManager()->persist( $articulo_bd);
         $this->getEntityManager()->flush();
         return $articulo;
+    }
+    
+     function getLenceriaPaginada($pagina = 1, $rpp = 4) {
+        $gestor = $this->getEntityManager();
+        // $gestor = $this->getManager();
+        $dql = "select art from izv\data\Articulo art where art.tipo='sujetadores' order by art.nombre";
+        $query = $gestor->createQuery($dql);
+        $paginator = new Paginator($query); 
+        $total = $paginator->count();
+        $pagination = new Pagination($total, $pagina, $rpp); 
+        $paginator->getQuery()
+            ->setFirstResult($pagination->offset())
+            ->setMaxResults($pagination->rpp());
+        return array('info' => $paginator, 'paginas' => $pagination->values());
+    }
+    
+    function comprarArticulo($articuloId, $usuarioId, $cantidad=1, $formaPago='Paypal'){
+        $gestor = $this->getEntityManager();
+        
+        $pedido = new Pedido();
+        $detalle = new Detalle();
+        
+        $usuario = $gestor->getReference('izv\data\Usuario', ['id' => $usuarioId]);
+        $pedido->setUsuario($usuario);
+        $pedido->setFormaPago($formaPago);
+        $gestor->persist($pedido);
+        
+        $articulo = $this->getArticulo($articuloId);
+        $total = $articulo->getPrecio() * $cantidad;
+        
+        $detalle->setPedido($pedido);
+        $detalle->setPrecio($total);
+        $detalle->setCantidad($cantidad);
+        $detalle->setArticulo($articulo);
+        
+        $gestor->persist($detalle);
+        $gestor->flush();
+        
+        return count($pedido->getDetalles);
     }
     
 }
