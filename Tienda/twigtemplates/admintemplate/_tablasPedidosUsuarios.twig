@@ -21,9 +21,12 @@
 										<th>Identificador</th>
 										<th>Fecha de pedido</th>
 										<th>Forma de pago</th>
-										<th>Detalles</th>
-										<th>Editar</th>
-										<th>Borrar</th>
+										{#<th>Detalles</th>#}
+										<th>  </th>
+										<th>  </th>
+										<th>  </th>
+										{#<th>Editar</th>#}
+										{#<th>Borrar</th>#}
 									</tr>
 								</thead>
 								<tbody>
@@ -37,21 +40,21 @@
 												<form method="POST" action="articulo/verDetalles" >
 	                                            	<td>
 														<input type="hidden" class="form-control" name='id' id="id-edit"  value="{{pedido.id}}"   >
-												    	<button type="submit" class="editar transparente"> ver más</button>
+												    	{#<button type="submit" class="editar transparente"> ver más</button>#}
 												    	<i href="articulo/editarArticulo?{{pedido.id}}" class="borrar transparente"></button>
 												   </td>
 	                                            </form>
 												<form method="POST" action="articulo/editarArticulo" >
 	                                            	<td>
-														<input type="hidden" class="form-control" name='id' id="id-edit"  value="{{pedido.id}}"   >
-												    	<button type="submit" class="editar transparente"> &#9998;</button>
-												    	<i href="articulo/editarArticulo?{{pedido.id}}" class="borrar transparente"></button>
+														{#<input type="hidden" class="form-control" name='id' id="id-edit"  value="{{pedido.id}}"   >#}
+												  {#  	<button type="submit" class="editar transparente"> &#9998;</button>#}
+												  {#  	<i href="articulo/editarArticulo?{{pedido.id}}" class="borrar transparente"></button>#}
 												   </td>
 	                                            </form>
-												<form method="POST" action="articulo/doBorrarArticulo" >
+												<form method="POST" action="compra/doBorrarPedido" >
 	                                                <td>
-		                                                <input type="hidden" class="form-control" name="id" id="id-edit"  value="{{articulo.id}}" >
-		                                                <button type="submit" class="borrar transparente"> &#10060;</button>
+		                                                {#<input type="hidden" class="form-control" name="id" id="id-edit"  value="{{articulo.id}}" >#}
+		                                                {#<button type="submit" class="borrar transparente"> &#10060;</button>#}
 	                                                 </td>
 	                                             </form>
 											</tr>

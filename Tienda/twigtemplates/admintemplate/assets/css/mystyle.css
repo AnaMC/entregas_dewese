@@ -408,7 +408,8 @@ td {
 }
 
 .tamano-login{
-    height: 500px;
+    /*height: 500px;*/
+    height: 610px;
 }
 
 .transparente{

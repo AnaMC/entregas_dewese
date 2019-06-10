@@ -30,7 +30,8 @@ class UserController extends Controller {
                                     //Clave , valor [para feedback]
             $this->getModel()->set('respuesta', $resultado);
         }
-        $this->getModel()->set('twigFile', '_adminRegister.twig');
+        // $this->getModel()->set('twigFile', '_adminRegister.twig');
+        $this->getModel()->set('twigFile', '_new_register.twig');
     }
     
     function doRegistro(){

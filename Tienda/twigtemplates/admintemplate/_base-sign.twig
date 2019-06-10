@@ -53,7 +53,10 @@
 	        </div>
     	</header>
     {# FIN PERFECT WOMAN #}
-    
+    	{% if respuesta %}
+			<div class='respuesta' id="respuesta" data-resultado={{resultado}}>Realizado con éxito</div>
+		{% endif %}	
+		
 		<div class="vertical-align-wrap">
 			<div class="vertical-align">
 				<div class="auth-box tamano-login">
@@ -61,7 +64,7 @@
 						<div class="content">
 							<div class="header">
 								{#<div class="logo logo-login text-center"><img src="{{twigFolder}}/assets/img/logo.jpg" width=140 alt="Perfect Woman Logo"></div>#}
-								<p class="lead">Entra en tu cuenta</p>
+			
 							</div>
 							{% block login %}{% endblock %}
 							{% block register %}{% endblock %}
