@@ -51,10 +51,16 @@ class DormirController extends Controller {
     }
     
     function doComprar(){
-        $articuloId = Reader::read('id');
-        $usuarioId = $this->getSession()->getLogin()->getId();
-        $resultado = $this->getModel()->comprarArticulo($articuloId, $usuarioId);
-        header('Location: main?op=compra&result=' . $resultado);
+
+        if($this->getSession()->getLogin()){
+            $articuloId = Reader::read('id');
+            $usuarioId = $this->getSession()->getLogin()->getId();
+            $resultado = $this->getModel()->comprarArticulo($articuloId, $usuarioId);
+            header('Location: main?op=compra&result=' . $resultado);
+         }else{
+            header('Location: ' . App::BASE . 'usuario/login');
+         }
+        
     }
     
     

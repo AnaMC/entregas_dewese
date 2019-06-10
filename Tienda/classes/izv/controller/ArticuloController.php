@@ -15,6 +15,7 @@ class ArticuloController extends Controller {
         parent::__construct($model);
         // $this->getModel()->set('admin', $this->isAdmin());
         $this->getModel()->set('titulo', 'Articulo Controller');
+        $this->getModel()->set('admin', $this->isAdmin());
     }
     
     function main() {
