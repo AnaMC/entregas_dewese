@@ -335,6 +335,7 @@
 
 .row span a {
     text-decoration: none;
+    color: #8a4c5d;
 }
 
 @media only screen and (max-width:900px) {

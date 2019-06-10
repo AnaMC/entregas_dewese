@@ -20,6 +20,7 @@ class LenceriaController extends Controller {
         $this->getModel()->set('titulo', 'Articulo Controller');
         $pagina_br = Reader::read('pagina-br');
         $pagina_len = Reader::read('pagina-len');
+        $pagina_body = Reader::read('pagina-body');
         
         if($pagina_br === null || !is_numeric($pagina_br)) {
             $pagina_br = 1;
@@ -38,6 +39,13 @@ class LenceriaController extends Controller {
         
         $this->getModel()->add($resultado_br);
         $this->getModel()->add($resultado_len);
+        $this->getModel()->set('admin', $this->isAdmin());
+        
+        $resultado_body = $this->getModel()->getBodyPaginado($pagina_body);
+        
+        $this->getModel()->add($resultado_br);
+        $this->getModel()->add($resultado_len);
+        $this->getModel()->add($resultado_body);
         $this->getModel()->set('admin', $this->isAdmin());
     }
     

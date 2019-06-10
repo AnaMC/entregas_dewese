@@ -19,7 +19,7 @@
         <p class="sujetadores-txt geosans"> Descubre nuestra nueva colección de pijamas cortos, cómodos, con un diseño exclusivo y favorecedores, algunos se venden por piezas, lo que los hacen perfectamente combinables entre ellos.</p>
         <div class="sujetadores-fotos ">
 
-            {% for articulo in info  %}
+            {% for articulo in info_cor  %}
                 <form action="dormir/doComprar">
                     <input type="hidden" class="form-control" name='id' id="id-edit"  value="{{articulo.id}}">
                     <div class="marco">
@@ -38,10 +38,10 @@
         {#<p class="vermas geosans">VER MÁS</p>#}
         
         <div class="row">
-            <span> <a href="dormir/main?pagina={{paginas.primero}}" >&#10094;&#10094; </a></span>
-            <span> <a href="dormir/main?pagina={{paginas.anterior}}" >&#10094; </a></span>
-            <span> <a href="dormir/main?pagina={{paginas.siguiente}}"> &#10095;</a></span>
-            <span> <a href="dormir/main?pagina={{paginas.ultimo}}">&#10095;&#10095;</a></span>    
+            <span> <a href="dormir/main?pagina-cor={{paginas_cor.primero}}" >&#10094;&#10094; </a></span>
+            <span> <a href="dormir/main?pagina-cor={{paginas_cor.anterior}}" >&#10094; </a></span>
+            <span> <a href="dormir/main?pagina-cor={{paginas_cor.siguiente}}"> &#10095;</a></span>
+            <span> <a href="dormir/main?pagina-cor={{paginas_cor.ultimo}}">&#10095;&#10095;</a></span>    
         </div>
         
     </div>
@@ -65,35 +65,30 @@
 
         <div class="sujetadores-fotos ">
 
-            <div class="marco">
-                <div class="marco-item homewear-01 img-responsive ">
-                    <img src="{{twigFolder}}/assets/img/dimensionador-productos.png" />
-                </div>
-                <p>Pantalón largo estrecho</p>
-            </div>
-
-            <div class="marco">
-                <div class="marco-item homewear-02 img-responsive ">
-                    <img src="{{twigFolder}}/assets/img/dimensionador-productos.png" />
-                </div>
-                <p>Sudadera de cuello alto</p>
-            </div>
-
-            <div class="marco">
-                <div class="marco-item homewear-03 img-responsive ">
-                    <img src="{{twigFolder}}/assets/img/dimensionador-productos.png" />
-                </div>
-                <p>Pantalón largo de punto</p>
-            </div>
-
-            <div class="marco">
-                <div class="marco-item homewear-04 img-responsive">
-                    <img src="{{twigFolder}}/assets/img/dimensionador-productos.png" />
-                </div>
-                <p>Pantalón largo estrecho</p>
-            </div>
+            {% for articulo in info_homew  %}
+                <form action="dormir/doComprar">
+                    <input type="hidden" class="form-control" name='id' id="id-edit"  value="{{articulo.id}}">
+                    <div class="marco">
+                        <div class=" marco-item cortos-01 img-responsive " style="background-image:url({{twigFolder}}/assets/img/home_{{articulo.id}}.jpg)">
+                             <a><img src="{{twigFolder}}/assets/img/dimensionador-productos.png" /></a>
+                        </div>
+                        <p class="pie-foto">{{articulo.nombre}}</p>
+                        {#<p class="pie-foto">{{articulo.descripcion}}</p>#}
+                        
+                        {#<p class="btn-compra"><a href="ruta/accion">Comprar</a></p>#}
+                        <input class="btn-compra" type="submit" value="Comprar"></input>
+                    </div>
+                </form>
+            {% endfor %}
+          
         </div>
-        <p class="vermas geosans">VER MÁS</p>
+        {#<p class="vermas geosans">VER MÁS</p>#}
+        <div class="row">
+            <span> <a href="dormir/main?pagina-homew={{paginas_homew.primero}}" >&#10094;&#10094; </a></span>
+            <span> <a href="dormir/main?pagina-homew={{paginas_homew.anterior}}" >&#10094; </a></span>
+            <span> <a href="dormir/main?pagina-homew={{paginas_homew.siguiente}}"> &#10095;</a></span>
+            <span> <a href="dormir/main?pagina-homew={{paginas_homew.ultimo}}">&#10095;&#10095;</a></span>    
+        </div>
     </div>
     <!--  Fin Braguitas  -->
 
@@ -115,35 +110,30 @@
 
         <div class="sujetadores-fotos ">
 
-            <div class="marco">
-                <div class="marco-item camisones-01 img-responsive ">
-                    <img src="{{twigFolder}}/assets/img/dimensionador-productos.png" />
-                </div>
-                <p>Camisón corto de tirantes</p>
-            </div>
-
-            <div class="marco">
-                <div class="marco-item camisones-02 img-responsive ">
-                    <img src="{{twigFolder}}/assets/img/dimensionador-productos.png" />
-                </div>
-                <p>Camisón largo de tirantes</p>
-            </div>
-
-            <div class="marco">
-                <div class="marco-item camisones-03 img-responsive ">
-                    <img src="{{twigFolder}}/assets/img/dimensionador-productos.png" />
-                </div>
-                <p>Camisón corto jacquard floral</p>
-            </div>
-
-            <div class="marco">
-                <div class="marco-item camisones-04 img-responsive ">
-                    <img src="{{twigFolder}}/assets/img/dimensionador-productos.png" />
-                </div>
-                <p>Camisón corto de encaje</p>
-            </div>
+           {% for articulo in info_cami  %}
+                <form action="dormir/doComprar">
+                    <input type="hidden" class="form-control" name='id' id="id-edit"  value="{{articulo.id}}">
+                    <div class="marco">
+                        <div class=" marco-item cortos-01 img-responsive " style="background-image:url({{twigFolder}}/assets/img/camison_{{articulo.id}}.jpg)">
+                             <a><img src="{{twigFolder}}/assets/img/dimensionador-productos.png" /></a>
+                        </div>
+                        <p class="pie-foto">{{articulo.nombre}}</p>
+                        {#<p class="pie-foto">{{articulo.descripcion}}</p>#}
+                        
+                        {#<p class="btn-compra"><a href="ruta/accion">Comprar</a></p>#}
+                        <input class="btn-compra" type="submit" value="Comprar"></input>
+                    </div>
+                </form>
+            {% endfor %}
+            
         </div>
-        <p class="vermas geosans">VER MÁS</p>
+        {#<p class="vermas geosans">VER MÁS</p>#}
+        <div class="row">
+            <span> <a href="dormir/main?pagina-cami={{paginas_cami.primero}}" >&#10094;&#10094; </a></span>
+            <span> <a href="dormir/main?pagina-cami={{paginas_cami.anterior}}" >&#10094; </a></span>
+            <span> <a href="dormir/main?pagina-cami={{paginas_cami.siguiente}}"> &#10095;</a></span>
+            <span> <a href="dormir/main?pagina-cami={{paginas_cami.ultimo}}">&#10095;&#10095;</a></span>    
+        </div>
     </div>
     <!--   Fin Bodies-->
 

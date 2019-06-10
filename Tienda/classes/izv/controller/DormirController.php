@@ -18,16 +18,35 @@ class DormirController extends Controller {
     
     function main() {
         $this->getModel()->set('titulo', 'Articulo Controller');
-        $pagina = Reader::read('pagina');
+        $pagina_cor = Reader::read('pagina-cor');
+        $pagina_homew = Reader::read('pagina-homew');
+        $pagina_cami = Reader::read('pagina-cami');
         
-        if($pagina === null || !is_numeric($pagina)) {
-            $pagina = 1;
+        if($pagina_cor === null || !is_numeric($pagina_cor)) {
+            $pagina_cor = 1;
         }
         
-        $resultado = $this->getModel()->getPijamaPaginado($pagina);
-        // echo Util::varDump($resultado);
-        // exit();
-        $this->getModel()->add($resultado);
+        if($pagina_homew === null || !is_numeric($pagina_homew)) {
+            $pagina_homew = 1;
+        }
+        
+        if($pagina_cami === null || !is_numeric($pagina_cami)) {
+            $pagina_cami = 1;
+        }
+        
+        $resultado_cor = $this->getModel()->getPijamaPaginado($pagina_cor);
+        $this->getModel()->add($resultado_cor);
+        
+        $resultado_homew = $this->getModel()->getHomewPaginado($pagina_homew);
+        $this->getModel()->add($resultado_homew);
+        
+        $resultado_cami = $this->getModel()->getCamiPaginado($pagina_cami);
+        $this->getModel()->add($resultado_cami);
+        
+        $this->getModel()->add($resultado_cor);
+        $this->getModel()->add($resultado_homew);
+        $this->getModel()->add($resultado_cami);
+        
         $this->getModel()->set('admin', $this->isAdmin());
     }
     

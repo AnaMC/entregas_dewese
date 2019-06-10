@@ -110,20 +110,6 @@ class ArticuloModel extends Model {
         return count($pedido->getDetalles);
     }
     
-    function getPijamaPaginado($pagina = 1, $rpp = 4) {
-        $gestor = $this->getEntityManager();
-        // $gestor = $this->getManager();
-        $dql = "select art from izv\data\Articulo art where art.tipo='pijama' order by art.nombre";
-        $query = $gestor->createQuery($dql);
-        $paginator = new Paginator($query); 
-        $total = $paginator->count();
-        $pagination = new Pagination($total, $pagina, $rpp); 
-        $paginator->getQuery()
-            ->setFirstResult($pagination->offset())
-            ->setMaxResults($pagination->rpp());
-        return array('info' => $paginator, 'paginas' => $pagination->values());
-    } 
-    
     function getBraguitaPaginado($pagina = 1, $rpp = 4) {
         $gestor = $this->getEntityManager();
         // $gestor = $this->getManager();
@@ -137,5 +123,61 @@ class ArticuloModel extends Model {
             ->setMaxResults($pagination->rpp());
         return array('info_br' => $paginator, 'paginas_br' => $pagination->values());
     }
+    
+    function getBodyPaginado($pagina = 1, $rpp = 4) {
+        $gestor = $this->getEntityManager();
+        // $gestor = $this->getManager();
+        $dql = "select art from izv\data\Articulo art where art.tipo='body' order by art.nombre";
+        $query = $gestor->createQuery($dql);
+        $paginator = new Paginator($query); 
+        $total = $paginator->count();
+        $pagination = new Pagination($total, $pagina, $rpp); 
+        $paginator->getQuery()
+            ->setFirstResult($pagination->offset())
+            ->setMaxResults($pagination->rpp());
+        return array('info_body' => $paginator, 'paginas_body' => $pagination->values());
+    }
+    
+    function getPijamaPaginado($pagina = 1, $rpp = 4) {
+        $gestor = $this->getEntityManager();
+        // $gestor = $this->getManager();
+        $dql = "select art from izv\data\Articulo art where art.tipo='pijama' order by art.nombre";
+        $query = $gestor->createQuery($dql);
+        $paginator = new Paginator($query); 
+        $total = $paginator->count();
+        $pagination = new Pagination($total, $pagina, $rpp); 
+        $paginator->getQuery()
+            ->setFirstResult($pagination->offset())
+            ->setMaxResults($pagination->rpp());
+        return array('info_cor' => $paginator, 'paginas_cor' => $pagination->values());
+    } 
+    
+    function getHomewPaginado($pagina = 1, $rpp = 4) {
+        $gestor = $this->getEntityManager();
+        // $gestor = $this->getManager();
+        $dql = "select art from izv\data\Articulo art where art.tipo='homewear' order by art.nombre";
+        $query = $gestor->createQuery($dql);
+        $paginator = new Paginator($query); 
+        $total = $paginator->count();
+        $pagination = new Pagination($total, $pagina, $rpp); 
+        $paginator->getQuery()
+            ->setFirstResult($pagination->offset())
+            ->setMaxResults($pagination->rpp());
+        return array('info_homew' => $paginator, 'paginas_homew' => $pagination->values());
+    } 
+    
+    function getCamiPaginado($pagina = 1, $rpp = 4) {
+        $gestor = $this->getEntityManager();
+        // $gestor = $this->getManager();
+        $dql = "select art from izv\data\Articulo art where art.tipo='camison' order by art.nombre";
+        $query = $gestor->createQuery($dql);
+        $paginator = new Paginator($query); 
+        $total = $paginator->count();
+        $pagination = new Pagination($total, $pagina, $rpp); 
+        $paginator->getQuery()
+            ->setFirstResult($pagination->offset())
+            ->setMaxResults($pagination->rpp());
+        return array('info_cami' => $paginator, 'paginas_cami' => $pagination->values());
+    } 
     
 }
