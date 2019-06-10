@@ -55,9 +55,7 @@ class ArticuloModel extends Model {
     }
     
     function editar($articulo){
-        $id = $articulo->getId();
-        $articulo_bd = $this->getArticulo($id);
-        
+        $articulo_bd = $this->getArticulo($articulo->getId());
          $articulo_bd->setNombre($articulo->getNombre());
          $articulo_bd->setPrecio($articulo->getPrecio());
          $articulo_bd->setCantidad($articulo->getCantidad());

@@ -79,9 +79,9 @@ class ArticuloController extends Controller {
     function editarArticulo(){
         $id = Reader::read('id');
         $resultado = $this->getModel()->getArticulo($id);
-        if($resultado != null){
-                                    //Clave , valor [para feedback]
+        if($resultado != null){     //Clave , valor [para feedback]
             $this->getModel()->set('info', $resultado);
+            $this->getModel()->set('id', $id);
             $this->getModel()->set('edit', true);
         }
         
@@ -90,6 +90,7 @@ class ArticuloController extends Controller {
     }
     
     function doEditarArticulo(){
+        // $id = Reader::read('id');
         $articulo = Reader::readObject('izv\data\Articulo');
         // var_dump($id);
         // exit();
