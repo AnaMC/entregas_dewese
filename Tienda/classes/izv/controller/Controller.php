@@ -45,4 +45,5 @@ class Controller {
         return $this->getSession()->isLogged() && $this->getSession()->getLogin()->getTipo() === 1;
     }
     
+    
 }

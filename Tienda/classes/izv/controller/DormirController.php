@@ -18,6 +18,24 @@ class DormirController extends Controller {
     
     function main() {
         $this->getModel()->set('titulo', 'Articulo Controller');
+        $pagina = Reader::read('pagina');
+        
+        if($pagina === null || !is_numeric($pagina)) {
+            $pagina = 1;
+        }
+        
+        $resultado = $this->getModel()->getPijamaPaginado($pagina);
+        // echo Util::varDump($resultado);
+        // exit();
+        $this->getModel()->add($resultado);
+        $this->getModel()->set('admin', $this->isAdmin());
+    }
+    
+    function doComprar(){
+        $articuloId = Reader::read('id');
+        $usuarioId = $this->getSession()->getLogin()->getId();
+        $resultado = $this->getModel()->comprarArticulo($articuloId, $usuarioId);
+        header('Location: main?op=compra&result=' . $resultado);
     }
     
     

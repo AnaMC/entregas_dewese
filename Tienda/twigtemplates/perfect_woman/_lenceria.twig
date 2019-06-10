@@ -21,7 +21,7 @@
 
         <div class="sujetadores-fotos " id="#sujetadores">
             
-            {% for articulo in info  %}
+            {% for articulo in info_len  %}
                 <form action="lenceria/doComprar">
                     <input type="hidden" class="form-control" name='id' id="id-edit"  value="{{articulo.id}}">
                     <div class="marco">
@@ -29,6 +29,8 @@
                              <a><img src="{{twigFolder}}/assets/img/dimensionador-productos.png" /></a>
                         </div>
                         <p class="pie-foto">{{articulo.nombre}}</p>
+                        {#<p class="pie-foto">{{articulo.descripcion}}</p>#}
+                        
                         {#<p class="btn-compra"><a href="ruta/accion">Comprar</a></p>#}
                         <input class="btn-compra" type="submit" value="Comprar"></input>
                     </div>
@@ -38,16 +40,17 @@
         </div>
         {#<p id="ver-mas-suje" class="vermas geosans">VER MÁS</p>#}
         <div class="row">
-            <span> <a href="lenceria/main?pagina={{paginas.primero}}" >&#10094;&#10094; </a></span>
-            <span> <a href="lenceria/main?pagina={{paginas.anterior}}" >&#10094; </a></span>
-            <span> <a href="lenceria/main?pagina={{paginas.siguiente}}"> &#10095;</a></span>
-            <span> <a href="lenceria/main?pagina={{paginas.ultimo}}">&#10095;&#10095;</a></span>    
+            <span> <a href="lenceria/main?pagina-len={{paginas_len.primero}}" >&#10094;&#10094; </a></span>
+            <span> <a href="lenceria/main?pagina-len={{paginas_len.anterior}}" >&#10094; </a></span>
+            <span> <a href="lenceria/main?pagina-len={{paginas_len.siguiente}}"> &#10095;</a></span>
+            <span> <a href="lenceria/main?pagina-len={{paginas_len.ultimo}}">&#10095;&#10095;</a></span>    
         </div>
     </div>
     <!--  Fin Sujetadores  -->
 
     <!--  Braguitas  -->
     <div class="sujetadores" id="ver-mas-braguitas">
+        
         <div class="braguitas-titulo ">
             <div class="box-braguitas izq"></div>
             <div class="box-b1"></div>
@@ -62,34 +65,31 @@
         <p class="sujetadores-txt geosans">Las últimas tendencias en braguitas de encaje, brasileñas, de algodón, sin costuras... para toda clase de momentos y perfectamente combinables con la colección de sujetadores <br> ¡Siéntete sexy a todas horas!</p>
 
         <div class="sujetadores-fotos ">
-
-            <div class="marco">
-                <div class="marco-item braguitas-01 img-responsive ">
-                    <img src="{{twigFolder}}/assets/img/dimensionador-productos.png" />
-                </div>
-                <p>Braguita de encaje</p>
-            </div>
-
-            <div class="marco">
-                <div class="marco-item braguitas-02 img-responsive ">
-                    <img src="{{twigFolder}}/assets/img/dimensionador-productos.png" />
-                </div>
-                <p>Braguita clásica de encaje</p>
-            </div>
-
-            <div class="marco">
-                <div class="marco-item braguitas-03 img-responsive ">
-                    <img src="{{twigFolder}}/assets/img/dimensionador-productos.png" />
-                </div>
-                <p>Braguita brasileña encaje y tiras</p>
-            </div>
-
-            <div class="marco">
-                <div class="marco-item braguitas-04 img-responsive">
-                    <img src="{{twigFolder}}/assets/img/dimensionador-productos.png" />
-                </div>
-                <p>Braguita clásica</p>
-            </div>
+            {% for articulo in info_br  %}
+                <form action="lenceria/doComprar">
+                    <input type="hidden" class="form-control" name='id' id="id-edit"  value="{{articulo.id}}">
+                    <div class="marco">
+                        <div class=" marco-item sujetadores-01 img-responsive" style="background-image:url({{twigFolder}}/assets/img/braguita_{{articulo.id}}.jpg)">
+                             <a><img src="{{twigFolder}}/assets/img/dimensionador-productos.png" /></a>
+                        </div>
+                        <p class="pie-foto">{{articulo.nombre}}</p>
+                        {#<p class="pie-foto">{{articulo.descripcion}}</p>#}
+                        
+                        {#<p class="btn-compra"><a href="ruta/accion">Comprar</a></p>#}
+                        <input class="btn-compra" type="submit" value="Comprar"></input>
+                    </div>
+                </form>
+            {% endfor %}
+    	
+        </div>
+        {#<p id="ver-mas-suje" class="vermas geosans">VER MÁS</p>#}
+        <div class="row">
+            <span> <a href="lenceria/main?pagina-br={{paginas_br.primero}}" >&#10094;&#10094; </a></span>
+            <span> <a href="lenceria/main?pagina-br={{paginas_br.anterior}}" >&#10094; </a></span>
+            <span> <a href="lenceria/main?pagina-br={{paginas_br.siguiente}}"> &#10095;</a></span>
+            <span> <a href="lenceria/main?pagina-br={{paginas_br.ultimo}}">&#10095;&#10095;</a></span>    
+        </div>
+           
         </div>        
         <p class="vermas geosans " id="ver-mas-suje">VER MÁS</p>
     </div>

@@ -71,7 +71,7 @@ class ArticuloModel extends Model {
         return $articulo;
     }
     
-     function getLenceriaPaginada($pagina = 1, $rpp = 4) {
+    function getLenceriaPaginada($pagina = 1, $rpp = 4) {
         $gestor = $this->getEntityManager();
         // $gestor = $this->getManager();
         $dql = "select art from izv\data\Articulo art where art.tipo='sujetadores' order by art.nombre";
@@ -82,10 +82,10 @@ class ArticuloModel extends Model {
         $paginator->getQuery()
             ->setFirstResult($pagination->offset())
             ->setMaxResults($pagination->rpp());
-        return array('info' => $paginator, 'paginas' => $pagination->values());
+        return array('info_len' => $paginator, 'paginas_len' => $pagination->values());
     }
     
-    function comprarArticulo($articuloId, $usuarioId, $cantidad=1, $formaPago='Paypal'){
+    function comprarArticulo($articuloId, $usuarioId, $cantidad = 1, $formaPago = 'Paypal'){
         $gestor = $this->getEntityManager();
         
         $pedido = new Pedido();
@@ -108,6 +108,34 @@ class ArticuloModel extends Model {
         $gestor->flush();
         
         return count($pedido->getDetalles);
+    }
+    
+    function getPijamaPaginado($pagina = 1, $rpp = 4) {
+        $gestor = $this->getEntityManager();
+        // $gestor = $this->getManager();
+        $dql = "select art from izv\data\Articulo art where art.tipo='pijama' order by art.nombre";
+        $query = $gestor->createQuery($dql);
+        $paginator = new Paginator($query); 
+        $total = $paginator->count();
+        $pagination = new Pagination($total, $pagina, $rpp); 
+        $paginator->getQuery()
+            ->setFirstResult($pagination->offset())
+            ->setMaxResults($pagination->rpp());
+        return array('info' => $paginator, 'paginas' => $pagination->values());
+    } 
+    
+    function getBraguitaPaginado($pagina = 1, $rpp = 4) {
+        $gestor = $this->getEntityManager();
+        // $gestor = $this->getManager();
+        $dql = "select art from izv\data\Articulo art where art.tipo='braguita' order by art.nombre";
+        $query = $gestor->createQuery($dql);
+        $paginator = new Paginator($query); 
+        $total = $paginator->count();
+        $pagination = new Pagination($total, $pagina, $rpp); 
+        $paginator->getQuery()
+            ->setFirstResult($pagination->offset())
+            ->setMaxResults($pagination->rpp());
+        return array('info_br' => $paginator, 'paginas_br' => $pagination->values());
     }
     
 }

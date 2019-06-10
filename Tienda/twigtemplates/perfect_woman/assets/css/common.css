@@ -240,8 +240,19 @@ p a {
 
 .btn-compra {
     padding: 0 !important;
+    border: 0px !important;
+    background-color: transparent !important;
+    font-family: geosans !important;
+    margin: 0 auto !important;
+    width: 100% !important;
+    font-size: 1em !important;
+    text-transform: uppercase;
 }
 
+.btn-compra:hover{
+    background-color: #c34980 !important;
+    color: white;
+}
 
 /*          TIPOGRAFIAS         */
 

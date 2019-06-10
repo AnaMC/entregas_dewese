@@ -11,9 +11,11 @@ class Router {
             //RUTAS
             'index'     => new Route('Model', 'MainView' , 'MainController'),
             'usuario'  => new Route('UserModel', 'UserView', 'UserController'),
+            // ↓ Compras reales aquí
             'articulo'  => new Route('ArticuloModel', 'UserView', 'ArticuloController'),
             'lenceria'  => new Route('ArticuloModel', 'LenceriaView', 'LenceriaController'),
             'dormir'  => new Route('ArticuloModel', 'DormirView', 'DormirController'),
+            // ↓ Gestón de pedidos
             'compra'  => new Route('CompraModel', 'UserView', 'CompraController'),
         );
         $this->ruta = $ruta;

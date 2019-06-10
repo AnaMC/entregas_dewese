@@ -19,35 +19,31 @@
         <p class="sujetadores-txt geosans"> Descubre nuestra nueva colección de pijamas cortos, cómodos, con un diseño exclusivo y favorecedores, algunos se venden por piezas, lo que los hacen perfectamente combinables entre ellos.</p>
         <div class="sujetadores-fotos ">
 
-            <div class="marco">
-                <div class="marco-item cortos-01 img-responsive ">
-                    <img src="{{twigFolder}}/assets/img/dimensionador-productos.png" />
-                </div>
-                <p class="pie-foto">Pijama corto de encaje cruzado</p>
-            </div>
-
-            <div class="marco">
-                <div class="marco-item cortos-02 img-responsive ">
-                    <img src="{{twigFolder}}/assets/img/dimensionador-productos.png" />
-                </div>
-                <p>Pijama corto animal print</p>
-            </div>
-
-            <div class="marco">
-                <div class="marco-item cortos-03 img-responsive ">
-                    <img src="assets/img/dimensionador-productos.png" />
-                </div>
-                <p>Pijama corto con encaje</p>
-            </div>
-
-            <div class="marco">
-                <div class="marco-item cortos-04 img-responsive ">
-                    <img src="{{twigFolder}}/assets/img/dimensionador-productos.png" />
-                </div>
-                <p>Pijama corto satinado con flores</p>
-            </div>
+            {% for articulo in info  %}
+                <form action="dormir/doComprar">
+                    <input type="hidden" class="form-control" name='id' id="id-edit"  value="{{articulo.id}}">
+                    <div class="marco">
+                        <div class=" marco-item cortos-01 img-responsive " style="background-image:url({{twigFolder}}/assets/img/corto_{{articulo.id}}.jpg)">
+                             <a><img src="{{twigFolder}}/assets/img/dimensionador-productos.png" /></a>
+                        </div>
+                        <p class="pie-foto">{{articulo.nombre}}</p>
+                        {#<p class="pie-foto">{{articulo.descripcion}}</p>#}
+                        
+                        {#<p class="btn-compra"><a href="ruta/accion">Comprar</a></p>#}
+                        <input class="btn-compra" type="submit" value="Comprar"></input>
+                    </div>
+                </form>
+            {% endfor %}
         </div>
-        <p class="vermas geosans">VER MÁS</p>
+        {#<p class="vermas geosans">VER MÁS</p>#}
+        
+        <div class="row">
+            <span> <a href="dormir/main?pagina={{paginas.primero}}" >&#10094;&#10094; </a></span>
+            <span> <a href="dormir/main?pagina={{paginas.anterior}}" >&#10094; </a></span>
+            <span> <a href="dormir/main?pagina={{paginas.siguiente}}"> &#10095;</a></span>
+            <span> <a href="dormir/main?pagina={{paginas.ultimo}}">&#10095;&#10095;</a></span>    
+        </div>
+        
     </div>
     <!--  Fin Sujetadores  -->
 
