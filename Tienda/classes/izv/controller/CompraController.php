@@ -40,7 +40,8 @@ class CompraController extends Controller {
         $this->getModel()->set('twigFile', '_tablasPedidos.twig');
         
         }else{
-             header('Location: ' . App::BASE . 'usuario/login');
+            //  header('Location: ' . App::BASE . 'usuario/login');
+             Util::redirect(App::BASE . 'usuario/login');
         }
     }
     
@@ -60,7 +61,8 @@ class CompraController extends Controller {
         $this->getModel()->set('twigFile', '_tablasPedidosUsuarios.twig');
         
         }else{
-             header('Location: ' . App::BASE . 'usuario/login');
+            //  header('Location: ' . App::BASE . 'usuario/login');
+              Util::redirect(App::BASE . 'usuario/login');
         }
     }
  
@@ -78,7 +80,8 @@ class CompraController extends Controller {
             }
                header('Location: paginacionPedidos?op=borrado&result=1');
         }else{
-             header('Location: ' . App::BASE . 'usuario/login');
+            //  header('Location: ' . App::BASE . 'usuario/login');
+              Util::redirect(App::BASE . 'usuario/login');
         }
     } 
     
@@ -97,7 +100,8 @@ class CompraController extends Controller {
         $this->getModel()->set('admin', $this->isAdmin());
         $this->getModel()->set('twigFile', '../perfect_woman/_lencemplateria.twig');
         }else{
-                 header('Location: ' . App::BASE . 'usuario/login');
+                //  header('Location: ' . App::BASE . 'usuario/login');
+                 Util::redirect(App::BASE . 'usuario/login');
         }
 
     }

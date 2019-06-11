@@ -61,7 +61,8 @@ class DormirController extends Controller {
             header('Location: main?op=compra&result=' . $resultado);
             
          }else{
-            header('Location: ' . App::BASE . 'usuario/login');
+            // header('Location: ' . App::BASE . 'usuario/login');
+            Util::redirect(App::BASE . 'usuario/login');
          }
         
     }

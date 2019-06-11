@@ -62,7 +62,8 @@ class UserController extends Controller {
         $usuario->setActivo('1');
         
             $this->getModel()->getEntityManager()->flush();
-            header('Location: ' . App::BASE . 'usuario/login');
+            // header('Location: ' . App::BASE . 'usuario/login');
+            Util::redirect(App::BASE . 'usuario/login');
     }
     
     //Plantilla que va a mostrar
@@ -106,8 +107,9 @@ class UserController extends Controller {
     
     function doLogout(){
       $this->getSession()->logout();
-        header('Location: login');
-        exit();
+        // header('Location: login');
+        // exit();
+        Util::redirect(App::BASE . 'usuario/login');
     }
    
     function logged(){
@@ -117,7 +119,8 @@ class UserController extends Controller {
             $this->getModel()->set('info', $resultado);
             $this->getModel()->set('twigFile','_tablas.twig');
         }else{
-             header('Location: ' . App::BASE . 'usuario/login');
+            //  header('Location: ' . App::BASE . 'usuario/login');
+             Util::redirect(App::BASE . 'usuario/login');
         }
     }
     
@@ -129,7 +132,8 @@ class UserController extends Controller {
             $this->getModel()->set('admin', $this->isAdmin());
             $this->getModel()->set('twigFile','_tablas.twig');
         }else{
-             header('Location: ' . App::BASE . 'usuario/login');
+            //  header('Location: ' . App::BASE . 'usuario/login');
+             Util::redirect(App::BASE . 'usuario/login');
         }
     } 
     
@@ -160,7 +164,8 @@ class UserController extends Controller {
             
             $this->getModel()->set('twigFile', '_edit.twig');
         }else{
-             header('Location: ' . App::BASE . 'usuario/login');
+            //  header('Location: ' . App::BASE . 'usuario/login');
+             Util::redirect(App::BASE . 'usuario/login');
         }
     }
     
@@ -197,7 +202,8 @@ class UserController extends Controller {
             $this->getModel()->set('admin', $this->isAdmin());
             $this->getModel()->set('twigFile', '_tablas.twig');
         }else{
-             header('Location: ' . App::BASE . 'usuario/login');
+            //  header('Location: ' . App::BASE . 'usuario/login');
+             Util::redirect(App::BASE . 'usuario/login');
         }
     }
 }
