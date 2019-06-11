@@ -23,32 +23,43 @@ class ArticuloController extends Controller {
     }
     
     function registroArticulo(){
-        
-        $resultado = Reader::read('resultado');
-        
-        if($resultado != null){
-                                    //Clave , valor [para feedback]
-            $this->getModel()->set('respuesta', $resultado);
+        if($this->getSession()->getLogin()){ 
+            $resultado = Reader::read('resultado');
+            
+            if($resultado != null){
+                                        //Clave , valor [para feedback]
+                $this->getModel()->set('respuesta', $resultado);
+            }
+            $this->getModel()->set('twigFile', '_articuloRegister.twig');
+        }else{
+             header('Location: ' . App::BASE . 'usuario/login');
         }
-        $this->getModel()->set('twigFile', '_articuloRegister.twig');
     }
     
     function doRegistroArticulo(){
-        $articulo = Reader::readObject('izv\data\Articulo');  
         
-        // echo Util::varDump($articulo);
-        // exit();
-        
-        $resultado = $this->getModel()->registroArticulo($articulo);
-
-        if($resultado != 0 && $resultado != -1){
-         
-            header('Location: ' . App::BASE . 'articulo/registroArticulo?resultado=' . $resultado ? '1' : '0' );
+        if($this->getSession()->getLogin()){ 
+            
+            $articulo = Reader::readObject('izv\data\Articulo');  
+            
+            // echo Util::varDump($articulo);
+            // exit();
+            
+            $resultado = $this->getModel()->registroArticulo($articulo);
+    
+            if($resultado != 0 && $resultado != -1){
+             
+                header('Location: ' . App::BASE . 'articulo/registroArticulo?resultado=' . $resultado ? '1' : '0' );
+            }
+            header('Location: ' . App::BASE . 'articulo/registroArticulo?resultado=' . $resultado );
+         }else{
+             header('Location: ' . App::BASE . 'usuario/login');
         }
-        header('Location: ' . App::BASE . 'articulo/registroArticulo?resultado=' . $resultado );
     }
     
     function paginacionArticulos() {
+        if($this->getSession()->getLogin()){ 
+            
         $pagina = Reader::read('pagina');
         
         if($pagina === null || !is_numeric($pagina)) {
@@ -61,6 +72,10 @@ class ArticuloController extends Controller {
         $this->getModel()->add($resultado);
         $this->getModel()->set('admin', $this->isAdmin());
         $this->getModel()->set('twigFile', '_tablasProduct.twig');
+        
+        }else{
+             header('Location: ' . App::BASE . 'usuario/login');
+        }
     }
  
     function doBorrarArticulo(){
@@ -78,35 +93,43 @@ class ArticuloController extends Controller {
     } 
     
     function editarArticulo(){
-        $id = Reader::read('id');
-        $resultado = $this->getModel()->getArticulo($id);
-        if($resultado != null){     //Clave , valor [para feedback]
-            $this->getModel()->set('info', $resultado);
-            $this->getModel()->set('id', $id);
-            $this->getModel()->set('edit', true);
+        if($this->getSession()->getLogin()){ 
+            
+            $id = Reader::read('id');
+            $resultado = $this->getModel()->getArticulo($id);
+            if($resultado != null){     //Clave , valor [para feedback]
+                $this->getModel()->set('info', $resultado);
+                $this->getModel()->set('id', $id);
+                $this->getModel()->set('edit', true);
+            }
+            
+            $this->getModel()->set('twigFile', '_articuloEdit.twig');
+            
+        }else{
+             header('Location: ' . App::BASE . 'usuario/login');
         }
-        
-        $this->getModel()->set('twigFile', '_articuloEdit.twig');
         
     }
     
     function doEditarArticulo(){
-        // $id = Reader::read('id');
-        $articulo = Reader::readObject('izv\data\Articulo');
-        // var_dump($id);
-        // exit();
-        $resultado = $this->getModel()->editar($articulo);  
-        // $r = $resultado->getId() === null ? 1 : 0;
-        $admin = $this->isAdmin();
-        if($admin){
-            header('Location: paginacionArticulos?op=login&res=' . $r);
+        if($this->getSession()->getLogin()){ 
+            // $id = Reader::read('id');
+            $articulo = Reader::readObject('izv\data\Articulo');
+            // var_dump($id);
+            // exit();
+            $resultado = $this->getModel()->editar($articulo);  
+            // $r = $resultado->getId() === null ? 1 : 0;
+            $admin = $this->isAdmin();
+            if($admin){
+                header('Location: paginacionArticulos?op=login&res=' . $r);
+                exit();
+            }else{
+                header('Location: paginacionArticulos?op=login&res=' . $r);
+                exit();
+            }
             exit();
         }else{
-            header('Location: paginacionArticulos?op=login&res=' . $r);
-            exit();
+             header('Location: ' . App::BASE . 'usuario/login');
         }
-        exit();
     }
-    
-    
 }

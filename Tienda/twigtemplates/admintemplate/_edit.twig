@@ -62,46 +62,46 @@
 							<div class='row'>
 								<div class='col-md-12'>
 									<!-- TODO LIST -->
-									<div class="panel">
-										<div class="panel-heading">
-											<h3 class="panel-title">Gestión de Cuenta</h3>
-											<div class="right">
-												<button type="button" class="btn-toggle-collapse"><i class="lnr lnr-chevron-up"></i></button>
+									{#<div class="panel">#}
+									{#	<div class="panel-heading">#}
+									{#		<h3 class="panel-title">Gestión de Cuenta</h3>#}
+									{#		<div class="right">#}
+									{#			<button type="button" class="btn-toggle-collapse"><i class="lnr lnr-chevron-up"></i></button>#}
 												{#<button type="button" class="btn-remove"><i class="lnr lnr-cross"></i></button>#}
-											</div>
-										</div>
-										<div class="panel-body">
-											<ul class="list-unstyled todo-list">
-												<li>
-													<label class="control-inline fancy-checkbox">
-														<input type="checkbox" id="activo" name='activo' {{user.activo == true ? 'checked' : '' }}><span></span>
+									{#		</div>#}
+									{#	</div>#}
+									{#	<div class="panel-body">#}
+									{#		<ul class="list-unstyled todo-list">#}
+									{#			<li>#}
+									{#				<label class="control-inline fancy-checkbox">#}
+									{#					<input type="checkbox" id="activo" name='activo' {{user.activo == true ? 'checked' : '' }}><span></span>#}
 														
-													</label>
-													<p>
-														<span class="title">Activar Cuenta</span>
-														<span class="short-description">Marque esta opción para activar la cuenta de este usuario.</span>
+									{#				</label>#}
+									{#				<p>#}
+									{#					<span class="title">Activar Cuenta</span>#}
+									{#					<span class="short-description">Marque esta opción para activar la cuenta de este usuario.</span>#}
 														{#<span class="date">Oct 9, 2016</span>#}
-													</p>
-													<div class="controls">
-														<a href="#"><i class="icon-software icon-software-pencil"></i></a> <a href="#"><i class="icon-arrows icon-arrows-circle-remove"></i></a>
-													</div>
-												</li>
-												<li>
-													<label class="control-inline fancy-checkbox">
-														<input type="checkbox" id="rol" name='rol' {{info.tipo == true ? 'checked' : '' }}><span></span>
-													</label>
-													<p>
-														<span class="title">Privilegios de Administrador</span>
-														<span class="short-description">Marque esta opción para otorgar privilegios de administrador a este usuario</span>
-														<span class="date">Con estos privilegios podrá realizar operaciones de insercción de datos y borrado.</span>
-													</p>
-													<div class="controls">
-														<a href="#"><i class="icon-software icon-software-pencil"></i></a> <a href="#"><i class="icon-arrows icon-arrows-circle-remove"></i></a>
-													</div>
-												</li>
-											</ul>
-										</div>
-									</div>
+									{#				</p>#}
+									{#				<div class="controls">#}
+									{#					<a href="#"><i class="icon-software icon-software-pencil"></i></a> <a href="#"><i class="icon-arrows icon-arrows-circle-remove"></i></a>#}
+									{#				</div>#}
+									{#			</li>#}
+									{#			<li>#}
+									{#				<label class="control-inline fancy-checkbox">#}
+									{#					<input type="checkbox" id="rol" name='rol' {{info.tipo == true ? 'checked' : '' }}><span></span>#}
+									{#				</label>#}
+									{#				<p>#}
+									{#					<span class="title">Privilegios de Administrador</span>#}
+									{#					<span class="short-description">Marque esta opción para otorgar privilegios de administrador a este usuario</span>#}
+									{#					<span class="date">Con estos privilegios podrá realizar operaciones de insercción de datos y borrado.</span>#}
+									{#				</p>#}
+									{#				<div class="controls">#}
+									{#					<a href="#"><i class="icon-software icon-software-pencil"></i></a> <a href="#"><i class="icon-arrows icon-arrows-circle-remove"></i></a>#}
+									{#				</div>#}
+									{#			</li>#}
+									{#		</ul>#}
+									{#	</div>#}
+									{#</div>#}
 									<!-- END TODO LIST -->
 								</div>
 							</div>

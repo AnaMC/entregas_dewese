@@ -24,6 +24,8 @@ class CompraController extends Controller {
     }
    
     function paginacionPedidos() {
+        if($this->getSession()->getLogin()){ 
+             
         $pagina = Reader::read('pagina');
         
         if($pagina === null || !is_numeric($pagina)) {
@@ -36,9 +38,15 @@ class CompraController extends Controller {
         $this->getModel()->add($resultado);
         $this->getModel()->set('admin', $this->isAdmin());
         $this->getModel()->set('twigFile', '_tablasPedidos.twig');
+        
+        }else{
+             header('Location: ' . App::BASE . 'usuario/login');
+        }
     }
     
      function paginacionPedidosUsuarios() {
+        if($this->getSession()->getLogin()){ 
+            
         $pagina = Reader::read('pagina');
         
         if($pagina === null || !is_numeric($pagina)) {
@@ -50,37 +58,47 @@ class CompraController extends Controller {
         $this->getModel()->add($resultado);
         $this->getModel()->set('admin', $this->isAdmin());
         $this->getModel()->set('twigFile', '_tablasPedidosUsuarios.twig');
+        
+        }else{
+             header('Location: ' . App::BASE . 'usuario/login');
+        }
     }
  
     function doBorrarPedido(){
-        $admin = $this->isAdmin();
-        if($admin){
-            $id = Reader::read('id');
-            // var_dump($id);
-            // exit();
-            $resultado = $this->getModel()->borrarPedido($id);
-            $r = $resultado === null ? 1 : 0;
-            header('Location: paginacionPedidos?op=borrado&result='. $r);
-            exit();
+        if($this->getSession()->getLogin()){ 
+            $admin = $this->isAdmin();
+            if($admin){
+                $id = Reader::read('id');
+                // var_dump($id);
+                // exit();
+                $resultado = $this->getModel()->borrarPedido($id);
+                $r = $resultado === null ? 1 : 0;
+                header('Location: paginacionPedidos?op=borrado&result='. $r);
+                exit();
+            }
+               header('Location: paginacionPedidos?op=borrado&result=1');
+        }else{
+             header('Location: ' . App::BASE . 'usuario/login');
         }
-           header('Location: paginacionPedidos?op=borrado&result=1');
     } 
     
-      function paginacionArticulos() {
-        $pagina = Reader::read('pagina');
-        
-        if($pagina === null || !is_numeric($pagina)) {
-            $pagina = 1;
-        }
-        
+    function paginacionArticulos() {
+        if($this->getSession()->getLogin()){ 
+            $pagina = Reader::read('pagina');
+            
+            if($pagina === null || !is_numeric($pagina)) {
+                $pagina = 1;
+            }
+    
         $resultado = $this->getModel()->getArticulosPaginados($pagina);
         // echo Util::varDump($resultado);
         // exit();
         $this->getModel()->add($resultado);
         $this->getModel()->set('admin', $this->isAdmin());
         $this->getModel()->set('twigFile', '../perfect_woman/_lencemplateria.twig');
-    }
-    
-    
+        }else{
+                 header('Location: ' . App::BASE . 'usuario/login');
+        }
 
+    }
 }

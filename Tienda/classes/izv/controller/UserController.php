@@ -111,19 +111,26 @@ class UserController extends Controller {
     }
    
     function logged(){
-        $id = $this->getSession()->getLogin()->getId();
-        $resultado = $this->getModel()->getUsuario($id);
-        $this->getModel()->set('info', $resultado);
-        $this->getModel()->set('twigFile','_tablas.twig');
+        if($this->getSession()->getLogin()){
+            $id = $this->getSession()->getLogin()->getId();
+            $resultado = $this->getModel()->getUsuario($id);
+            $this->getModel()->set('info', $resultado);
+            $this->getModel()->set('twigFile','_tablas.twig');
+        }else{
+             header('Location: ' . App::BASE . 'usuario/login');
+        }
     }
     
     function listar(){
-        $resultado = $this->getModel()->getUsuarios();
-      
-        $this->getModel()->set('info', $resultado);
-        $this->getModel()->set('admin', $this->isAdmin());
-        $this->getModel()->set('twigFile','_tablas.twig');
-
+        if($this->getSession()->getLogin()){
+            $resultado = $this->getModel()->getUsuarios();
+          
+            $this->getModel()->set('info', $resultado);
+            $this->getModel()->set('admin', $this->isAdmin());
+            $this->getModel()->set('twigFile','_tablas.twig');
+        }else{
+             header('Location: ' . App::BASE . 'usuario/login');
+        }
     } 
     
     function doBorrar(){
@@ -143,15 +150,18 @@ class UserController extends Controller {
     }
         
     function editar(){
-        $id = Reader::read('id');
-        $resultado = $this->getModel()->getUsuario($id);
-        if($resultado != null){
-                                    //Clave , valor [para feedback]
-            $this->getModel()->set('info', $resultado);
+        if($this->getSession()->getLogin()){
+            $id = Reader::read('id');
+            $resultado = $this->getModel()->getUsuario($id);
+            if($resultado != null){
+                                        //Clave , valor [para feedback]
+                $this->getModel()->set('info', $resultado);
+            }
+            
+            $this->getModel()->set('twigFile', '_edit.twig');
+        }else{
+             header('Location: ' . App::BASE . 'usuario/login');
         }
-        
-        $this->getModel()->set('twigFile', '_edit.twig');
-        
     }
     
     function doEditar(){
@@ -173,18 +183,21 @@ class UserController extends Controller {
     // Paginacion
     
      function paginacion() {
-        $pagina = Reader::read('pagina');
-        
-        if($pagina === null || !is_numeric($pagina)) {
-            $pagina = 1;
+        if($this->getSession()->getLogin()){
+            $pagina = Reader::read('pagina');
+            
+            if($pagina === null || !is_numeric($pagina)) {
+                $pagina = 1;
+            }
+            
+            $resultado = $this->getModel()->getUsuariosPaginados($pagina);
+            // echo Util::varDump($resultado);
+            // exit();
+            $this->getModel()->add($resultado);
+            $this->getModel()->set('admin', $this->isAdmin());
+            $this->getModel()->set('twigFile', '_tablas.twig');
+        }else{
+             header('Location: ' . App::BASE . 'usuario/login');
         }
-        
-        $resultado = $this->getModel()->getUsuariosPaginados($pagina);
-        // echo Util::varDump($resultado);
-        // exit();
-        $this->getModel()->add($resultado);
-        $this->getModel()->set('admin', $this->isAdmin());
-        $this->getModel()->set('twigFile', '_tablas.twig');
     }
-    
 }

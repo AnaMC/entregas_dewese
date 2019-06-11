@@ -60,6 +60,11 @@ class Util {
         return date('Y-m-d', strtotime($date));
     }
 
+    static function redirect($url) {
+        header('Location: ' . $url);
+        exit();
+    }
+
     static function url() {
         $url = "http" . (($_SERVER['SERVER_PORT'] == 443) ? "s" : "") . "://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
         $parts = pathinfo($url);
